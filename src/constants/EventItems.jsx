@@ -1,7 +1,7 @@
 
 function EventItems() {
   return (
-    <a href="#">
+    <a href="#" >
       <div className="card bg-base-100 w-96 shadow-xl">
         <figure>
           <img

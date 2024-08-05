@@ -1,4 +1,5 @@
-import EventItems from '../constants/EventItems';
+import React from 'react';
+import EventItems from '../constants/EventItems'; // Assuming EventItems is a separate component
 
 const eventData = [
   { id: 1, title: 'Event 1', description: 'Description for Event 1' },
@@ -10,11 +11,11 @@ const eventData = [
 
 const TechEvents = () => {
   return (
-    <div className='bg-black h-auto w-screen p-[4rem]'>
+    <div className='bg-purple-100 h-auto w-screen p-[4rem]'>
       <div className='bg-transparent text-4xl text-white font-orbitron text-center'>
         <span>Technical Events</span>
       </div>
-      <div className='grid grid-flow-row grid-rows-2 grid-cols-4 gap-[2rem] pt-[3rem]'>
+      <div className='grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 pt-[3rem]'>
         {eventData.map(event => (
           <EventItems key={event.id} title={event.title} description={event.description} />
         ))}
