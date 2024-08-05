@@ -1,4 +1,3 @@
-import React from 'react'
 import sample from '../assets/SampleLogo.svg'
 const Hero = () => {
   return (

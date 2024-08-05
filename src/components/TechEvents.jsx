@@ -1,4 +1,3 @@
-import React from 'react'
 import EventItems from '../constants/EventItems'
 
 const TechEvents = () => {

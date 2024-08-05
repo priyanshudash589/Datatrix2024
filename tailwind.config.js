@@ -1,4 +1,4 @@
-
+import daisyui from "daisyui";
 const withMT = require("@material-tailwind/react/utils/withMT");
  
 module.exports = withMT({
@@ -10,5 +10,5 @@ module.exports = withMT({
       aston:["Anton"],
     }
   },
-  plugins: [],
+  plugins: [daisyui],
 });
