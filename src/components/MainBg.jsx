@@ -158,32 +158,23 @@ export default function MainBg() {
         </Navbar>
       </div>
 
-      <div className="bg-transparent sm:hidden lg:flex flex-row md:flex lg:justify-between lg:items-center md:justify-between md:items-center p-5 absolute w-auto h-[5rem] gap-8 lg:top-[50rem] lg:left-[15rem] md:top-[40rem] md:left-[10rem]">
+      <div
+        className="bg-transparent flex flex-col sm:flex-row justify-center items-center gap-4 p-5 w-full sm:w-auto absolute 
+                left-1/2 transform -translate-x-1/2
+                top-[30rem] sm:top-[35rem] md:top-[40rem] lg:top-[50rem]
+                sm:left-1/2 sm:-translate-x-1/2
+                md:left-[10rem] md:translate-x-0
+                lg:left-[15rem]"
+      >
         <Button
           variant="outlined"
-          className="w-[15rem] h-12 flex justify-center items-center text-sky-200 border-2 font-orbitron rounded-lg md:bg-black border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
+          className="w-full sm:w-[15rem] h-12 flex justify-center items-center text-sky-200 border-2 font-orbitron rounded-lg bg-black border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
         >
           Register Now
         </Button>
         <Button
           variant="outlined"
-          className="w-[15rem] h-12 flex justify-center items-center md:bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
-        >
-          Know More
-        </Button>       
-      </div>
-
-
-      <div className="bg-transparent flex flex-col justify-between items-center p-5 absolute w-screen h-[10rem] lg:hidden md:hidden gap-8 top-[40rem] left-[10rem] ">
-        <Button
-          variant="outlined"
-          className="w-[15rem] h-12 flex justify-center bg-black items-center text-sky-200 border-2 font-orbitron rounded-lg border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
-        >
-          Register Now
-        </Button>
-        <Button
-          variant="outlined"
-          className="w-[15rem] h-12 flex justify-center bg-black items-center text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
+          className="w-full sm:w-[15rem] h-12 flex justify-center items-center bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
         >
           Know More
         </Button>
