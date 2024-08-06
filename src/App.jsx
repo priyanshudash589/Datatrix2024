@@ -7,6 +7,7 @@ import NonTechEvents from "./components/NonTechEvents";
 import { Footer } from "./components/Footer";
 import Sponsors from "./components/Sponsors";
 import {PreviousEvents} from '../src/components/PreviousEvents'
+import MainBg from "./components/MainBg";
 
 function App() {
   const[loading, setLoading] = useState(false);
@@ -20,7 +21,8 @@ function App() {
 
   return (
     <>
-      {loading?<Loadr/> :<><Hero/><Speakers/><Sponsors/><TechEvents/><NonTechEvents/><PreviousEvents/> <Footer/></>}
+      {/* {loading?<Loadr/> :<><Hero/><Speakers/><Sponsors/><TechEvents/><NonTechEvents/><PreviousEvents/> <Footer/></>} */}
+      <MainBg/><Speakers/><Sponsors/><TechEvents/><NonTechEvents/><PreviousEvents/><Footer/>
     </>
   )
 }

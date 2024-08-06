@@ -11,10 +11,10 @@ const Speakers = () => {
         
     </div>
         <Marquee className='bg-black pt-5'>
-            <ProfileCard/>
-            <ProfileCard/>
-            <ProfileCard/>
-            <ProfileCard/>
+            <ProfileCard name="Natalia"/>
+            <ProfileCard name="Vishal"/>
+            <ProfileCard name="Priyasnyi"/>
+            <ProfileCard name="vbkbkn"/>
             <ProfileCard/>
         </Marquee>
     </>

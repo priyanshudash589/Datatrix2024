@@ -1,5 +1,6 @@
 import React from 'react'
 import EventItems from '../constants/EventItems'
+import Event from '../components/Event'
 
 const TechEvents = () => {
   return (
@@ -10,7 +11,7 @@ const TechEvents = () => {
             </div>
             <div className='grid grid-flow-row grid-rows-2 grid-cols-4 gap-[2rem] pt-[3rem]'>
 
-                <EventItems/>
+                <a href="../components/Event"><EventItems/></a>
                 <EventItems/>
                 <EventItems/>
                 <EventItems/>

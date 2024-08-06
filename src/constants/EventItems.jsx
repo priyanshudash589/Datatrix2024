@@ -5,6 +5,7 @@ import {
     CardFooter,
     Typography,
   } from "@material-tailwind/react";
+  import { Button } from "@material-tailwind/react";
    
  function EventItems() {
     return (
@@ -30,7 +31,7 @@ import {
           </Typography>
         </CardBody>
         <CardFooter className="flex items-center justify-between">
-          <Typography className="font-normal">January 10</Typography>
+        <Button variant="outlined">Click Here</Button>
         </CardFooter>
       </Card></a>
     );

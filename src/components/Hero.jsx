@@ -5,6 +5,7 @@ const Hero = () => {
     <>
         <div className='bg-black h-screen w-screen pr-[8rem]
         pl-[8rem] pt-[4rem] '>
+        
 
             <div className='flex justify-between mb-[4rem] items-center'>
                 <img src={sample} alt="" className='h-[5rem]'/>
