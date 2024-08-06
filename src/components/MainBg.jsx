@@ -168,15 +168,9 @@ export default function MainBg() {
       >
         <Button
           variant="outlined"
-          className="w-full sm:w-[15rem] h-12 flex justify-center items-center text-sky-200 border-2 font-orbitron rounded-lg bg-black border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
-        >
-          Register Now
-        </Button>
-        <Button
-          variant="outlined"
           className="w-full sm:w-[15rem] h-12 flex justify-center items-center bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
         >
-          Know More
+          Know More . . . 
         </Button>
       </div>
     </div>

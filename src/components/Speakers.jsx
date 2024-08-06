@@ -5,18 +5,18 @@ import { ProfileCard } from '../constants/ProfileCard';
 const Speakers = () => {
   return (
     <>
-    <div className='w-screen h-[6rem] bg-black text-center flex flex-col gap-2'>
+    <div className='w-screen h-[45rem] bg-black text-center flex flex-col gap-2 p-7 pt-11'>
         <span className='text-white text-4xl font-orbitron'>Data Innovations Conference Experts</span>
         <span className='text-center font-orbitron text-white'>Data Innovations Conference Experts</span>
-        
-    </div>
-        <Marquee className='bg-black pt-5'>
+        <Marquee className='bg-black mt-6'>
             <ProfileCard name="Natalia"/>
             <ProfileCard name="Vishal"/>
             <ProfileCard name="Priyasnyi"/>
             <ProfileCard name="vbkbkn"/>
             <ProfileCard/>
-        </Marquee>
+        </Marquee>        
+    </div>
+        
     </>
   )
 }

@@ -7,6 +7,8 @@ module.exports = withMT({
     extend: {
       backgroundImage: {
         'patter-data': "url('/src/assets/databg.gif')",
+        'patt-grid': "url('/src/assets/grid.svg')",
+        'bg2': "url('/src/assets/technical.gif')"
       }
     },
     fontFamily:{
