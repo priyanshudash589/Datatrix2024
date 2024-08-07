@@ -155,14 +155,8 @@ export default function MainBg({
         </Navbar>
       </div>
 
-      <div className="pt-32"> {/* Add padding-top to push content below fixed navbar */}
         <div
-          className="bg-transparent flex flex-col sm:flex-row justify-center items-center gap-4 p-5 w-full sm:w-auto 
-                  left-1/2 transform -translate-x-1/2
-                  top-[30rem] sm:top-[35rem] md:top-[40rem] lg:top-[50rem]
-                  sm:left-1/2 sm:-translate-x-1/2
-                  md:left-[10rem] md:translate-x-0
-                  lg:left-[15rem]"
+          className="bg-transparent flex flex-col sm:flex-row justify-center items-center gap-4 p-0 w-full xl:translate-y-[50rem] xl:-translate-x-[25rem] lg:translate-y-[46rem] lg:-translate-x-[8rem] md:translate-y-[37rem] translate-y-[37.5rem]"
         >
           <button
             variant="outlined"
@@ -172,6 +166,6 @@ export default function MainBg({
           </button>
         </div>
       </div>
-    </div>
+    
   );
 }
