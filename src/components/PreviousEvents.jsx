@@ -2,7 +2,7 @@ import { Carousel, Typography, Button } from "@material-tailwind/react";
  
 export function PreviousEvents() {
   return (
-    <div className="bg-black">
+    <div className="bg-black lg:pt-[4rem]">
       <div className="text-center p-[3rem]" >
         <span className="text-4xl  text-white font-orbitron bg-black">Our Previous Successful Events</span>
       </div>

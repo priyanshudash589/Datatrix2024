@@ -6,8 +6,15 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
-export default function MainBg() {
+export default function MainBg({ 
+  scrollToSpeakers, 
+  scrollToSponsors, 
+  scrollToTechEvents, 
+  scrollToNonTechEvents, 
+  scrollToPreviousEvents 
+}) {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,19 +32,9 @@ export default function MainBg() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center text-white">
-          About Us
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center text-white">
+        <button onClick={scrollToSpeakers} className="flex items-center text-white">
           Speakers
-        </a>
+        </button>
       </Typography>
       <Typography
         as="li"
@@ -45,9 +42,9 @@ export default function MainBg() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center text-white">
+        <button onClick={scrollToSponsors} className="flex items-center text-white">
           Sponsors
-        </a>
+        </button>
       </Typography>
       <Typography
         as="li"
@@ -55,19 +52,9 @@ export default function MainBg() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center text-white">
-          Gallery
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center text-white">
+        <button onClick={scrollToTechEvents} className="flex items-center text-white">
           Tech Events
-        </a>
+        </button>
       </Typography>
       <Typography
         as="li"
@@ -75,22 +62,32 @@ export default function MainBg() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center text-white">
+        <button onClick={scrollToNonTechEvents} className="flex items-center text-white">
           Non-Tech Events
-        </a>
+        </button>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <button onClick={scrollToPreviousEvents} className="flex items-center text-white">
+          Previous Events
+        </button>
       </Typography>
     </ul>
   );
 
   return (
-    <div className=" max-h-[100vh] h-[100vh] w-screen bg-patter-data overflow-scroll static p-6">
-      <div className="bg-transparent">
-        <Navbar className="sticky top-0 z-10 h-max max-w-full bg-black rounded-xl px-4 py-2 lg:px-8 lg:py-4">
+    <div className="min-h-screen w-screen bg-patter-data overflow-x-hidden">
+      <div className="fixed top-0 left-0 right-0 z-50 p-6">
+        <Navbar className="mx-auto max-w-full bg-black backdrop-blur-sm rounded-xl px-4 py-2 lg:px-8 lg:py-4">
           <div className="flex items-center justify-between text-blue-gray-900">
             <Typography
-              as="a"
-              href="#"
-              className="mr-4 cursor-pointer py-1.5 font-medium  text-white"
+              as={Link}
+              to="/"
+              className="mr-4 cursor-pointer py-1.5 font-medium text-white"
             >
               Logo
             </Typography>
@@ -158,20 +155,22 @@ export default function MainBg() {
         </Navbar>
       </div>
 
-      <div
-        className="bg-transparent flex flex-col sm:flex-row justify-center items-center gap-4 p-5 w-full sm:w-auto absolute 
-                left-1/2 transform -translate-x-1/2
-                top-[30rem] sm:top-[35rem] md:top-[40rem] lg:top-[50rem]
-                sm:left-1/2 sm:-translate-x-1/2
-                md:left-[10rem] md:translate-x-0
-                lg:left-[15rem]"
-      >
-        <Button
-          variant="outlined"
-          className="w-full sm:w-[15rem] h-12 flex justify-center items-center bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
+      <div className="pt-32"> {/* Add padding-top to push content below fixed navbar */}
+        <div
+          className="bg-transparent flex flex-col sm:flex-row justify-center items-center gap-4 p-5 w-full sm:w-auto 
+                  left-1/2 transform -translate-x-1/2
+                  top-[30rem] sm:top-[35rem] md:top-[40rem] lg:top-[50rem]
+                  sm:left-1/2 sm:-translate-x-1/2
+                  md:left-[10rem] md:translate-x-0
+                  lg:left-[15rem]"
         >
-          Know More . . . 
-        </Button>
+          <button
+            variant="outlined"
+            className="w-full sm:w-[15rem] focus:outline-none h-12 flex justify-center items-center bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
+          >
+            Know More . . . 
+          </button>
+        </div>
       </div>
     </div>
   );

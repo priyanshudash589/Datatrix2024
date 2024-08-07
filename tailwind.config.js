@@ -8,7 +8,8 @@ module.exports = withMT({
       backgroundImage: {
         'patter-data': "url('/src/assets/databg.gif')",
         'patt-grid': "url('/src/assets/grid.svg')",
-        'bg2': "url('/src/assets/technical.gif')"
+        'bg2': "url('/src/assets/technical.gif')",
+        'event': "url('/src/assets/event-bgd.svg')"
       }
     },
     fontFamily:{

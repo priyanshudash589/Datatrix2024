@@ -1,30 +1,31 @@
-import Hero from "./components/Hero"
-import Loadr from "./components/Loadr"
-import { useState, useEffect } from "react"
-import Speakers from "./components/Speakers";
-import TechEvents from "./components/TechEvents";
-import NonTechEvents from "./components/NonTechEvents";
-import { Footer } from "./components/Footer";
-import Sponsors from "./components/Sponsors";
-import {PreviousEvents} from '../src/components/PreviousEvents'
-import MainBg from "./components/MainBg";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Loadr from "./components/Loadr";
+import Home from "./components/Home";
+import Event from './components/Event';
 
 function App() {
-  const[loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     setLoading(true);
-    setTimeout(()=>{
+    setTimeout(() => {
       setLoading(false)
     }, 4000)
   }, [])
 
+  if (loading) {
+    return <Loadr />;
+  }
+
   return (
-    <>
-      {/* {loading?<Loadr/> :<><Hero/><Speakers/><Sponsors/><TechEvents/><NonTechEvents/><PreviousEvents/> <Footer/></>} */}
-      <MainBg/><Speakers/><Sponsors/><TechEvents/><NonTechEvents/><PreviousEvents/><Footer/>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/event/:id" element={<Event />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
