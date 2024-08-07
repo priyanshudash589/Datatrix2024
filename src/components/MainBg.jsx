@@ -160,7 +160,7 @@ export default function MainBg({
         >
           <button
             variant="outlined"
-            className="w-full sm:w-[15rem] focus:outline-none h-12 flex justify-center items-center bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
+            className="w-[15rem] focus:outline-none h-12 flex justify-center items-center bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
           >
             Know More . . . 
           </button>

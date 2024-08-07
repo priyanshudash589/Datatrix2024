@@ -5,7 +5,7 @@ import { ProfileCard } from "../constants/ProfileCard";
 const Speakers = () => {
   return (
     <>
-      <div className="w-full min-h-[45rem] bg-black text-center flex flex-col gap-2 p-3 md:p-7 md:pt-11 lg:pt-[10rem]">
+      <div className="w-full min-h-[32rem] bg-black text-center flex flex-col gap-2 p-3 md:p-7 md:pt-11 lg:pt-[10rem]">
         <span className="text-white text-2xl sm:text-3xl md:text-4xl font-orbitron">
           Data Innovations Conference Experts
         </span>
