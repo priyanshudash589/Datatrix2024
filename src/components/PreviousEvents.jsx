@@ -1,98 +1,120 @@
-import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { Carousel, Typography } from "@material-tailwind/react";
+import { useState, useEffect } from 'react';
  
 export function PreviousEvents() {
+  const [images, setImages] = useState({
+    guest: '',
+    participant: '',
+    coreTeam: ''
+  });
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const guestImage = await import('../assets/EventImages/guest.JPG');
+      const participantImage = await import('../assets/EventImages/particpant.JPG');
+      const coreTeamImage = await import('../assets/EventImages/coreteam.JPG');
+
+      setImages({
+        guest: guestImage.default,
+        participant: participantImage.default,
+        coreTeam: coreTeamImage.default
+      });
+    };
+
+    loadImages();
+  }, []);
+
   return (
     <div className="bg-black lg:pt-[4rem]">
       <div className="text-center p-[3rem]" >
-        <span className="text-4xl  text-white font-orbitron bg-black">Our Previous Successful Events</span>
+        <span className="text-4xl text-white font-orbitron bg-black">Our Previous Successful Events</span>
       </div>
-    <Carousel autoplay loop>
-      <div className="relative h-[55rem] w-full">
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
-          <div className="w-3/4 text-center md:w-2/4">
-            <Typography
-              variant="h1"
-              color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-            >
-              The Beauty of Nature
-            </Typography>
-            <Typography
-              variant="lead"
-              color="white"
-              className="mb-12 opacity-80"
-            >
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
-            </Typography>
+      <Carousel autoplay loop>
+        <div className="relative h-[55rem] w-full">
+          <img
+            src={images.guest}
+            alt="Guest"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+            <div className="w-3/4 text-center md:w-2/4">
+              <Typography
+                variant="h1"
+                color="white"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              >
+                The Beauty of Nature
+              </Typography>
+              <Typography
+                variant="lead"
+                color="white"
+                className="mb-12 opacity-80"
+              >
+                It is not so much for its beauty that the forest makes a claim
+                upon men&apos;s hearts, as for that subtle something, that quality
+                of air that emanation from old trees, that so wonderfully changes
+                and renews a weary spirit.
+              </Typography>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="relative h-[55rem] w-full">
-        <img
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-          alt="image 2"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
-          <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
-            <Typography
-              variant="h1"
-              color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-            >
-              The Beauty of Nature
-            </Typography>
-            <Typography
-              variant="lead"
-              color="white"
-              className="mb-12 opacity-80"
-            >
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
-            </Typography>
-           
+        <div className="relative h-[55rem] w-full">
+          <img
+            src={images.participant}
+            alt="Participant"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+            <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+              <Typography
+                variant="h1"
+                color="white"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              >
+                The Beauty of Nature
+              </Typography>
+              <Typography
+                variant="lead"
+                color="white"
+                className="mb-12 opacity-80"
+              >
+                It is not so much for its beauty that the forest makes a claim
+                upon men&apos;s hearts, as for that subtle something, that quality
+                of air that emanation from old trees, that so wonderfully changes
+                and renews a weary spirit.
+              </Typography>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="relative h-[55rem] w-full">
-        <img
-          src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-          alt="image 3"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
-          <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
-            <Typography
-              variant="h1"
-              color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-            >
-              The Beauty of Nature
-            </Typography>
-            <Typography
-              variant="lead"
-              color="white"
-              className="mb-12 opacity-80"
-            >
-              It is not so much for its beauty that the forest makes a claim
-              upon men&apos;s hearts, as for that subtle something, that quality
-              of air that emanation from old trees, that so wonderfully changes
-              and renews a weary spirit.
-            </Typography>
-            
+        <div className="relative h-[55rem] w-full">
+          <img
+            src={images.coreTeam}
+            alt="Core Team"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+            <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
+              <Typography
+                variant="h1"
+                color="white"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              >
+                The Beauty of Nature
+              </Typography>
+              <Typography
+                variant="lead"
+                color="white"
+                className="mb-12 opacity-80"
+              >
+                It is not so much for its beauty that the forest makes a claim
+                upon men&apos;s hearts, as for that subtle something, that quality
+                of air that emanation from old trees, that so wonderfully changes
+                and renews a weary spirit.
+              </Typography>
+            </div>
           </div>
         </div>
-      </div>
-    </Carousel></div>
+      </Carousel>
+    </div>
   );
 }
