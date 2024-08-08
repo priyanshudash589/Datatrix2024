@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   Card,
   CardHeader,
@@ -6,9 +7,14 @@ import {
   Typography,
   Button
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+function EventItems({ image, title, description, events }) {
+  const navigate = useNavigate();
 
-function EventItems({ id, image, title, description }) {
+  const handleRegister = () => {
+    const event = events.find((e) => e.title === title);
+    navigate(`/event/${title}`, { state: { event } });
+  };
+
   return (
     <Card className="max-w-[24rem] overflow-hidden backdrop-blur-sm p-6 bg-transparent border-[1px] border-[#e1fff2] rounded-[4rem] shadow-custom-glow">
       <CardHeader
@@ -23,7 +29,7 @@ function EventItems({ id, image, title, description }) {
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="h4" color="white" className="font-orbitron">
+        <Typography variant="h4" color="white" className="font-orbitron" title={title}>
           {title || "UI/UX Review Check"}
         </Typography>
         <Typography variant="lead" color="gray" className="mt-3 text-md font-orbitron">
@@ -31,9 +37,9 @@ function EventItems({ id, image, title, description }) {
         </Typography>
       </CardBody>
       <CardFooter className="flex items-center justify-between ">
-        <Link to={`/event/${id}`}>
-          <Button variant="outlined" className="border-[#fff] text-white font-orbitron" >Register</Button>
-        </Link>
+        <Button variant="outlined" className="border-[#fff] text-white font-orbitron" onClick={handleRegister}>
+          Register
+        </Button>
       </CardFooter>
     </Card>
   );
