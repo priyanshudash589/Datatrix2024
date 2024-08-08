@@ -3,12 +3,12 @@ import EventItems from "../constants/EventItems";
 import tech from "../assets/technical.gif";
 const TechEvents = () => {
   const events = [
-    { id: 1, title: "Hackathon", description: "24-hour coding challenge", image: "path/to/image1.jpg" },
-    { id: 2, title: "AI Workshop", description: "Learn about artificial intelligence", image: "path/to/image2.jpg" },
+    { id: 1, title: "Hackathon", description: "24-hour coding challenge", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" },
+    { id: 2, title: "AI Workshop", description: "Learn about artificial intelligence", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" },
   
   ];
   return (
-    <div className="bg-black w-full p-4 sm:p-6 md:p-8 lg:p-[4rem] relative lg:pt-[10rem]">
+    <div className="bg-event w-full p-4 sm:p-6 md:p-8 lg:p-[4rem] relative lg:pt-[10rem] bg-cover">
       <div className="bg-transparent text-2xl sm:text-3xl md:text-4xl text-white font-orbitron text-center mb-6 sm:mb-8 md:mb-[3rem]">
         <span>Technical Events</span>
       </div>
@@ -25,12 +25,6 @@ const TechEvents = () => {
         ))}
 
       </div>
-
-      <img
-        src={tech}
-        alt=""
-        className="hidden sm:block w-1/3 md:w-1/4 lg:w-1/5 max-h-[20rem] object-contain absolute sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 lg:bottom-[4rem] lg:right-[4rem]"
-      />
     </div>
   );
 };
