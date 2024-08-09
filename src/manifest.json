@@ -1,0 +1,20 @@
+{
+    "name": "bigdataevent",
+    "short_name": "bigdataevent",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "A description of your app",
+    "icons": [
+      {
+        "src": "icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "serviceworker": {
+      "src": "/service-worker.js",
+      "scope": "/",
+      "use_cache": true
+    }
+  }

@@ -41,7 +41,7 @@ const events = [
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
   },
   {
-    id: 5,
+    id: 6,
     title: "Design Forge",
     description: "UI/UX Workshop & Competition",
     about: "Join us at DesignForge for a dynamic UI/UX experience, starting with a workshop led by industry experts where you'll sharpen your design skills and learn the latest trends. Then, put your knowledge to the test in our exciting competition, where designers create innovative user experiences. This is your chance to learn, compete, and showcase your talent in the fast-paced world of UI/UX design.",
@@ -49,7 +49,7 @@ const events = [
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
   },
   {
-    id: 6,
+    id: 7,
     title: "Data Visulalization Challenge",
     description: "24-hour coding challenge",
     about: "A place where students who are interested in data visualization can showcase their skills. A sample data set will be given, and the participants can make exciting interactive dashboards using any of their favorite frameworks, like Tableau, PowerBi, d3.js, etc. Judging would be based on students' creativity and ability to showcase a story via their dashboard.",
