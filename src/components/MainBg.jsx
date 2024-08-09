@@ -62,16 +62,6 @@ export default function MainBg({
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <button onClick={scrollToNonTechEvents} className="flex items-center text-white">
-          Non-Tech Events
-        </button>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
         <button onClick={scrollToPreviousEvents} className="flex items-center text-white">
           Previous Events
         </button>
@@ -144,11 +134,8 @@ export default function MainBg({
           <MobileNav open={openNav}>
             {navList}
             <div className="flex items-center gap-x-1">
-              <Button fullWidth variant="text" size="sm" className="">
-                <span>Log In</span>
-              </Button>
               <Button fullWidth variant="gradient" size="sm" className="">
-                <span>Sign in</span>
+                <span>Contact Us</span>
               </Button>
             </div>
           </MobileNav>
