@@ -7,12 +7,15 @@ import {
   Typography,
   Button
 } from "@material-tailwind/react";
+
 function EventItems({ image, title, description, events }) {
   const navigate = useNavigate();
 
   const handleRegister = () => {
     const event = events.find((e) => e.title === title);
-    navigate(`/event/${title}`, { state: { event } });
+    if (event) {
+      navigate(`/event/${event.title}`, { state: { event } });
+    }
   };
 
   return (
@@ -24,8 +27,7 @@ function EventItems({ image, title, description, events }) {
       >
         <img
           src={image || "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"}
-          alt={title || "Event image"
-          }
+          alt={title || "Event image"}
         />
       </CardHeader>
       <CardBody>

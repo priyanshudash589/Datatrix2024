@@ -5,6 +5,7 @@ import {
   Typography,
   Button,
   IconButton,
+  Collapse,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
@@ -12,7 +13,6 @@ export default function MainBg({
   scrollToSpeakers, 
   scrollToSponsors, 
   scrollToTechEvents, 
-  scrollToNonTechEvents, 
   scrollToPreviousEvents 
 }) {
   const [openNav, setOpenNav] = React.useState(false);
@@ -131,14 +131,14 @@ export default function MainBg({
               </IconButton>
             </div>
           </div>
-          <MobileNav open={openNav}>
+          <Collapse open={openNav}>
             {navList}
             <div className="flex items-center gap-x-1">
               <Button fullWidth variant="gradient" size="sm" className="">
                 <span>Contact Us</span>
               </Button>
             </div>
-          </MobileNav>
+          </Collapse>
         </Navbar>
       </div>
 
