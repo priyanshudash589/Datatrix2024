@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import image from "../assets/EventImages/3.png";
+import LoaderSlot from '../assets/loaderslot.gif'
 
 const Datascquiz = () => {
   const event = {
@@ -32,7 +33,9 @@ const Datascquiz = () => {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const { data } = await axios.get("https://datatrix2024-backend.onrender.com/data-science-quiz-slots");
+        const { data } = await axios.get(
+          "https://datatrix2024-backend.onrender.com/data-science-quiz-slots"
+        );
         setAvailableSlots(data.availableSlots);
         setTotalSlots(data.totalSlots);
       } catch (error) {
@@ -76,7 +79,10 @@ const Datascquiz = () => {
         college: cname.trim(),
         phoneNumber: pnumber.trim(),
       };
-      const { data } = await axios.post("https://datatrix2024-backend.onrender.com/data-science-quiz-register", payload);
+      const { data } = await axios.post(
+        "https://datatrix2024-backend.onrender.com/data-science-quiz-register",
+        payload
+      );
 
       setRegistrationStatus(data.message);
       setIsRegistered(true);
@@ -91,7 +97,7 @@ const Datascquiz = () => {
     }
   };
 
-  if (availableSlots === null) return <p>Loading slot details...</p>;
+  if (availableSlots === null) return <><div className="bg-black w-sceen h-screen flex justify-center items-center"><img src={LoaderSlot} alt="" /></div></>;
 
   return (
     <>
@@ -131,46 +137,57 @@ const Datascquiz = () => {
                 <p className="text-lg md:text-xl font-bold text-white-800 mb-4 font-orbitron">
                   Available Slots: {availableSlots} / {totalSlots}
                 </p>
-                <form className="flex flex-col gap-4" onSubmit={handleRegistration}>
+                <form
+                  className="flex flex-col gap-4"
+                  onSubmit={handleRegistration}
+                >
                   <input
                     type="text"
                     name="college"
                     className="p-2 text-center rounded-xl text-black"
                     placeholder="College"
-                    disabled={isRegistered} 
+                    disabled={isRegistered}
                     value={cname}
-                    onChange={(e) => {setCname(e.target.value)}}
+                    onChange={(e) => {
+                      setCname(e.target.value);
+                    }}
                   />
                   <input
                     type="text"
                     name="name"
                     className="p-2 text-center rounded-xl text-black"
                     placeholder="Name"
-                    disabled={isRegistered} 
+                    disabled={isRegistered}
                     value={pname}
-                    onChange={(e) => {setName(e.target.value)}}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
                   />
                   <input
                     type="email"
                     name="email"
                     className="p-2 text-center rounded-xl text-black"
                     placeholder="Email"
-                    disabled={isRegistered} 
+                    disabled={isRegistered}
                     value={email}
-                    onChange={(e) => {setMail(e.target.value)}}
+                    onChange={(e) => {
+                      setMail(e.target.value);
+                    }}
                   />
                   <input
                     type="text"
                     name="phone"
                     className="p-2 text-center rounded-xl text-black"
                     placeholder="Phone"
-                    disabled={isRegistered} 
+                    disabled={isRegistered}
                     value={pnumber}
-                    onChange={(e) => {setPnumber(e.target.value)}}
+                    onChange={(e) => {
+                      setPnumber(e.target.value);
+                    }}
                   />
                   <input
-                    type="submit" 
-                    value={isRegistered ? "Registered" : "Register Now"} 
+                    type="submit"
+                    value={isRegistered ? "Registered" : "Register Now"}
                     disabled={isRegistered}
                     className="bg-dark-500 mt-4 border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]"
                   />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import image from "../assets/EventImages/6.png";
-
+import LoaderSlot from '../assets/loaderslot.gif'
 const Designforge = () => {
   const event = {
     name: "Design Foge",
@@ -91,7 +91,7 @@ const Designforge = () => {
     }
   };
 
-  if (availableSlots === null) return <p>Loading slot details...</p>;
+  if (availableSlots === null) return <><div className="bg-black w-sceen h-screen flex justify-center items-center"><img src={LoaderSlot} alt="" /></div></>;
 
   return (
     <>

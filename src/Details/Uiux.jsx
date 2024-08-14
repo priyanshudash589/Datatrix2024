@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import img from '../assets/EventImages/5.png';
-
+import LoaderSlot from '../assets/loaderslot.gif'
 function Event() {
   const event = {
     title: "UI/UX Workshop",
@@ -129,6 +129,8 @@ function Event() {
       setLoading(false);
     }
   };
+
+  if (availableSlots === null) return <><div className="bg-black w-sceen h-screen flex justify-center items-center"><img src={LoaderSlot} alt="" /></div></>;
 
   return (
     <div className="bg-patt-grid h-full w-screen text-white">
