@@ -32,7 +32,7 @@ const Datascquiz = () => {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8080/data-science-quiz-slots");
+        const { data } = await axios.get("https://datatrix2024-backend.onrender.com/data-science-quiz-slots");
         setAvailableSlots(data.availableSlots);
         setTotalSlots(data.totalSlots);
       } catch (error) {
@@ -76,7 +76,7 @@ const Datascquiz = () => {
         college: cname.trim(),
         phoneNumber: pnumber.trim(),
       };
-      const { data } = await axios.post("http://localhost:8080/data-science-quiz-register", payload);
+      const { data } = await axios.post("https://datatrix2024-backend.onrender.com/data-science-quiz-register", payload);
 
       setRegistrationStatus(data.message);
       setIsRegistered(true);

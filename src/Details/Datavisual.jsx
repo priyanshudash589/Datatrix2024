@@ -32,7 +32,7 @@ const Datavisual = () => {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8080/data-visualization-slots");
+        const { data } = await axios.get("https://datatrix2024-backend.onrender.com/data-visualization-slots");
         setAvailableSlots(data.availableSlots);
         setTotalSlots(data.totalSlots);
       } catch (error) {
@@ -76,7 +76,7 @@ const Datavisual = () => {
         college: cname.trim(),
         phoneNumber: pnumber.trim(),
       };
-      const { data } = await axios.post("http://localhost:8080/data-visualization-register", payload);
+      const { data } = await axios.post("https://datatrix2024-backend.onrender.comdata-visualization-register", payload);
 
       setRegistrationStatus(data.message);
       setIsRegistered(true);

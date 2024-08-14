@@ -32,7 +32,7 @@ const Designforge = () => {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8080/design-forge-slots");
+        const { data } = await axios.get("https://datatrix2024-backend.onrender.com/design-forge-slots");
         setAvailableSlots(data.availableSlots);
         setTotalSlots(data.totalSlots);
       } catch (error) {
@@ -76,7 +76,7 @@ const Designforge = () => {
         college: cname.trim(),
         phoneNumber: pnumber.trim(),
       };
-      const { data } = await axios.post("http://localhost:8080/design-forge-register", payload);
+      const { data } = await axios.post("https://datatrix2024-backend.onrender.com/design-forge-register", payload);
 
       setRegistrationStatus(data.message);
       setIsRegistered(true);

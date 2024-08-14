@@ -44,7 +44,7 @@ function Event() {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8080/workshop-slots");
+        const { data } = await axios.get("https://datatrix2024-backend.onrender.com/workshop-slots");
         setAvailableSlots(data.availableSlots);
         setTotalSlots(data.totalSlots);
       } catch (error) {
@@ -78,7 +78,7 @@ function Event() {
       };
 
       const { data: order } = await axios.post(
-        "http://localhost:8080/workshop-create-order",
+        "https://datatrix2024-backend.onrender.com/workshop-create-order",
         payload
       );
 
@@ -89,7 +89,7 @@ function Event() {
         order_id: order.id,
         handler: function (response) {
             axios
-                .post("http://localhost:8080/workshop-verify-payment", {
+                .post("https://datatrix2024-backend.onrender.com/workshop-verify-payment", {
                     razorpay_order_id: response.razorpay_order_id,
                     razorpay_payment_id: response.razorpay_payment_id,
                     razorpay_signature: response.razorpay_signature,

@@ -32,7 +32,7 @@ const Sppedregex = () => {
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8080/speed-regex-slots");
+        const { data } = await axios.get("https://datatrix2024-backend.onrender.com/speed-regex-slots");
         setAvailableSlots(data.availableSlots);
         setTotalSlots(data.totalSlots);
       } catch (error) {
@@ -76,7 +76,7 @@ const Sppedregex = () => {
         college: cname.trim(),
         phoneNumber: pnumber.trim(),
       };
-      const { data } = await axios.post("http://localhost:8080/speed-regex-register", payload);
+      const { data } = await axios.post("https://datatrix2024-backend.onrender.com/speed-regex-register", payload);
 
       setRegistrationStatus(data.message);
       setIsRegistered(true);
