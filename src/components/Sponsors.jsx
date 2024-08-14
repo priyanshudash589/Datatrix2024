@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../assets/SampleLogo.svg'
 const Sponsors = () => {
   return (
-    <div className='bg-patt-grid p-4 sm:p-8 lg:p-[4rem] w-full text-center lg:pt-[10rem]'>
+    <div className='bg-patt-grid p-4 sm:p-8 lg:p-[2rem] w-full text-center lg:pt-[5rem]'>
     <span className='font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl'>Our Sponsors</span>
 
     <div className='p-4 sm:p-8 lg:p-[4rem] min-h-[20rem]'>

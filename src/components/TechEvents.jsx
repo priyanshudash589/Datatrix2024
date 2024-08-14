@@ -1,28 +1,253 @@
 import React from "react";
-import EventItems from "../constants/EventItems";
-import events from '../Events/EventDetails'
-
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import img1 from '../assets/EventImages/1.png'
+import img2 from '../assets/EventImages/2.png'
+import img3 from '../assets/EventImages/3.png'
+import img4 from '../assets/EventImages/4.png'
+import img5 from '../assets/EventImages/5.png'
+import img6 from '../assets/EventImages/6.png'
+import img7 from '../assets/EventImages/7.png'
+import { Link } from "react-router-dom";
 const TechEvents = () => {
-
+  const events = [
+    {
+      key:'event1',
+      id: 1,
+      title: "Datathon",
+      description: "24-hour coding challenge",
+      imageSrc:img1
+    },
+    {
+      key:'event2',
+      id: 2,
+      title: "Data Science Quiz",
+      description: "24-hour coding challenge",
+      imageSrc:img2
+    },
+    {
+      key:'event3',
+      id: 3,
+      title: "Data Science Quiz",
+      description: "24-hour coding challenge",
+      imageSrc:img3
+    },
+    {
+      key:'event4',
+      id: 4,
+      title: "Speed Regex",
+      description: "24-hour coding challenge",
+      imageSrc:img4
+    },
+    {
+      key:'event5',
+      id: 5,
+      title: "Idea Explorer",
+      description: "24-hour coding challenge",
+      imageSrc:img5
+    },
+    {
+      key:'event6',
+      id: 6,
+      title: "Design Forge",
+      description: "UI/UX Workshop & Competition",
+      imageSrc:img6
+    },
+    {
+      key:'event7',
+      id: 7,
+      title: "Data Visulalization Challenge",
+      description: "24-hour coding challenge",
+      imageSrc:img7
+    },
+  ];
   return (
-    <div className="bg-event w-full p-4 sm:p-6 md:p-8 lg:p-[4rem] relative lg:pt-[10rem] bg-cover lg:h-[82rem] md:h-[75rem] h-[200rem]">
-      <div className="bg-transparent text-2xl sm:text-3xl md:text-4xl text-white font-orbitron text-center mb-6 sm:mb-8 md:mb-[3rem]">
-        <span>Technical Events</span>
-      </div>
+    <>
+    <div className="bg-black p-6 text-center">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-[2rem] mb-24 sm:mb-28 md:mb-32 lg:mb-[20rem]">
-        {events.map((event) => (
-          <EventItems
-            key={event.id}
-            image={event.image}
-            title={event.title}
-            description={event.description}
-            about={event.about}
-            events={events}
-          />
-        ))}
+          <h1 className="font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl p-[5rem]">Our Events</h1>
+
+      <div className="flex flex-wrap justify-center p-[5rem] gap-6">
+        
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img1}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                Datathon
+              </Typography>
+              <Typography>
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/datathon-hackathon`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            </CardFooter>
+          </Card>
+
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img2}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                UI/UX Workshop
+              </Typography>
+              <Typography>
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/uiux-workshop`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
+            </CardFooter>
+          </Card>
+
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img3}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                Data Quiz
+              </Typography>
+              <Typography>
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/data-science-quiz`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            </CardFooter>
+          </Card>
+
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img4}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                Speed Regex
+              </Typography>
+              <Typography>
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/speed-regex`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            </CardFooter>
+          </Card>
+
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img5}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                Idea Explorer
+              </Typography>
+              <Typography>
+                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/idea-explorer`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
+              <Button halfWidth={true} variant="outlined" color="blue">250/- PER TEAM</Button>
+            </CardFooter>
+          </Card>
+
+          <Card className="mt-6 w-96 ">
+          <CardHeader color="blue-gray" className="relative h-56">
+            <img
+              src={img7}
+              alt="Data Visualization Challenge"
+              className="w-full h-full object-cover"
+            />
+          </CardHeader>
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              Data Visualization Challenge
+            </Typography>
+            <Typography>
+            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+            </Typography>
+          </CardBody>
+          <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/data-visualization-challenge`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+          </CardFooter>
+        </Card>
+
+        <Card className="mt-6 w-96 ">
+          <CardHeader color="blue-gray" className="relative h-56">
+            <img
+              src={img6}
+              alt="Design Forge"
+              className="w-full h-full object-cover"
+            />
+          </CardHeader>
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              Design Forge
+            </Typography>
+            <Typography>
+            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+            </Typography>
+          </CardBody>
+          <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/design-forge`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+          </CardFooter>
+        </Card>
+
+       
       </div>
     </div>
+    </>
   );
 };
 

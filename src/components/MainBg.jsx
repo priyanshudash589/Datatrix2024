@@ -1,17 +1,17 @@
 import React from "react";
 import {
   Navbar,
-  MobileNav,
   Typography,
   Button,
   IconButton,
   Collapse,
 } from "@material-tailwind/react";
+import imglogo from '../assets/datatrix.png'
 import { Link } from "react-router-dom";
+
 
 export default function MainBg({ 
   scrollToSpeakers, 
-  scrollToSponsors, 
   scrollToTechEvents, 
   scrollToPreviousEvents 
 }) {
@@ -42,7 +42,7 @@ export default function MainBg({
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <button onClick={scrollToSponsors} className="flex items-center text-white">
+        <button className="flex items-center text-white">
           Sponsors
         </button>
       </Typography>
@@ -52,9 +52,9 @@ export default function MainBg({
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <button onClick={scrollToTechEvents} className="flex items-center text-white">
-          Tech Events
-        </button>
+        <Link to="/events" className="flex items-center text-white">
+          Our Events
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -79,7 +79,7 @@ export default function MainBg({
               to="/"
               className="mr-4 cursor-pointer py-1.5 font-medium text-white"
             >
-              Logo
+              <img src={imglogo} alt="" className="h-[2rem]"/>
             </Typography>
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>

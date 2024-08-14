@@ -1,16 +1,14 @@
 // Home.jsx
 import React, { useRef } from 'react';
 import Speakers from "./Speakers";
-import TechEvents from "./TechEvents";
 import { Footer } from "./Footer";
-import Sponsors from "./Sponsors";
 import { PreviousEvents } from './PreviousEvents';
 import MainBg from "./MainBg";
+import Sponsors from './Sponsors';
 
 function Home() {
   const speakersRef = useRef(null);
-  const sponsorsRef = useRef(null);
-  const techEventsRef = useRef(null);
+  const sponsorsref = useRef(null);
   const previousEventsRef = useRef(null);
 
   const scrollToSection = (ref) => {
@@ -21,18 +19,14 @@ function Home() {
     <>
       <MainBg 
         scrollToSpeakers={() => scrollToSection(speakersRef)}
-        scrollToSponsors={() => scrollToSection(sponsorsRef)}
-        scrollToTechEvents={() => scrollToSection(techEventsRef)}
+        scrollToSponsors={() => scrollToSection(sponsorsref)}
         scrollToPreviousEvents={() => scrollToSection(previousEventsRef)}
       />
       <div ref={speakersRef}>
         <Speakers />
       </div>
-      <div ref={sponsorsRef}>
+      <div ref={sponsorsref}>
         <Sponsors />
-      </div>
-      <div ref={techEventsRef}>
-        <TechEvents />
       </div>      
       <div ref={previousEventsRef}>
         <PreviousEvents />
