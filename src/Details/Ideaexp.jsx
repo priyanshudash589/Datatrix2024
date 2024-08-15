@@ -4,16 +4,16 @@ import img from '../assets/EventImages/5.png';
 import LoaderSlot from '../assets/loaderslot.gif'
 function Event() {
   const event = {
-    title: "Idea Explorer",
+    title: "UI/UX Workshop",
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
-      faculty1: "Mr. A.Thiruneelakandan, AP/CSE",
-      faculty2: "",
+      faculty1: "Dr. A. Manju, AP/CSE",
+      faculty2: "Ms. Srinarayani K, AP/CSE",
     },
     studentcoordinator: {
-      student1: "VARSHA ANBUMANI - 8838193588",
-      student2: "G.MAHIMA - 9514870306",
+      student1: "VIBHUVAN B - 9003200177",
+      student2: "JASMINE FATHIMA K - 8270821999",
     },
     date: "",
     venue: "",
