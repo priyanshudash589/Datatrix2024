@@ -4,7 +4,7 @@ import img from '../assets/EventImages/5.png';
 import LoaderSlot from '../assets/loaderslot.gif'
 function Event() {
   const event = {
-    title: "UI/UX Workshop",
+    title: "Idea Explorer",
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
@@ -12,8 +12,8 @@ function Event() {
       faculty2: "Ms. Srinarayani K, AP/CSE",
     },
     studentcoordinator: {
-      student1: "VIBHUVAN B - 9003200177",
-      student2: "JASMINE FATHIMA K - 8270821999",
+      student1: "Vibhuvan B - 9003200177",
+      student2: "Jasmine Fathima K - 8270821999",
     },
     date: "",
     venue: "",
@@ -151,6 +151,7 @@ function Event() {
             </h2>
             <ul className="list-disc pl-5 text-gray-200 p-5">
               <li>{event.facultycoordinator.faculty1}</li>
+              <li>{event.facultycoordinator.faculty2}</li>
             </ul>
             <h2 className="text-xl font-bold mb-2 font-orbitron">
               Student coordinator:
