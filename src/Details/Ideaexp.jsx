@@ -152,6 +152,7 @@ function Event() {
             <ul className="list-disc pl-5 text-gray-200 p-5">
               <li>{event.facultycoordinator.faculty1}</li>
               <li>{event.facultycoordinator.faculty2}</li>
+              <li>{event.facultycoordinator.faculty2}</li>
             </ul>
             <h2 className="text-xl font-bold mb-2 font-orbitron">
               Student coordinator:
