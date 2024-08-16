@@ -8,12 +8,12 @@ function Event() {
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
-      faculty1: "Mr. A.Thiruneelakandan, AP/CSE",
+      faculty1: "Mr.K.RAJESH, AP/CSE - 8248872058",
       faculty2: "",
     },
     studentcoordinator: {
-      student1: "VARSHA ANBUMANI - 8838193588",
-      student2: "G.MAHIMA - 9514870306",
+      student1: "AAKASH V - 9840090772",
+      
     },
     date: "",
     venue: "",
@@ -156,8 +156,7 @@ function Event() {
               Student coordinator:
             </h2>
             <ul className="list-disc pl-5 text-gray-200 p-5">
-              <li>{event.studentcoordinator.student1}</li>
-              <li>{event.studentcoordinator.student2}</li>              
+              <li>{event.studentcoordinator.student1}</li>              
             </ul>
             <div className="bg-dark rounded-md h-auto shadow-md p-4 mt-4">
               <h3 className="text-xl font-bold text-white-800 mb-2 font-orbitron">

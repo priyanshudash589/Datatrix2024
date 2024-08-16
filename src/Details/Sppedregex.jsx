@@ -8,7 +8,7 @@ const Sppedregex = () => {
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
-      faculty1: "Ms. Srinarayani K, AP/CSEE",
+      faculty1: "Ms. SRINARAYANI K, AP/CSE - 9791138865",
       faculty2: "",
     },
     studentcoordinator: {

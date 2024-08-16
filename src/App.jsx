@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Loadr from "./components/Loadr";
+import Loadr from "./components/Loadr";
 import Home from "./components/Home";
 import Datathon from "./Details/Datathon";
 import  Datascquiz from './Details/Datascquiz'
@@ -12,18 +12,18 @@ import Uiux from './Details/Uiux'
 import TechEvents from "./components/TechEvents";
 
 function App() {
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     setLoading(false)
-  //   }, 4000)
-  // }, [])
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false)
+    }, 4000)
+  }, [])
 
-  // if (loading) {
-  //   return <Loadr />;
-  // }
+  if (loading) {
+    return <Loadr />;
+  }
 
   return (
     <Router>

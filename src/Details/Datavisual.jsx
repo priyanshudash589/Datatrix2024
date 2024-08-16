@@ -9,7 +9,7 @@ const Datavisual = () => {
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
-      faculty1: "Mr.A.Thiruneelakandan, AP/CSE",
+      faculty1: "Mr.A.THIRUNEELANKANDAN, AP/CSE - 9933217852",
       faculty2: "",
     },
     studentcoordinator: {
@@ -124,6 +124,7 @@ const Datavisual = () => {
               </h2>
               <ul className="list-disc pl-5 text-gray-200 mb-4">
                 <li>{event.studentcoordinator.student1}</li>
+                <li>{event.studentcoordinator.student2}</li>
               </ul>
               <div className="bg-dark rounded-md shadow-md p-4 mt-4">
                 <h3 className="text-lg md:text-xl font-bold text-white-800 mb-2 font-orbitron">

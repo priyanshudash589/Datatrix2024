@@ -8,12 +8,12 @@ const Designforge = () => {
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
-      faculty1: "Mr.A.Thiruneelakandan, AP/CSE",
+      faculty1: "Mr.K.RAJESH, AP/CSE - 82488 72058",
       faculty2: "",
     },
     studentcoordinator: {
-      student1: "VARSHA ANBUMANI - 8838193588",
-      student2: "G.MAHIMA - 9514870306",
+      student1: "AAKASH V - 9840090772",
+      
     },
     date: "",
     venue: "",

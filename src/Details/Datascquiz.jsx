@@ -9,7 +9,7 @@ const Datascquiz = () => {
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
-      faculty1: "Ms.R.Swathi, AP/CSE",
+      faculty1: "Ms.R.SWATHI, AP/CSE - 8754230477",
       faculty2: "",
     },
     studentcoordinator: {
