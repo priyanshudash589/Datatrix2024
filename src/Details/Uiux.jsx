@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import img from '../assets/EventImages/5.png';
+import img from '../assets/EventImages/2.png';
 import LoaderSlot from '../assets/loaderslot.gif'
+
 function Event() {
   const event = {
     title: "UI/UX Workshop",
     about:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
     facultycoordinator: {
-      faculty1: "Mr.K.RAJESH, AP/CSE - 8248872058",
-      faculty2: "",
+      faculty1: "Dr. A. MANJU, AP/CSE - 8903976381",
+      faculty2: " Ms. SRINARAYANI K, AP/CSE - 9791138865",
     },
     studentcoordinator: {
-      student1: "AAKASH V - 9840090772",
-      
+      student1: "JASMINE FATHIMA K - 8270821999",
+      student2: "VIBHUVAN B - 9003200177",
     },
     date: "",
     venue: "",
-    price: 100, // Assuming the event is free, so price is set to 0
+    price: 300, // Assuming the event is free, so price is set to 0
   };
 
   const [registrationStatus, setRegistrationStatus] = useState("");
@@ -26,25 +27,24 @@ function Event() {
   const [error, setError] = useState(null);
   const [availableSlots, setAvailableSlots] = useState(null);
   const [totalSlots, setTotalSlots] = useState(null);
-  const [participant, setParticipant] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    college: "",
-  });
+  const [teamName, setTeamName] = useState("");
+  const [teamMembers, setTeamMembers] = useState([
+    { name: "", email: "", phone: "", college: "" },
+    { name: "", email: "", phone: "", college: "" },
+    { name: "", email: "", phone: "", college: "" },
+  ]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e, index) => {
     const { name, value } = e.target;
-    setParticipant((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    const updatedMembers = [...teamMembers];
+    updatedMembers[index][name] = value;
+    setTeamMembers(updatedMembers);
   };
 
   useEffect(() => {
     const fetchSlots = async () => {
       try {
-        const { data } = await axios.get("https://datatrix2024-backend.onrender.com/workshop-slots");
+        const { data } = await axios.get("http://localhost:8080/workshop-slots");
         setAvailableSlots(data.availableSlots);
         setTotalSlots(data.totalSlots);
       } catch (error) {
@@ -63,7 +63,7 @@ function Event() {
 
     if (availableSlots <= 0) {
       setRegistrationStatus("No available slots.");
-      setLoading(false); // Ensure loading is set to false if no slots are available
+      setLoading(false);
       return;
     }
 
@@ -78,7 +78,7 @@ function Event() {
       };
 
       const { data: order } = await axios.post(
-        "https://datatrix2024-backend.onrender.com/workshop-create-order",
+        "http://localhost:8080/workshop-create-order",
         payload
       );
 
@@ -89,14 +89,12 @@ function Event() {
         order_id: order.id,
         handler: function (response) {
             axios
-                .post("https://datatrix2024-backend.onrender.com/workshop-verify-payment", {
+                .post("http://localhost:8080/workshop-verify-payment", {
                     razorpay_order_id: response.razorpay_order_id,
                     razorpay_payment_id: response.razorpay_payment_id,
                     razorpay_signature: response.razorpay_signature,
-                    participantName: participant.name,
-                    participantEmail: participant.email,
-                    participantPhone: participant.phone,
-                    participantCollege: participant.college,
+                    teamName: teamName,
+                    teamMembers: teamMembers,
                     participantEvent: event?.title,
                     amount: order.amount,
                 })
@@ -111,9 +109,9 @@ function Event() {
                 });
         },
         prefill: {
-            name: participant.name,
-            email: participant.email,
-            contact: participant.phone,
+            name: teamMembers[0].name,
+            email: teamMembers[0].email,
+            contact: teamMembers[0].phone,
         },
         theme: {
             color: "#3399cc",
@@ -151,12 +149,14 @@ function Event() {
             </h2>
             <ul className="list-disc pl-5 text-gray-200 p-5">
               <li>{event.facultycoordinator.faculty1}</li>
+              <li>{event.facultycoordinator.faculty2}</li>
             </ul>
             <h2 className="text-xl font-bold mb-2 font-orbitron">
               Student coordinator:
             </h2>
             <ul className="list-disc pl-5 text-gray-200 p-5">
-              <li>{event.studentcoordinator.student1}</li>              
+              <li>{event.studentcoordinator.student1}</li>
+              <li>{event.studentcoordinator.student2}</li>
             </ul>
             <div className="bg-dark rounded-md h-auto shadow-md p-4 mt-4">
               <h3 className="text-xl font-bold text-white-800 mb-2 font-orbitron">
@@ -165,52 +165,72 @@ function Event() {
               <form className="flex flex-col gap-2">
                 <input
                   type="text"
-                  name="college"
+                  name="teamName"
                   className="p-2 text-center rounded-xl text-black"
-                  placeholder="College"
-                  value={participant.college}
-                  onChange={handleInputChange}
+                  placeholder="Team Name"
+                  value={teamName}
+                  onChange={(e) => setTeamName(e.target.value)}
                 />
-                <input
-                  type="text"
-                  name="name"
-                  className="p-2 text-center rounded-xl text-black"
-                  placeholder="Name"
-                  value={participant.name}
-                  onChange={handleInputChange}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  className="p-2 text-center rounded-xl text-black"
-                  placeholder="Email"
-                  value={participant.email}
-                  onChange={handleInputChange}
-                />
-                <input
-                  type="text"
-                  name="phone"
-                  className="p-2 text-center rounded-xl text-black"
-                  placeholder="Phone"
-                  value={participant.phone}
-                  onChange={handleInputChange}
-                />
+                {teamMembers.map((member, index) => (
+                  <div key={index} className="mb-4">
+                    <h4 className="text-lg font-bold mb-2">Team Member {index + 1}</h4>
+                    <input
+                      type="text"
+                      name="name"
+                      className="p-2 text-center rounded-xl text-black mb-2"
+                      placeholder={`Member ${index + 1} Name`}
+                      value={member.name}
+                      onChange={(e) => handleInputChange(e, index)}
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      className="p-2 text-center rounded-xl text-black mb-2"
+                      placeholder={`Member ${index + 1} Email`}
+                      value={member.email}
+                      onChange={(e) => handleInputChange(e, index)}
+                    />
+                    <input
+                      type="text"
+                      name="phone"
+                      className="p-2 text-center rounded-xl text-black mb-2"
+                      placeholder={`Member ${index + 1} Phone`}
+                      value={member.phone}
+                      onChange={(e) => handleInputChange(e, index)}
+                    />
+                    <input
+                      type="text"
+                      name="college"
+                      className="p-2 text-center rounded-xl text-black"
+                      placeholder={`Member ${index + 1} College`}
+                      value={member.college}
+                      onChange={(e) => handleInputChange(e, index)}
+                    />
+                  </div>
+                ))}
               </form>
               <button
-                className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]"
+                className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
                 onClick={handlePayment}
-                disabled={loading}
+                disabled={isRegistered || loading || availableSlots <= 0}
               >
-                {loading ? "Processing..." : "Register Now"}
+                {isRegistered
+                  ? "Registration Complete"
+                  : loading
+                  ? "Processing..."
+                  : "Register Now"}
               </button>
-              {error && <p style={{ color: "red" }}>{error}</p>}
-              <p className="mt-4 text-yellow-500 italic">
-                {availableSlots !== null && totalSlots !== null ? (
-                  `${availableSlots} / ${totalSlots} slots available`
-                ) : (
-                  "No slot information available"
-                )}
+              <p className="text-white mt-4 font-bold font-orbitron">
+                Available Slots: {availableSlots}
               </p>
+              {registrationStatus && (
+                <p className="text-red-500 mt-2 font-bold font-orbitron">
+                  {registrationStatus}
+                </p>
+              )}
+              {error && (
+                <p className="text-red-500 mt-2 font-bold font-orbitron">{error}</p>
+              )}
             </div>
           </div>
         </div>

@@ -69,9 +69,9 @@ const TechEvents = () => {
   ];
   return (
     <>
-    <div className="bg-black p-6 text-center">
+    <div className="bg-black p-6 text-center scroll-smooth">
 
-          <h1 className="font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl p-[5rem]">Our Events</h1>
+          <h1 className="font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl p-[2rem] pt-[4rem]">Our Events</h1>
 
       <div className="flex flex-wrap justify-center p-[5rem] gap-6">
         
@@ -95,7 +95,7 @@ const TechEvents = () => {
             <Link to={`/event/datathon-hackathon`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
             </CardFooter>
           </Card>
 
@@ -119,7 +119,7 @@ const TechEvents = () => {
             <Link to={`/event/uiux-workshop`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
+            <div  className="border-[3px] border-blue-500 text-center rounded-lg w-auto p-2 flex items-center justify-center"><span className="text-blue-500">300/- PER TEAM</span></div>
             </CardFooter>
           </Card>
 
@@ -143,7 +143,7 @@ const TechEvents = () => {
             <Link to={`/event/data-science-quiz`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
             </CardFooter>
           </Card>
 
@@ -167,7 +167,7 @@ const TechEvents = () => {
             <Link to={`/event/speed-regex`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
             </CardFooter>
           </Card>
 
@@ -191,8 +191,7 @@ const TechEvents = () => {
             <Link to={`/event/idea-explorer`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
-              <Button halfWidth={true} variant="outlined" color="blue">250/- PER TEAM</Button>
+            <div  className="border-[3px] border-blue-500 text-center rounded-lg w-auto p-2 flex items-center justify-center"><span className="text-blue-500">100/- PER PERSON</span></div>
             </CardFooter>
           </Card>
 
@@ -216,7 +215,7 @@ const TechEvents = () => {
             <Link to={`/event/data-visualization-challenge`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
           </CardFooter>
         </Card>
 
@@ -240,7 +239,7 @@ const TechEvents = () => {
             <Link to={`/event/design-forge`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
           </CardFooter>
         </Card>
 
