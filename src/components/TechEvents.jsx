@@ -29,7 +29,7 @@ const TechEvents = () => {
       id: 2,
       title: "Data Science Quiz",
       description: "24-hour coding challenge",
-      imageSrc:img2
+      imageSrc:img5
     },
     {
       key:'event3',
@@ -50,7 +50,7 @@ const TechEvents = () => {
       id: 5,
       title: "Idea Explorer",
       description: "Project presentation",
-      imageSrc:img5
+      imageSrc:img2
     },
     {
       key:'event6',
@@ -71,9 +71,9 @@ const TechEvents = () => {
     <>
     <div className="bg-black p-6 text-center scroll-smooth">
 
-          <h1 className="font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl p-[2rem] pt-[4rem]">Our Events</h1>
+          <h1 className="font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl p-[2rem] pt-[2rem]">Our Events</h1>
 
-      <div className="flex flex-wrap justify-center p-[5rem] gap-6">
+      <div className="flex flex-wrap justify-center p-[3rem] gap-6">
         
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
@@ -102,7 +102,7 @@ const TechEvents = () => {
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
               <img
-                src={img5}
+                src={img2}
                 alt="card-image"
                 className="w-full h-full object-cover"
               />
@@ -116,18 +116,17 @@ const TechEvents = () => {
               </Typography>
             </CardBody>
             <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/idea-explorer`}>
+            <Link to={`/event/idea-explorer`} className="w-full flex justify-between">
               <Button halfWidth={true}>Register Here</Button>
+              <Button halfWidth={true} variant="outlined" color="blue">300/- PER TEAM</Button>
             </Link>
-              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
-              <Button halfWidth={true} variant="outlined" color="blue">250/- PER TEAM</Button>
             </CardFooter>
           </Card>
 
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
               <img
-                src={img2}
+                src={img3}
                 alt="card-image"
                 className="w-full h-full object-cover"
               />
@@ -141,17 +140,17 @@ const TechEvents = () => {
               </Typography>
             </CardBody>
             <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/uiux-workshop`}>
+            <Link to={`/event/uiux-workshop`} className="w-full flex justify-between">
               <Button halfWidth={true}>Register Here</Button>
-            </Link>
               <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
+            </Link>
             </CardFooter>
           </Card>
 
           <Card className="mt-6 w-96 ">
           <CardHeader color="blue-gray" className="relative h-56">
             <img
-              src={img6}
+              src={img4}
               alt="Design Forge"
               className="w-full h-full object-cover"
             />
@@ -168,7 +167,7 @@ const TechEvents = () => {
             <Link to={`/event/design-forge`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
           </CardFooter>
         </Card>
 
@@ -176,7 +175,7 @@ const TechEvents = () => {
         <Card className="mt-6 w-96 ">
           <CardHeader color="blue-gray" className="relative h-56">
             <img
-              src={img7}
+              src={img5}
               alt="Data Visualization Challenge"
               className="w-full h-full object-cover"
             />
@@ -193,7 +192,7 @@ const TechEvents = () => {
             <Link to={`/event/data-visualization-challenge`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
           </CardFooter>
         </Card>
 
@@ -201,7 +200,7 @@ const TechEvents = () => {
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
               <img
-                src={img3}
+                src={img6}
                 alt="card-image"
                 className="w-full h-full object-cover"
               />
@@ -217,8 +216,8 @@ const TechEvents = () => {
             <CardFooter className="pt-0 flex justify-between">
             <Link to={`/event/data-science-quiz`}>
               <Button halfWidth={true}>Register Here</Button>
-            </Link>
-              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+              </Link>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
             </CardFooter>
           </Card>
           
@@ -226,7 +225,7 @@ const TechEvents = () => {
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
               <img
-                src={img4}
+                src={img7}
                 alt="card-image"
                 className="w-full h-full object-cover"
               />
@@ -243,7 +242,7 @@ const TechEvents = () => {
             <Link to={`/event/speed-regex`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
             </CardFooter>
           </Card>
 

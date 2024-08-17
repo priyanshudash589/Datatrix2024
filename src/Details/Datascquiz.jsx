@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import image from "../assets/EventImages/3.png";
+import image from "../assets/EventImages/6.png";
 import LoaderSlot from '../assets/loaderslot.gif'
 
 const Datascquiz = () => {

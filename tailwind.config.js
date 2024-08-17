@@ -10,6 +10,7 @@ module.exports = withMT({
         "bg2": "url('/src/assets/technical.gif')",
         "event": "url('/src/assets/Desktop - 1.svg')",
         "event2": "url('/src/assets/Desktop - 2.svg')",
+        "patdata": "url('/src/assets/techno2.gif')",
       },
       
     },

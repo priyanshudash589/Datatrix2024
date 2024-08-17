@@ -43,17 +43,15 @@ export function PreviousEvents() {
                 color="white"
                 className="mb-4 text-3xl md:text-4xl lg:text-5xl"
               >
-                The Beauty of Nature
+                Learning from the Best of the Best
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                It is not so much for its beauty that the forest makes a claim
-                upon men&apos;s hearts, as for that subtle something, that quality
-                of air that emanation from old trees, that so wonderfully changes
-                and renews a weary spirit.
+                Dive deep into the minds of industry leaders and experts who have mastered their craft. Gain unparalleled insights and knowledge from those who set the standards in their fields.
+
               </Typography>
             </div>
           </div>
@@ -71,17 +69,15 @@ export function PreviousEvents() {
                 color="white"
                 className="mb-4 text-3xl md:text-4xl lg:text-5xl"
               >
-                The Beauty of Nature
+                Plunge into the depths of data
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                It is not so much for its beauty that the forest makes a claim
-                upon men&apos;s hearts, as for that subtle something, that quality
-                of air that emanation from old trees, that so wonderfully changes
-                and renews a weary spirit.
+                Explore the infinite possibilities hidden within vast datasets. Uncover powerful patterns and trends that can transform raw data into actionable insights.
+
               </Typography>
             </div>
           </div>
@@ -99,17 +95,14 @@ export function PreviousEvents() {
                 color="white"
                 className="mb-4 text-3xl md:text-4xl lg:text-5xl"
               >
-                The Beauty of Nature
+                Organizing Excellence with the best crew
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                It is not so much for its beauty that the forest makes a claim
-                upon men&apos;s hearts, as for that subtle something, that quality
-                of air that emanation from old trees, that so wonderfully changes
-                and renews a weary spirit.
+                Experience seamless event management with a team dedicated to perfection. From start to finish, our expert crew ensures every detail is executed flawlessly, creating an unforgettable experience.
               </Typography>
             </div>
           </div>

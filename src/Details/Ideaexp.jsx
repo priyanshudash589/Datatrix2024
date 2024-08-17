@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import img from '../assets/EventImages/5.png';
+import img from '../assets/EventImages/2.png';
 import LoaderSlot from '../assets/loaderslot.gif'
 function Event() {
   const event = {
@@ -133,25 +133,25 @@ function Event() {
   if (availableSlots === null) return <><div className="bg-black w-sceen h-screen flex justify-center items-center"><img src={LoaderSlot} alt="" /></div></>;
 
   return (
-    <div className="bg-patt-grid h-full w-screen text-white">
-      <div className="container mx-auto p-4 pt-8">
+    <div className="bg-patt-grid h-auto w-screen text-white">
+      <div className=" container mx-auto pt-8">
         <h1 className="text-6xl font-bold mb-4 text-center font-orbitron p-6">
           {event?.title || "Event Name"}
         </h1>
-        <div className="flex flex-col md:flex-row items-center md:items-start mb-8">
+        <div className=" flex flex-col md:flex-row items-center md:items-start mb-8">
           <div className="md:w-1/2 md:mr-8">
             <img src={img} alt="Event" className="rounded-md mb-4" />
-          </div>
-          <div className="md:w-1/2">
             <p className="text-gray-200 mb-4 font-orbitron p-7 leading-loose">
               {event?.about}
             </p>
+          </div>
+          <div className="md:w-1/2">
+            
             <h2 className="text-xl font-bold mb-2 font-orbitron">
               Faculty coordinator:
             </h2>
             <ul className="list-disc pl-5 text-gray-200 p-5">
               <li>{event.facultycoordinator.faculty1}</li>
-              <li>{event.facultycoordinator.faculty2}</li>
               <li>{event.facultycoordinator.faculty2}</li>
             </ul>
             <h2 className="text-xl font-bold mb-2 font-orbitron">

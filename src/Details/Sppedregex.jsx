@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import image from "../assets/EventImages/4.png";
+import image from "../assets/EventImages/7.png";
 import LoaderSlot from '../assets/loaderslot.gif'
 const Sppedregex = () => {
   const event = {

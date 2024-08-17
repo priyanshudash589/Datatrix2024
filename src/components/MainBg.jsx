@@ -6,12 +6,14 @@ import {
   IconButton,
   Collapse,
 } from "@material-tailwind/react";
-import imglogo from "../assets/datatrix.png";
+import imglogo from "../assets/main-logo-datatrix2.png";
+import img from "../assets/datatrix.png";
+import img2 from "../assets/datatrix-text.svg";
 import { Link } from "react-router-dom";
+import calendaroutline from '../assets/calendar-outline.svg'
 
 export default function MainBg({
-  scrollToSpeakers,
-  scrollToTechEvents,
+  scrollToSponsors,
   scrollToPreviousEvents,
 }) {
   const [openNav, setOpenNav] = React.useState(false);
@@ -25,26 +27,25 @@ export default function MainBg({
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
-      <Typography
+      {/* <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-normal"
       >
         <button
-          onClick={scrollToSpeakers}
           className="flex items-center text-white"
         >
           Speakers
         </button>
-      </Typography>
+      </Typography> */}
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <button className="flex items-center text-white">Sponsors</button>
+        <button onClick={scrollToSponsors} className="flex items-center text-white">Sponsors</button>
       </Typography>
       <Typography
         as="li"
@@ -74,18 +75,16 @@ export default function MainBg({
 
   return (
     <>
-      <div className="bg-patter-data w-screen min-h-screen">
-        <div className="min-h-screen w-screen backdrop-brightness-[.35] backdrop-saturate-150 overflow-x-hidden">
+      <div className=" bg-patdata bg-cover w-screen min-h-screen">
+        <div className="min-h-screen w-screen backdrop-brightness-[.15] backdrop-saturate-150 overflow-x-hidden">
           <div className="fixed top-0 left-0 right-0 z-50 p-6">
             <Navbar className="mx-auto max-w-full bg-black backdrop-blur-sm rounded-xl px-4 py-2 lg:px-8 lg:py-4">
-              <div className="flex items-center justify-between text-blue-gray-900">
-                <Typography
-                  as={Link}
-                  to="/"
-                  className="mr-4 cursor-pointer py-1.5 font-medium text-white"
-                >
-                  <img src={imglogo} alt="" className="h-[2rem]" />
-                </Typography>
+              <div className="flex items-center justify-between flex-row text-blue-gray-900">
+                <div className="flex items-center gap-2">
+                  <img src={imglogo} alt="" className="h-[3rem] overflow-hidden" />
+                  <img src={img2} alt="" className="h-[25px] overflow-hidden" />
+                  </div>
+                
                 <div className="flex items-center gap-4">
                   <div className="mr-4 hidden lg:block">{navList}</div>
                   <div className="flex items-center gap-x-1">
@@ -147,13 +146,15 @@ export default function MainBg({
             </Navbar>
           </div>
 
-          <div className="bg-transparent flex flex-col sm:flex-row justify-center items-center gap-4 p-0 w-full xl:translate-y-[50rem] xl:-translate-x-[25rem] lg:translate-y-[46rem] lg:-translate-x-[8rem] md:translate-y-[37rem] translate-y-[37.5rem]">
-            <button
-              variant="outlined"
-              className="w-[15rem] focus:outline-none h-12 flex justify-center items-center bg-black text-sky-200 border-2 rounded-lg font-orbitron border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] text-white"
-            >
-              Know More . . .
-            </button>
+          <div className="bg-transparent flex w-screen h-screen flex-col sm:flex-col justify-center items-center">
+
+            <img src={img} alt="" className="h-[4rem] md:lg-[7rem] lg:h-[10rem]" />
+
+            <div className="h-auto w-auto flex items-center gap-6 border-white border-[0.8px] p-3 rounded">
+              <img src={calendaroutline} alt="" className="h-[2rem] invert" />
+              <p className="text-white font-orbitron flex gap-1 tracking-wider">13.09.24 <span></span>{"  "} <span></span>&{"  "} <span></span> 14.09.24</p>
+            </div>
+    
           </div>
         </div>
       </div>

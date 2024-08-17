@@ -1,7 +1,9 @@
 import React from 'react'
 import logo from '../assets/SampleLogo.svg'
 import aanya from '../assets/amaya.png'
-const Sponsors = () => {
+import mj from '../assets/mj.jpeg.jpg'
+import grid from '../assets/gridart.jpg'
+export function Sponsors() {
   return (
     <div className='bg-patt-grid p-4 sm:p-8 lg:p-[2rem] w-full text-center lg:pt-[5rem]'>
     <span className='font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl'>Our Sponsors</span>
@@ -37,14 +39,11 @@ const Sponsors = () => {
         </div>
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-2'>
             <img src={aanya} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
-    
-            {/* <img src={logo} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
-            <img src={logo} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
-            <img src={logo} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> */}
+            <img src={mj} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
+            <img src={grid} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> 
         </div>
     </div>
 </div>
   )
 }
 
-export default Sponsors

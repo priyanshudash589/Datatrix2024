@@ -18,7 +18,7 @@ function Event() {
     },
     date: "",
     venue: "",
-    price: 300, // Assuming the event is free, so price is set to 0
+    price: 300,
   };
 
   const [registrationStatus, setRegistrationStatus] = useState("");
@@ -43,13 +43,17 @@ function Event() {
 
   useEffect(() => {
     const fetchSlots = async () => {
+      setLoading(true);
       try {
-        const { data } = await axios.get("http://localhost:8080/workshop-slots");
-        setAvailableSlots(data.availableSlots);
-        setTotalSlots(data.totalSlots);
+        const response = await axios.get("http://localhost:8080/workshop-slots");
+        console.log("Slots response:", response.data);
+        setAvailableSlots(response.data.availableSlots);
+        setTotalSlots(response.data.totalSlots);
       } catch (error) {
         console.error("Error fetching slot details:", error);
-        setRegistrationStatus("Error loading slot details.");
+        setError("Error loading slot details. Please try again later.");
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -62,14 +66,14 @@ function Event() {
     setError(null);
 
     if (availableSlots <= 0) {
-      setRegistrationStatus("No available slots.");
+      setError("No available slots.");
       setLoading(false);
       return;
     }
 
     try {
       const payload = {
-        amount: event?.price * 100, // Convert price to paise
+        amount: event?.price * 100,
         currency: "INR",
         receipt: `receipt#${Math.random().toString(36).substring(7)}`,
         notes: {
@@ -77,10 +81,12 @@ function Event() {
         },
       };
 
+      console.log("Creating order with payload:", payload);
       const { data: order } = await axios.post(
         "http://localhost:8080/workshop-create-order",
         payload
       );
+      console.log("Order created:", order);
 
       const options = {
         key: "rzp_test_yime1L5rinM9tw",
@@ -88,47 +94,60 @@ function Event() {
         currency: order.currency,
         order_id: order.id,
         handler: function (response) {
-            axios
-                .post("http://localhost:8080/workshop-verify-payment", {
-                    razorpay_order_id: response.razorpay_order_id,
-                    razorpay_payment_id: response.razorpay_payment_id,
-                    razorpay_signature: response.razorpay_signature,
-                    teamName: teamName,
-                    teamMembers: teamMembers,
-                    participantEvent: event?.title,
-                    amount: order.amount,
-                })
-                .then((verificationResponse) => {
-                    alert("Payment verified successfully!");
-                    setIsRegistered(true);
-                    setAvailableSlots((prevSlots) => prevSlots - 1);
-                })
-                .catch((error) => {
-                    console.error("Payment verification failed", error);
-                    setError("Payment verification failed");
-                });
+          console.log("Payment successful:", response);
+          verifyPayment(response);
         },
         prefill: {
-            name: teamMembers[0].name,
-            email: teamMembers[0].email,
-            contact: teamMembers[0].phone,
+          name: teamMembers[0].name,
+          email: teamMembers[0].email,
+          contact: teamMembers[0].phone,
         },
         theme: {
-            color: "#3399cc",
+          color: "#3399cc",
         },
-    }
+      };
 
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (error) {
       console.error("Order creation failed:", error);
-      setError("Order creation failed");
+      setError("Failed to create order. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  if (availableSlots === null) return <><div className="bg-black w-sceen h-screen flex justify-center items-center"><img src={LoaderSlot} alt="" /></div></>;
+  const verifyPayment = async (response) => {
+    try {
+      const verificationData = {
+        razorpay_order_id: response.razorpay_order_id,
+        razorpay_payment_id: response.razorpay_payment_id,
+        razorpay_signature: response.razorpay_signature,
+        teamName: teamName,
+        teamMembers: teamMembers,
+        participantEvent: event?.title,
+        amount: response.amount,
+      };
+
+      console.log("Verifying payment:", verificationData);
+      const verificationResponse = await axios.post(
+        "http://localhost:8080/workshop-verify-payment",
+        verificationData
+      );
+      console.log("Payment verification response:", verificationResponse.data);
+
+      alert("Payment verified successfully!");
+      setIsRegistered(true);
+      setAvailableSlots((prevSlots) => prevSlots - 1);
+    } catch (error) {
+      console.error("Payment verification failed", error);
+      setError("Payment verification failed. Please contact support.");
+    }
+  };
+
+  if (loading) return <div className="bg-black w-screen h-screen flex justify-center items-center"><img src={LoaderSlot} alt="Loading..." /></div>;
+
+  if (error) return <div className="text-red-500">{error}</div>;
 
   return (
     <div className="bg-patt-grid h-full w-screen text-white">
