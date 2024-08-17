@@ -6,7 +6,7 @@ const Designforge = () => {
   const event = {
     name: "Design Foge",
     about:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
+      "Ignite your creativity at the Design Forge: A UI/UX workshop. Here, you are given a chance to display your talent for UI/UX while interacting with industry experts. In this workshop, you get a chance sharpen your designing skills and learn about the latest trends. Put your knowledge to the test with our exciting competition, where you, as designers, get to create innovative user experience and showcase them. A chance where you get to learn, grow, compete and demonstrate your talent in UI/UX design in this fast-paced world.",
     facultycoordinator: {
       faculty1: "Mr.K.RAJESH, AP/CSE - 82488 72058",
       faculty2: "",

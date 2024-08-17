@@ -7,14 +7,14 @@ const Datavisual = () => {
   const event = {
     name: "Speed Regex",
     about:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
+      "Level up at the Data Visualization challenge- an arena where you are given the opportunity to unleash your creativity and showcase your skills. You will be tasked with a sample dataset, where your goal is to make a creative, interactive dashboard using any framework of your choice like Tableau, Power BI and more. Your performance will be evaluated based on your creativity and your ability to present insights effectively, and how well you demonstrate your work in front of the judges. Are you up for the challenge?",
     facultycoordinator: {
       faculty1: "Mr.A.THIRUNEELANKANDAN, AP/CSE - 9933217852",
       faculty2: "",
     },
     studentcoordinator: {
       student1: "VARSHA ANBUMANI - 8838193588",
-      student2: "G.MAHIMA - 9514870306",
+      student2: "Mahima G - 9514870306",
     },
     date: "",
     venue: "",

@@ -34,36 +34,36 @@ const TechEvents = () => {
     {
       key:'event3',
       id: 3,
-      title: "Data Science Quiz",
-      description: "24-hour coding challenge",
+      title: "UI/UX Workshop ",
+      description: "Design workshop",
       imageSrc:img3
     },
     {
       key:'event4',
       id: 4,
       title: "Speed Regex",
-      description: "24-hour coding challenge",
+      description: "Regex challenge",
       imageSrc:img4
     },
     {
       key:'event5',
       id: 5,
       title: "Idea Explorer",
-      description: "24-hour coding challenge",
+      description: "Project presentation",
       imageSrc:img5
     },
     {
       key:'event6',
       id: 6,
       title: "Design Forge",
-      description: "UI/UX Workshop & Competition",
+      description: "UI/UX Competition",
       imageSrc:img6
     },
     {
       key:'event7',
       id: 7,
-      title: "Data Visulalization Challenge",
-      description: "24-hour coding challenge",
+      title: "Data visualization",
+      description: "Data visualization competition",
       imageSrc:img7
     },
   ];
@@ -88,7 +88,7 @@ const TechEvents = () => {
                 Datathon
               </Typography>
               <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              A 24-hour coding marathon to tackle real-world challenges, enhance your skills, and collaborate with fellow data enthusiasts. Code solo or in teams, and leave with new insights, stronger abilities, and lasting connections!
               </Typography>
             </CardBody>
             <CardFooter className="pt-0 flex justify-between">
@@ -96,6 +96,31 @@ const TechEvents = () => {
               <Button halfWidth={true}>Register Here</Button>
             </Link>
             <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
+            </CardFooter>
+          </Card>
+          
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img5}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                Idea Explorer
+              </Typography>
+              <Typography>
+              Join the Idea Explorer Forum to showcase ideas, get expert feedback, and connect with like-minded creators. Gain insights, refine your concepts, and expand your network in this dynamic event!
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/idea-explorer`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
+              <Button halfWidth={true} variant="outlined" color="blue">250/- PER TEAM</Button>
             </CardFooter>
           </Card>
 
@@ -112,16 +137,66 @@ const TechEvents = () => {
                 UI/UX Workshop
               </Typography>
               <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              Join the Design Forge UI/UX workshop to showcase your skills, learn from experts, and compete in creating innovative user experiences. Grow and sharpen your design talent!
               </Typography>
             </CardBody>
             <CardFooter className="pt-0 flex justify-between">
             <Link to={`/event/uiux-workshop`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <div  className="border-[3px] border-blue-500 text-center rounded-lg w-auto p-2 flex items-center justify-center"><span className="text-blue-500">300/- PER TEAM</span></div>
+              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
             </CardFooter>
           </Card>
+
+          <Card className="mt-6 w-96 ">
+          <CardHeader color="blue-gray" className="relative h-56">
+            <img
+              src={img6}
+              alt="Design Forge"
+              className="w-full h-full object-cover"
+            />
+          </CardHeader>
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              Design Forge
+            </Typography>
+            <Typography>
+            Join the Design Forge UI/UX competition to showcase your skills, create innovative designs, and learn from industry experts. Compete, grow, and demonstrate your talent!
+            </Typography>
+          </CardBody>
+          <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/design-forge`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+          </CardFooter>
+        </Card>
+
+        
+        <Card className="mt-6 w-96 ">
+          <CardHeader color="blue-gray" className="relative h-56">
+            <img
+              src={img7}
+              alt="Data Visualization Challenge"
+              className="w-full h-full object-cover"
+            />
+          </CardHeader>
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              Data Visualization Challenge
+            </Typography>
+            <Typography>
+            Join the Data Visualization Challenge to create interactive dashboards using tools like Tableau or Power BI. You'll be judged on creativity, insights, and presentation. Are you ready to impress?
+            </Typography>
+          </CardBody>
+          <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/data-visualization-challenge`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+          </CardFooter>
+        </Card>
+
 
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
@@ -136,16 +211,17 @@ const TechEvents = () => {
                 Data Quiz
               </Typography>
               <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              The Data Quiz Challenge is two-round competition testing data science skills. Round one covers foundational knowledge, and round two is a rapid-fire session. Perfect for all skill levels!
               </Typography>
             </CardBody>
             <CardFooter className="pt-0 flex justify-between">
             <Link to={`/event/data-science-quiz`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
+              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
             </CardFooter>
           </Card>
+          
 
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
@@ -160,88 +236,20 @@ const TechEvents = () => {
                 Speed Regex
               </Typography>
               <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
+              Join the Speed Regex Challenge to test your speed and accuracy in building regular expressions. Tackle tasks like string matching and date validation in this fun, fast-paced event for Regex enthusiasts!
               </Typography>
             </CardBody>
             <CardFooter className="pt-0 flex justify-between">
             <Link to={`/event/speed-regex`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
+              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
             </CardFooter>
           </Card>
 
-          <Card className="mt-6 w-96">
-            <CardHeader color="blue-gray" className="relative h-56">
-              <img
-                src={img5}
-                alt="card-image"
-                className="w-full h-full object-cover"
-              />
-            </CardHeader>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                Idea Explorer
-              </Typography>
-              <Typography>
-                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/idea-explorer`}>
-              <Button halfWidth={true}>Register Here</Button>
-            </Link>
-            <div  className="border-[3px] border-blue-500 text-center rounded-lg w-auto p-2 flex items-center justify-center"><span className="text-blue-500">100/- PER PERSON</span></div>
-            </CardFooter>
-          </Card>
 
-          <Card className="mt-6 w-96 ">
-          <CardHeader color="blue-gray" className="relative h-56">
-            <img
-              src={img7}
-              alt="Data Visualization Challenge"
-              className="w-full h-full object-cover"
-            />
-          </CardHeader>
-          <CardBody>
-            <Typography variant="h5" color="blue-gray" className="mb-2">
-              Data Visualization Challenge
-            </Typography>
-            <Typography>
-            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
-            </Typography>
-          </CardBody>
-          <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/data-visualization-challenge`}>
-              <Button halfWidth={true}>Register Here</Button>
-            </Link>
-            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
-          </CardFooter>
-        </Card>
 
-        <Card className="mt-6 w-96 ">
-          <CardHeader color="blue-gray" className="relative h-56">
-            <img
-              src={img6}
-              alt="Design Forge"
-              className="w-full h-full object-cover"
-            />
-          </CardHeader>
-          <CardBody>
-            <Typography variant="h5" color="blue-gray" className="mb-2">
-              Design Forge
-            </Typography>
-            <Typography>
-            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
-            </Typography>
-          </CardBody>
-          <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/design-forge`}>
-              <Button halfWidth={true}>Register Here</Button>
-            </Link>
-            <div  className="border-[3px] border-green-500 text-center rounded-lg w-20 flex items-center justify-center"><span className="text-green-500">FREE</span></div>
-          </CardFooter>
-        </Card>
+
 
        
       </div>
