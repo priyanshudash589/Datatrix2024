@@ -98,79 +98,7 @@ const TechEvents = () => {
               <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
             </CardFooter>
           </Card>
-
-          <Card className="mt-6 w-96">
-            <CardHeader color="blue-gray" className="relative h-56">
-              <img
-                src={img2}
-                alt="card-image"
-                className="w-full h-full object-cover"
-              />
-            </CardHeader>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                UI/UX Workshop
-              </Typography>
-              <Typography>
-              Join the Design Forge UI/UX workshop to showcase your skills, learn from experts, and compete in creating innovative user experiences. Grow and sharpen your design talent!
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/uiux-workshop`}>
-              <Button halfWidth={true}>Register Here</Button>
-            </Link>
-              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
-            </CardFooter>
-          </Card>
-
-          <Card className="mt-6 w-96">
-            <CardHeader color="blue-gray" className="relative h-56">
-              <img
-                src={img3}
-                alt="card-image"
-                className="w-full h-full object-cover"
-              />
-            </CardHeader>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                Data Quiz
-              </Typography>
-              <Typography>
-              The Data Quiz Challenge is two-round competition testing data science skills. Round one covers foundational knowledge, and round two is a rapid-fire session. Perfect for all skill levels!
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/data-science-quiz`}>
-              <Button halfWidth={true}>Register Here</Button>
-            </Link>
-              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
-            </CardFooter>
-          </Card>
-
-          <Card className="mt-6 w-96">
-            <CardHeader color="blue-gray" className="relative h-56">
-              <img
-                src={img4}
-                alt="card-image"
-                className="w-full h-full object-cover"
-              />
-            </CardHeader>
-            <CardBody>
-              <Typography variant="h5" color="blue-gray" className="mb-2">
-                Speed Regex
-              </Typography>
-              <Typography>
-              Join the Speed Regex Challenge to test your speed and accuracy in building regular expressions. Tackle tasks like string matching and date validation in this fun, fast-paced event for Regex enthusiasts!
-              </Typography>
-            </CardBody>
-            <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/speed-regex`}>
-              <Button halfWidth={true}>Register Here</Button>
-            </Link>
-              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
-            </CardFooter>
-          </Card>
-
+          
           <Card className="mt-6 w-96">
             <CardHeader color="blue-gray" className="relative h-56">
               <img
@@ -196,7 +124,56 @@ const TechEvents = () => {
             </CardFooter>
           </Card>
 
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img2}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                UI/UX Workshop
+              </Typography>
+              <Typography>
+              Join the Design Forge UI/UX workshop to showcase your skills, learn from experts, and compete in creating innovative user experiences. Grow and sharpen your design talent!
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/uiux-workshop`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="blue">100/- PER PERSON</Button>
+            </CardFooter>
+          </Card>
+
           <Card className="mt-6 w-96 ">
+          <CardHeader color="blue-gray" className="relative h-56">
+            <img
+              src={img6}
+              alt="Design Forge"
+              className="w-full h-full object-cover"
+            />
+          </CardHeader>
+          <CardBody>
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              Design Forge
+            </Typography>
+            <Typography>
+            Join the Design Forge UI/UX competition to showcase your skills, create innovative designs, and learn from industry experts. Compete, grow, and demonstrate your talent!
+            </Typography>
+          </CardBody>
+          <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/design-forge`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+          </CardFooter>
+        </Card>
+
+        
+        <Card className="mt-6 w-96 ">
           <CardHeader color="blue-gray" className="relative h-56">
             <img
               src={img7}
@@ -220,29 +197,59 @@ const TechEvents = () => {
           </CardFooter>
         </Card>
 
-        <Card className="mt-6 w-96 ">
-          <CardHeader color="blue-gray" className="relative h-56">
-            <img
-              src={img6}
-              alt="Design Forge"
-              className="w-full h-full object-cover"
-            />
-          </CardHeader>
-          <CardBody>
-            <Typography variant="h5" color="blue-gray" className="mb-2">
-              Design Forge
-            </Typography>
-            <Typography>
-            Join the Design Forge UI/UX competition to showcase your skills, create innovative designs, and learn from industry experts. Compete, grow, and demonstrate your talent!
-            </Typography>
-          </CardBody>
-          <CardFooter className="pt-0 flex justify-between">
-            <Link to={`/event/design-forge`}>
+
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img3}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                Data Quiz
+              </Typography>
+              <Typography>
+              The Data Quiz Challenge is two-round competition testing data science skills. Round one covers foundational knowledge, and round two is a rapid-fire session. Perfect for all skill levels!
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/data-science-quiz`}>
               <Button halfWidth={true}>Register Here</Button>
             </Link>
-            <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
-          </CardFooter>
-        </Card>
+              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            </CardFooter>
+          </Card>
+          
+
+          <Card className="mt-6 w-96">
+            <CardHeader color="blue-gray" className="relative h-56">
+              <img
+                src={img4}
+                alt="card-image"
+                className="w-full h-full object-cover"
+              />
+            </CardHeader>
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                Speed Regex
+              </Typography>
+              <Typography>
+              Join the Speed Regex Challenge to test your speed and accuracy in building regular expressions. Tackle tasks like string matching and date validation in this fun, fast-paced event for Regex enthusiasts!
+              </Typography>
+            </CardBody>
+            <CardFooter className="pt-0 flex justify-between">
+            <Link to={`/event/speed-regex`}>
+              <Button halfWidth={true}>Register Here</Button>
+            </Link>
+              <Button halfWidth={true} variant="outlined" color="green">FREE</Button>
+            </CardFooter>
+          </Card>
+
+
+
+
 
        
       </div>
