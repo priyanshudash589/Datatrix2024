@@ -6,7 +6,7 @@ function Event() {
   const event = {
     title: "Idea Explorer",
     about:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
+      "Welcome to the Idea Explorer Forum, a dynamic space where you can showcase your innovative ideas and initiatives. This event is designed for thinkers, creators, and problem-solvers who are eager to share their concepts and receive valuable feedback. It’s more than just a presentation—it's an opportunity to learn from industry experts, gain insights into the latest trends, and refine your ideas with the help of experienced mentors. Plus, you'll have the chance to connect with like-minded individuals, expanding your network and finding potential collaborators. Whether you’re just starting out or looking to take your ideas to the next level, the Idea Explorer Forum is the perfect place to ignite your creativity and make meaningful connections. Join us and bring your ideas to life!",
     facultycoordinator: {
       faculty1: "Dr. A. MANJU, AP/CSE - 8903976381",
       faculty2: " Ms. SRINARAYANI K, AP/CSE - 9791138865",

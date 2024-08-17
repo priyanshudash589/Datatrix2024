@@ -6,7 +6,7 @@ const Sppedregex = () => {
   const event = {
     name: "Speed Regex",
     about:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
+      "Accelerate your Regex Mastry at the Speed Regex Challenge-An opportunity for you that tests your accuracy and speed in constructing regular expressions. This fun and exciting challenge is designed for all the Regex Enthusiasts! You will be given various tasks to tackle including matching a string, Date validation or handling nested patterns. Come join us to put your quick thinking, fast reflexes and problem-solving skills to the test under pressure.",
     facultycoordinator: {
       faculty1: "Ms. SRINARAYANI K, AP/CSE - 9791138865",
       faculty2: "",

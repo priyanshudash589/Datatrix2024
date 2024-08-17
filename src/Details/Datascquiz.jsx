@@ -7,13 +7,13 @@ const Datascquiz = () => {
   const event = {
     name: "Data Quiz",
     about:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
+      "Join us for the Data Quiz Challenge, a thrilling two-round competition designed for data enthusiasts! In the first round, participants will tackle a series of data science questions in a pen-and-paper format, testing their foundational knowledge and problem-solving skills. The top scorers will advance to the second round—a fast-paced rapid-fire session where quick thinking and accuracy are key. This event is perfect for anyone passionate about data science, whether you're a seasoned pro or just starting out. Don't miss your chance to showcase your expertise and your competitiveness.",
     facultycoordinator: {
       faculty1: "Ms.R.SWATHI, AP/CSE - 8754230477",
       faculty2: "",
     },
     studentcoordinator: {
-      student1: "SHRUTHI ARAVIND - 99623 93003",
+      student1: "SHRUTHI ARAVIND - 9962393003",
       student2: "",
     },
     date: "",
