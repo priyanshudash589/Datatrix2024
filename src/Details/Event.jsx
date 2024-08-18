@@ -295,9 +295,6 @@ function Event() {
             </p>
           </div>
           <div className="md:w-1/2 flex justify-center flex-col">
-            <span className="p-4">Signer In as : {
-              user ? user.email : "Guest"
-              }</span>
             <h2 className="text-xl font-bold mb-1 font-orbitron p-2">
               Faculty coordinator:
             </h2>
@@ -319,10 +316,19 @@ function Event() {
                 ₹{event?.price}
               </h3>
 
-              <div className="flex flex-col space-y-4">
-                logged in as {user ? email : "Guest"}
-              </div>
+              {/* <div className="flex flex-col space-y-4">
+                  logged in as {user ? email : "Guest"}
+                </div>
+                <div className="flex flex-col space-y-4">
+                  <img src={user ? user.data.user.user_metadata.avatar_url : ""} alt="avatar" className="rounded-full h-12 w-12" />
+                </div> */}
+              {/* card with avatar */}
 
+              <div className="flex flex-col space-y-4">
+                <img src={user ? user.data.user.user_metadata.avatar_url : ""} alt="avatar" className="rounded-full h-10 w-10" />
+                <p className="text-white">Logged in as {user ? email : "Guest"}</p>
+
+              </div>
 
               {
                 registering && (
