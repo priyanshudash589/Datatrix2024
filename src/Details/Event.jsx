@@ -99,9 +99,10 @@ function Event() {
             <h2 className="text-xl font-bold mb-1 font-orbitron p-2">
               Faculty coordinator:
             </h2>
-            <ul className=" pl-5 text-gray-200 p-5 list-none">
+            <ul className="pl-5 text-gray-200 p-5 list-none">
               <li>{event?.event_staff_coordinate_1}</li>
               <li>{event?.event_staff_coordinate_2}</li>
+              <li>{event?.event_staff_coordinate_3}</li>
             </ul>
             <h2 className="text-xl font-bold mb-1 font-orbitron p-2">
               Student coordinator:
