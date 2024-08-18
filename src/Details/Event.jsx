@@ -290,26 +290,26 @@ function Event() {
               alt="Event"
               className="rounded-md mb-4"
             />
-          </div>
-          <div className="md:w-1/2">
-            <p className="text-gray-200 mb-4 font-orbitron p-7 leading-loose">
-              {event?.event_description}
+            <p className="text-gray-200 mb-4 font-orbitron p-4 leading-loose border-[2px] border-gray-500 rounded-md">
+              {event?.event_details}
             </p>
-            <span>Signer In as : {
+          </div>
+          <div className="md:w-1/2 flex justify-center flex-col">
+            <span className="p-4">Signer In as : {
               user ? user.email : "Guest"
-            }</span>
-            <h2 className="text-xl font-bold mb-2 font-orbitron">
+              }</span>
+            <h2 className="text-xl font-bold mb-1 font-orbitron p-2">
               Faculty coordinator:
             </h2>
-            <ul className="list-disc pl-5 text-gray-200 p-5">
+            <ul className="pl-5 text-gray-200 p-5 list-none">
               <li>{event?.event_staff_coordinate_1}</li>
-              {event?.event_staff_coordinate_2 && <li>{event?.event_staff_coordinate_2}</li>}
-              {event?.event_staff_coordinate_3 && <li>{event?.event_staff_coordinate_3}</li>}
+              <li>{event?.event_staff_coordinate_2}</li>
+              <li>{event?.event_staff_coordinate_3}</li>
             </ul>
-            <h2 className="text-xl font-bold mb-2 font-orbitron">
+            <h2 className="text-xl font-bold mb-1 font-orbitron p-2">
               Student coordinator:
             </h2>
-            <ul className="list-disc pl-5 text-gray-200 p-5">
+            <ul className=" pl-5 text-gray-200 p-5 list-none ">
               <li>{event?.student_coordinate_1}</li>
               {event?.student_coordinate_2 && <li>{event?.student_coordinate_2}</li>}
               {event?.student_coordinate_3 && <li>{event?.student_coordinate_3}</li>}

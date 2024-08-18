@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "./supabase";
-
 import Home from "./components/Home";
 import Datathon from "./Details/Datathon";
 import Event from "./Details/Event";
