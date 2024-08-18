@@ -29,7 +29,13 @@ function App() {
   }, []);
 
   if (!session) {
-    return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />;
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<TechEvents />} />
+        <Route path="/event/* " element={<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />} />
+      </Routes>
+    </Router>
   } else {
     return (
       <Router>
