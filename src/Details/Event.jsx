@@ -55,99 +55,6 @@ function Event() {
   const [participant3phone, setParticipant3phone] = useState("");
 
 
-
-  //register for event
-
-  //   Name	Description	Data Type	Format
-  //   id
-
-
-
-
-  //   ticket_id
-
-
-
-
-  //   uuid
-
-
-
-  // uuid	uuid
-  //   timestamp
-
-
-
-  // timestamp with time zone	timestamptz
-  //   status
-
-
-
-
-  //   note
-
-
-
-
-  //   eventid
-
-
-
-
-  //   participant1_email
-
-
-
-
-  //   participant1_name
-
-
-
-
-  //   participant2_email
-
-
-
-
-  //   participant2_name
-
-
-
-
-  //   participant3_email
-
-
-
-
-  //   participant3_name
-
-
-
-
-  //   participant1_phone
-
-
-
-
-  //   participant2_phone
-
-
-
-
-  //   participant3_phone
-
-
-
-
-  //   count_pati
-
-
-
-
-  //   team_name
-
-
-
   const register = async () => {
 
 
@@ -159,7 +66,7 @@ function Event() {
 
     const countparti = () => {
       let count = 0;
-      if (participant1email) {
+      if (email) {
         count++;
       }
       if (participant2email) {
@@ -248,6 +155,10 @@ function Event() {
       }
     }
     fetchUser();
+
+
+
+
 
 
     const fetchEvent = async () => {
