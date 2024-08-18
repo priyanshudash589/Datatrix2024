@@ -32,6 +32,7 @@ function Event() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
+  const [email, setEmail] = useState(null);
 
 
   const [registering, setRegistering] = useState(false);
@@ -74,9 +75,25 @@ function Event() {
     }
   };
 
+
   useEffect(() => {
-    const { data: user } = supabase.auth.getUser();
-    setUser(user);
+    const fetchUser = async () => {
+      try {
+        const user2 = supabase.auth.getUser().then((user) => {
+          setUser(user);
+          console.log(user.data.user);
+          setEmail(user.data.user.email);
+
+        }
+        );
+
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setAuthLoaded(true);
+      }
+    }
+    fetchUser();
 
     const fetchEvent = async () => {
       try {
@@ -96,6 +113,14 @@ function Event() {
     };
     fetchEvent();
   }, [id]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <img src={LoaderSlot} alt="Loading..." />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-patt-grid h-full w-screen text-white">
@@ -123,20 +148,25 @@ function Event() {
             </h2>
             <ul className="list-disc pl-5 text-gray-200 p-5">
               <li>{event?.event_staff_coordinate_1}</li>
-              <li>{event?.event_staff_coordinate_2}</li>
+              {event?.event_staff_coordinate_2 && <li>{event?.event_staff_coordinate_2}</li>}
+              {event?.event_staff_coordinate_3 && <li>{event?.event_staff_coordinate_3}</li>}
             </ul>
             <h2 className="text-xl font-bold mb-2 font-orbitron">
               Student coordinator:
             </h2>
             <ul className="list-disc pl-5 text-gray-200 p-5">
               <li>{event?.student_coordinate_1}</li>
-              <li>{event?.student_coordinate_2}</li>
+              {event?.student_coordinate_2 && <li>{event?.student_coordinate_2}</li>}
+              {event?.student_coordinate_3 && <li>{event?.student_coordinate_3}</li>}
             </ul>
             <div className="bg-dark rounded-md h-auto shadow-md p-4 mt-4">
               <h3 className="text-xl font-bold text-white-800 mb-2 font-orbitron">
                 ₹{event?.price}
               </h3>
 
+              <div className="flex flex-col space-y-4">
+                logged in as {user ? email : "Guest"}
+              </div>
               <button className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
                 onClick={() => {
                   setRegistering(!registering);
@@ -146,6 +176,7 @@ function Event() {
               >
                 {registering ? "Cancel" : "Register"}
               </button>
+
 
               {
                 registering && (
