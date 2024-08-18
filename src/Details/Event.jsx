@@ -33,6 +33,28 @@ function Event() {
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
 
+
+  const [registering, setRegistering] = useState(false);
+  const [ParticipantCount, setParticipantCount] = useState(0);
+  const [availableSlots, setAvailableSlots] = useState(0);
+
+  const [teamname, setTeamname] = useState("");
+
+
+  const [participant1email, setParticipant1email] = useState("");
+  const [participant2email, setParticipant2email] = useState("");
+  const [participant3email, setParticipant3email] = useState("");
+
+  const [participant1name, setParticipant1name] = useState("");
+  const [participant2name, setParticipant2name] = useState("");
+  const [participant3name, setParticipant3name] = useState("");
+
+  const [participant1phone, setParticipant1phone] = useState("");
+  const [participant2phone, setParticipant2phone] = useState("");
+  const [participant3phone, setParticipant3phone] = useState("");
+
+
+
   //register for event
   const register = async () => {
     try {
@@ -95,7 +117,7 @@ function Event() {
             </p>
             <span>Signer In as : {
               user ? user.email : "Guest"
-              }</span>
+            }</span>
             <h2 className="text-xl font-bold mb-2 font-orbitron">
               Faculty coordinator:
             </h2>
@@ -114,10 +136,86 @@ function Event() {
               <h3 className="text-xl font-bold text-white-800 mb-2 font-orbitron">
                 ₹{event?.price}
               </h3>
-              <button className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]">
-                register
+
+              <button className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
+                onClick={() => {
+                  setRegistering(!registering);
+                }
+                }
+
+              >
+                {registering ? "Cancel" : "Register"}
               </button>
-              
+
+              {
+                registering && (
+                  <>
+                    {event?.max_count >= 1 && (
+                      <>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="teamname" className="text-white">Team Name</label>
+                          <input type="text" id="teamname" className="p-2 rounded-md" value={teamname} onChange={(e) => setTeamname(e.target.value)} />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant1name" className="text-white">Participant 1 Name</label>
+                          <input type="text" id="participant1name" className="p-2 rounded-md" value={participant1name} onChange={(e) => setParticipant1name(e.target.value)} />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant1email" className="text-white">Participant 1 Email</label>
+                          <input type="email" id="participant1email" className="p-2 rounded-md" value={participant1email} onChange={(e) => setParticipant1email(e.target.value)} />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant1phone" className="text-white">Participant 1 Phone</label>
+                          <input type="text" id="participant1phone" className="p-2 rounded-md" value={participant1phone} onChange={(e) => setParticipant1phone(e.target.value)} />
+                        </div>
+                      </>
+                    )}
+                    {event?.max_count >= 2 && (
+                      <>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant2name" className="text-white">Participant 2 Name</label>
+                          <input type="text" id="participant2name" className="p-2 rounded-md" value={participant2name} onChange={(e) => setParticipant2name(e.target.value)} />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant2email" className="text-white">Participant 2 Email</label>
+                          <input type="email" id="participant2email" className="p-2 rounded-md" value={participant2email} onChange={(e) => setParticipant2email(e.target.value)} />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant2phone" className="text-white">Participant 2 Phone</label>
+                          <input type="text" id="participant2phone" className="p-2 rounded-md" value={participant2phone} onChange={(e) => setParticipant2phone(e.target.value)} />
+                        </div>
+                      </>
+                    )}
+                    {event?.max_count >= 3 && (
+                      <>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant3name" className="text-white">Participant 3 Name</label>
+                          <input type="text" id="participant3name" className="p-2 rounded-md" value={participant3name} onChange={(e) => setParticipant3name(e.target.value)} />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant3email" className="text-white">Participant 3 Email</label>
+                          <input type="email" id="participant3email" className="p-2 rounded-md" value={participant3email} onChange={(e) => setParticipant3email(e.target.value)} />
+                        </div>
+                        <div className="flex flex-col space-y-4">
+                          <label htmlFor="participant3phone" className="text-white">Participant 3 Phone</label>
+                          <input type="text" id="participant3phone" className="p-2 rounded-md" value={participant3phone} onChange={(e) => setParticipant3phone(e.target.value)} />
+                        </div>
+                      </>
+                    )}
+
+                    <button className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
+                      onClick={() => {
+                        register();
+                      }}
+                    >
+                      Register
+                    </button>
+                  </>
+                )
+              }
+
+
+
             </div>
           </div>
         </div>
