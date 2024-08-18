@@ -57,23 +57,177 @@ function Event() {
 
 
   //register for event
+
+  //   Name	Description	Data Type	Format
+  //   id
+
+
+
+
+  //   ticket_id
+
+
+
+
+  //   uuid
+
+
+
+  // uuid	uuid
+  //   timestamp
+
+
+
+  // timestamp with time zone	timestamptz
+  //   status
+
+
+
+
+  //   note
+
+
+
+
+  //   eventid
+
+
+
+
+  //   participant1_email
+
+
+
+
+  //   participant1_name
+
+
+
+
+  //   participant2_email
+
+
+
+
+  //   participant2_name
+
+
+
+
+  //   participant3_email
+
+
+
+
+  //   participant3_name
+
+
+
+
+  //   participant1_phone
+
+
+
+
+  //   participant2_phone
+
+
+
+
+  //   participant3_phone
+
+
+
+
+  //   count_pati
+
+
+
+
+  //   team_name
+
+
+
   const register = async () => {
+
+
+    checkRegistration();
+    if (check) {
+      alert("You have already registered for this event");
+      return;
+    }
+
+    const countparti = () => {
+      let count = 0;
+      if (participant1email) {
+        count++;
+      }
+      if (participant2email) {
+        count++;
+      }
+      if (participant3email) {
+        count++;
+      }
+      return count;
+    }
+
     try {
-      const { data, error } = await supabase.from("registration").insert([
-        {
-          eventid: id,
-          userid: user.id,
-        },
-      ]);
+
+      const { data, error } = await supabase
+        .from("registration")
+        .insert([
+          {
+            eventid: id,
+            ticket_id: id + "-" + email,
+            participant1_email: email,
+            participant1_name: participant1name,
+            participant1_phone: participant1phone,
+            participant2_email: participant2email,
+            participant2_name: participant2name,
+            participant2_phone: participant2phone,
+            participant3_email: participant3email,
+            participant3_name: participant3name,
+            participant3_phone: participant3phone,
+            count_pati: countparti(),
+            team_name: teamname,
+            status: "pending"
+          }
+        ]);
       if (error) {
         throw error;
       }
-      setRegistrationStatus("Registration Successful");
-      setAvailableSlots(availableSlots - 1);
+      alert("Registered Successfully");
+      setRegistering(false);
     } catch (error) {
-      setError(error.message);
+      alert(error.message);
     }
-  };
+  }
+
+
+  const [check, setCheck] = useState(false);
+  const [checkdata, setCheckData] = useState(null);
+
+  const checkRegistration = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("registration")
+        .select("*")
+        .eq("eventid", id)
+        .eq("participant1_email", email);
+      if (error) {
+        throw error;
+      }
+      setCheckData(data);
+      if (data.length > 0) {
+        setCheck(true);
+        alert("You have already registered for this event");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  }
+
+
 
 
   useEffect(() => {
@@ -94,6 +248,7 @@ function Event() {
       }
     }
     fetchUser();
+
 
     const fetchEvent = async () => {
       try {
@@ -167,15 +322,6 @@ function Event() {
               <div className="flex flex-col space-y-4">
                 logged in as {user ? email : "Guest"}
               </div>
-              <button className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
-                onClick={() => {
-                  setRegistering(!registering);
-                }
-                }
-
-              >
-                {registering ? "Cancel" : "Register"}
-              </button>
 
 
               {
@@ -185,19 +331,15 @@ function Event() {
                       <>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="teamname" className="text-white">Team Name</label>
-                          <input type="text" id="teamname" className="p-2 rounded-md" value={teamname} onChange={(e) => setTeamname(e.target.value)} />
+                          <input type="text" id="teamname" className="p-2 text-black rounded-md" value={teamname} onChange={(e) => setTeamname(e.target.value)} />
                         </div>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant1name" className="text-white">Participant 1 Name</label>
-                          <input type="text" id="participant1name" className="p-2 rounded-md" value={participant1name} onChange={(e) => setParticipant1name(e.target.value)} />
-                        </div>
-                        <div className="flex flex-col space-y-4">
-                          <label htmlFor="participant1email" className="text-white">Participant 1 Email</label>
-                          <input type="email" id="participant1email" className="p-2 rounded-md" value={participant1email} onChange={(e) => setParticipant1email(e.target.value)} />
+                          <input type="text" id="participant1name" className="text-black p-2 rounded-md" value={participant1name} onChange={(e) => setParticipant1name(e.target.value)} />
                         </div>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant1phone" className="text-white">Participant 1 Phone</label>
-                          <input type="text" id="participant1phone" className="p-2 rounded-md" value={participant1phone} onChange={(e) => setParticipant1phone(e.target.value)} />
+                          <input type="text" id="participant1phone" className="text-black p-2 rounded-md" value={participant1phone} onChange={(e) => setParticipant1phone(e.target.value)} />
                         </div>
                       </>
                     )}
@@ -205,15 +347,15 @@ function Event() {
                       <>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant2name" className="text-white">Participant 2 Name</label>
-                          <input type="text" id="participant2name" className="p-2 rounded-md" value={participant2name} onChange={(e) => setParticipant2name(e.target.value)} />
+                          <input type="text" id="participant2name" className="text-black p-2 rounded-md" value={participant2name} onChange={(e) => setParticipant2name(e.target.value)} />
                         </div>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant2email" className="text-white">Participant 2 Email</label>
-                          <input type="email" id="participant2email" className="p-2 rounded-md" value={participant2email} onChange={(e) => setParticipant2email(e.target.value)} />
+                          <input type="email" id="participant2email" className="text-black p-2 rounded-md" value={participant2email} onChange={(e) => setParticipant2email(e.target.value)} />
                         </div>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant2phone" className="text-white">Participant 2 Phone</label>
-                          <input type="text" id="participant2phone" className="p-2 rounded-md" value={participant2phone} onChange={(e) => setParticipant2phone(e.target.value)} />
+                          <input type="text" id="participant2phone" className="text-black p-2 rounded-md" value={participant2phone} onChange={(e) => setParticipant2phone(e.target.value)} />
                         </div>
                       </>
                     )}
@@ -221,15 +363,15 @@ function Event() {
                       <>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant3name" className="text-white">Participant 3 Name</label>
-                          <input type="text" id="participant3name" className="p-2 rounded-md" value={participant3name} onChange={(e) => setParticipant3name(e.target.value)} />
+                          <input type="text" id="participant3name" className="text-black p-2 rounded-md" value={participant3name} onChange={(e) => setParticipant3name(e.target.value)} />
                         </div>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant3email" className="text-white">Participant 3 Email</label>
-                          <input type="email" id="participant3email" className="p-2 rounded-md" value={participant3email} onChange={(e) => setParticipant3email(e.target.value)} />
+                          <input type="email" id="participant3email" className="text-black p-2 rounded-md" value={participant3email} onChange={(e) => setParticipant3email(e.target.value)} />
                         </div>
                         <div className="flex flex-col space-y-4">
                           <label htmlFor="participant3phone" className="text-white">Participant 3 Phone</label>
-                          <input type="text" id="participant3phone" className="p-2 rounded-md" value={participant3phone} onChange={(e) => setParticipant3phone(e.target.value)} />
+                          <input type="text" id="participant3phone" className="text-black p-2 rounded-md" value={participant3phone} onChange={(e) => setParticipant3phone(e.target.value)} />
                         </div>
                       </>
                     )}
@@ -244,6 +386,15 @@ function Event() {
                   </>
                 )
               }
+              <button className="bg-dark-500 ml-4 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
+                onClick={() => {
+                  setRegistering(!registering);
+                }
+                }
+
+              >
+                {registering ? "Cancel" : "Register"}
+              </button>
 
 
 
