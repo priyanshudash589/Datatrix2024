@@ -28,14 +28,28 @@ function App() {
     return () => subscription.unsubscribe();
   }, []);
 
+
+  const LoginPage = () => {
+    return (
+      <>
+        <div className="flex justify-center items-center h-screen w-1/2 mx-auto">
+          <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+        </div>
+      </>
+    );
+  }
+
   if (!session) {
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/events" element={<TechEvents />} />
-        <Route path="/event/* " element={<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />} />
-      </Routes>
-    </Router>
+    return (
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/events" element={<TechEvents />} />
+          <Route path="/event/*" element={<LoginPage />} />
+        </Routes>
+      </Router>
+    );
+
   } else {
     return (
       <Router>
