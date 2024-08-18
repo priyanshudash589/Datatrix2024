@@ -15,7 +15,9 @@ function App() {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
-    });
+    })
+      .catch(console.error);
+
 
     const {
       data: { subscription },
@@ -36,7 +38,6 @@ function App() {
           <Route path="/events" element={<TechEvents />} />
           <Route path="/event/datathon-hackathon" element={<Datathon />} />
           <Route path="/event/:id" element={<Event />} />
-         
         </Routes>
       </Router>
     );
