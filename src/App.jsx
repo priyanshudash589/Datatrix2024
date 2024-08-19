@@ -6,6 +6,7 @@ import supabase from "./supabase";
 import Home from "./components/Home";
 import Event from "./Details/Event";
 import TechEvents from "./components/TechEvents";
+import { Admin } from "./components/admin";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -97,6 +98,7 @@ function App() {
           <Route path="/events" element={<TechEvents />} />
           {/* <Route path="/events/datathon-hackathon" element={<Datathon />} /> */}
           <Route path="/events/:id" element={<Event />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
     );
