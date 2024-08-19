@@ -24,7 +24,19 @@ export function Admin() {
             console.log(data);
             setRowData(data);
             setColumnDefs(Object.keys(data[0]).map((key) => {
-                return { headerName: key, field: key };
+                return {
+                    headerName: key,
+                    field: key,
+                    sortable: true,
+                    filter: true,
+                    floatingFilter: true,
+                    flex: 1,
+                    minWidth: 150,
+                    resizable: true,
+                    editable: true,
+                    pivot: true,
+                };
+
             }));
         }
     }
@@ -34,11 +46,19 @@ export function Admin() {
     }, []);
 
     return (
-        <div className="ag-theme-quartz" style={{ height: 400, width: 600 }}>
-            <AgGridReact
-                rowData={rowData}
-                columnDefs={columnDefs}
-            />
+        <div
+            className="flex flex-col items-center justify-center"
+            style={{ height: "100vh" }}
+        >
+            <div className="ag-theme-quartz m-5" style={{ height: '80%', width: '80%' }}>
+                <AgGridReact
+                    rowData={rowData}
+                    columnDefs={columnDefs}
+                    pagination={true}
+                    paginationPageSize={10}
+                    domLayout='autoHeight'
+                />
+            </div>
         </div>
     );
 }
