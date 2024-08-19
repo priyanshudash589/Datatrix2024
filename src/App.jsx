@@ -85,7 +85,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<TechEvents />} />
-          <Route path="/events/*" element={<LoginPage />} />
+          <Route path="/*" element={<LoginPage />} />
         </Routes>
       </Router>
     );
@@ -99,6 +99,14 @@ function App() {
           {/* <Route path="/events/datathon-hackathon" element={<Datathon />} /> */}
           <Route path="/events/:id" element={<Event />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/*" element={
+            <>
+              <div className="flex justify-center items-center  w-full h-screen mx-auto bg-black text-white text-7xl">
+                404 <span className="text-2xl"> - Page Not Found</span>
+              </div>
+
+            </>
+          } />
         </Routes>
       </Router>
     );

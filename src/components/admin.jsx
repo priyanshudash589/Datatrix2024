@@ -41,6 +41,11 @@ export function Admin() {
         }
     }
 
+    const onGridReady = (params) => {
+        params.api.sizeColumnsToFit();
+    };
+
+
     React.useEffect(() => {
         fetchdata();
     }, []);
@@ -56,7 +61,7 @@ export function Admin() {
                     columnDefs={columnDefs}
                     pagination={true}
                     paginationPageSize={10}
-                    domLayout='autoHeight'
+                    onGridReady={onGridReady}
                 />
             </div>
         </div>
