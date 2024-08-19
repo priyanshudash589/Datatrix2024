@@ -108,7 +108,7 @@ const TechEvents = () => {
                   <Typography>{event.event_description}</Typography>
                 </CardBody>
                 <CardFooter className="pt-0 flex justify-between">
-                  <Link to={`/event/${event.id}`}>
+                  <Link to={`/events/${event.id}`}>
                     <Button className="w-[10rem]">Register Here</Button>
                   </Link>
                   <div className="border-[3px] border-green-500 text-center rounded-lg px-3 flex items-center justify-center">

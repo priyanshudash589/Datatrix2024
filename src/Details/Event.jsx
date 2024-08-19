@@ -13,8 +13,8 @@ function Event() {
   const [email, setEmail] = useState(null);
 
   const [registering, setRegistering] = useState(false);
-  const [ParticipantCount, setParticipantCount] = useState(0);
-  const [availableSlots, setAvailableSlots] = useState(0);
+  // const [ParticipantCount, setParticipantCount] = useState(0);
+  // const [availableSlots, setAvailableSlots] = useState(0);
 
   const [teamname, setTeamname] = useState("");
 
@@ -84,8 +84,8 @@ function Event() {
     }
   };
 
-  const [check, setCheck] = useState(false);
-  const [checkdata, setCheckData] = useState(null);
+  // const [check, setCheck] = useState(false);
+  // const [checkdata, setCheckData] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {

@@ -4,7 +4,6 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import supabase from "./supabase";
 import Home from "./components/Home";
-import Datathon from "./Details/Datathon";
 import Event from "./Details/Event";
 import TechEvents from "./components/TechEvents";
 
@@ -96,7 +95,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<TechEvents />} />
-          <Route path="/events/datathon-hackathon" element={<Datathon />} />
+          {/* <Route path="/events/datathon-hackathon" element={<Datathon />} /> */}
           <Route path="/events/:id" element={<Event />} />
         </Routes>
       </Router>
