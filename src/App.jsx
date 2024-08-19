@@ -60,7 +60,7 @@ function App() {
   const LoginPage = () => {
     return (
       <>
-        <div className="flex justify-center items-center  w-full h-screen w-1/2 mx-auto bg-black ">
+        <div className="flex justify-center items-center  w-full h-screen mx-auto bg-black ">
           <div className="w-full max-w-md p-4 rounded-lg  sm:p-8 text-gray-100 bg-gray-800 shadow-green-900	shadow-lg hover:shadow-xl hover:scale-105 transform transition duration-500">
             <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
             <div className="my-6 space-y-4">
@@ -85,7 +85,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<TechEvents />} />
-          <Route path="/event/*" element={<LoginPage />} />
+          <Route path="/events/*" element={<LoginPage />} />
         </Routes>
       </Router>
     );
@@ -96,8 +96,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<TechEvents />} />
-          <Route path="/event/datathon-hackathon" element={<Datathon />} />
-          <Route path="/event/:id" element={<Event />} />
+          <Route path="/events/datathon-hackathon" element={<Datathon />} />
+          <Route path="/events/:id" element={<Event />} />
         </Routes>
       </Router>
     );

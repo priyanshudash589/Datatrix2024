@@ -1,30 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import img from "../assets/EventImages/2.png";
 import LoaderSlot from "../assets/loaderslot.gif";
 import supabase from "../supabase";
 function Event() {
-  // const event = {
-  //   title: "UI/UX Workshop",
-  //   about:
-  //     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, quae! Atque, praesentium necessitatibus voluptatem nesciunt dolorum consequatur deserunt? Quisquam voluptates ratione quibusdam itaque nisi, nihil repellendus delectus aperiam autem quidem?",
-  //   facultycoordinator: {
-  //     faculty1: "Dr. A. MANJU, AP/CSE - 8903976381",
-  //     faculty2: " Ms. SRINARAYANI K, AP/CSE - 9791138865",
-  //   },
-  //   studentcoordinator: {
-  //     student1: "JASMINE FATHIMA K - 8270821999",
-  //     student2: "VIBHUVAN B - 9003200177",
-  //   },
-  //   date: "",
-  //   venue: "",
-  //   price: 300,
-  // };
-
-  // const [availableSlots, setAvailableSlots] = useState(50);
-  // const [registrationStatus, setRegistrationStatus] = useState("");
-  // const [error, setError] = useState(null);
-  //get id from url
+ 
   const id = window.location.pathname.split("/")[2];
 
   //fetch event details
