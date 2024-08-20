@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Event from "./Details/Event";
 import TechEvents from "./components/TechEvents";
 import { Admin } from "./components/admin";
+import Gallery from "./components/Gallery";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -84,6 +85,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/events" element={<TechEvents />} />
           <Route path="/*" element={<LoginPage />} />
         </Routes>
@@ -95,6 +97,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/events" element={<TechEvents />} />
           {/* <Route path="/events/datathon-hackathon" element={<Datathon />} /> */}
           <Route path="/events/:id" element={<Event />} />
