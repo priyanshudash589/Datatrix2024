@@ -47,7 +47,7 @@ function Event() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          "env": "test",
+          "env": "prod",
           "event": event.event_name,
           "amount": event.price,
           "email": email,
@@ -56,8 +56,11 @@ function Event() {
         })
       });
       const response = await data.json();
+
       setAccessKey(response.data);
       console.log(response.data);
+      return response.data;
+
     }
     catch (error) {
       console.error(error);
@@ -65,15 +68,15 @@ function Event() {
 
   };
 
-  const initiatePayment = () => {
 
 
-    const key = "2PBP7IABZ2";
-    const easebuzzCheckout = new EasebuzzCheckout(key, 'test'); // or 'test' for test environment
+  const handlePayment = async () => {
+    const key = "DTDZKG0DFU ";
+    const easebuzzCheckout = new EasebuzzCheckout(key, 'prod'); // or 'test' for test environment
 
 
     const options = {
-      access_key: accessKey,
+      access_key: await getAccessKey(),
       onResponse: (response) => {
         console.log(response);
         if (response.status === "success") {
@@ -86,15 +89,7 @@ function Event() {
       theme: "#123456" // color hex
     };
 
-    getAccessKey().then(() => {
-      easebuzzCheckout.initiatePayment(options);
-    }
-    );
-  };
-
-
-  const handlePaymentClick = () => {
-    initiatePayment();
+    easebuzzCheckout.initiatePayment(options);
   }
 
 
@@ -112,7 +107,6 @@ function Event() {
       }
       return count;
     };
-    initiatePayment();
 
 
     try {
@@ -138,6 +132,7 @@ function Event() {
       if (error) {
         throw error;
       }
+      handlePayment();
       alert("Registered Successfully");
       setRegistering(false);
       try {
@@ -432,7 +427,7 @@ function Event() {
                   <button
                     className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
                     id="ebz-checkout-btn" ref={buttonRef}
-                    onClick={handlePaymentClick}
+                    onClick={register}
                   >
                     Register
                   </button>
