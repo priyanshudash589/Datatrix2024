@@ -9,7 +9,11 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { Footer } from "./Footer";
 const TechEvents = () => {
+  //start   
+  
+  //end
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -51,7 +55,9 @@ const TechEvents = () => {
 
   return (
     <>
+      
       <div className="bg-black p-6 text-center scroll-smooth">
+     
         <h1 className="font-orbitron text-white text-2xl sm:text-3xl lg:text-4xl p-[2rem] pt-[2rem]">
           Our Events
         </h1>
@@ -126,6 +132,7 @@ const TechEvents = () => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
