@@ -6,6 +6,7 @@ import supabase from "./supabase";
 import Home from "./components/Home";
 import Event from "./Details/Event";
 import TechEvents from "./components/TechEvents";
+import { Admin } from "./components/admin";
 import Gallery from "./components/Gallery";
 
 function App() {
@@ -86,7 +87,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/events" element={<TechEvents />} />
-          <Route path="/events/*" element={<LoginPage />} />
+          <Route path="/*" element={<LoginPage />} />
         </Routes>
       </Router>
     );
@@ -100,6 +101,15 @@ function App() {
           <Route path="/events" element={<TechEvents />} />
           {/* <Route path="/events/datathon-hackathon" element={<Datathon />} /> */}
           <Route path="/events/:id" element={<Event />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/*" element={
+            <>
+              <div className="flex justify-center items-center  w-full h-screen mx-auto bg-black text-white text-7xl">
+                404 <span className="text-2xl"> - Page Not Found</span>
+              </div>
+
+            </>
+          } />
         </Routes>
       </Router>
     );
