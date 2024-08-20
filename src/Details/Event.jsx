@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import LoaderSlot from "../assets/loaderslot.gif";
 import supabase from "../supabase";
 function Event() {
- 
   const id = window.location.pathname.split("/")[2];
 
   //fetch event details
@@ -73,6 +72,13 @@ function Event() {
       }
       alert("Registered Successfully");
       setRegistering(false);
+      try {
+        await supabase
+          .from("event_details")
+          .update({ occupied_slots: event.occupied_slots + countparti() })
+      } catch (error) {
+        alert(error.message);
+      }
     } catch (error) {
       if (
         error.message.includes("duplicate key value violates unique constraint")
@@ -82,10 +88,8 @@ function Event() {
         alert(error.message);
       }
     }
+    return countparti();
   };
-
-  // const [check, setCheck] = useState(false);
-  // const [checkdata, setCheckData] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -97,8 +101,6 @@ function Event() {
         });
       } catch (error) {
         setError(error.message);
-      } finally {
-        setAuthLoaded(true);
       }
     };
     fetchUser();
@@ -130,7 +132,7 @@ function Event() {
   }
 
   return (
-    <div  className="bg-patt-grid min-h-screen bg-fixed w-full text-white">
+    <div className="bg-patt-grid min-h-screen bg-fixed w-full text-white">
       <div className="container mx-auto p-4 pt-8">
         <h1 className="text-6xl font-bold mb-4 text-center font-orbitron p-6">
           {event?.event_name}
@@ -186,7 +188,11 @@ function Event() {
                   Logged in as {user ? email : "Guest"}
                 </p>
               </div>
-
+              <div>
+                <p>
+                  Available slots: {event.occupied_slots} / {event.total_slots}
+                </p>
+              </div>
               {registering && (
                 <>
                   {event?.max_count >= 1 && (

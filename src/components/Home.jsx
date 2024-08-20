@@ -1,13 +1,13 @@
 // Home.jsx
 import React, { useRef } from 'react';
-// import Speakers from "./Speakers";
+import About from "./About";
 import { Footer } from "./Footer";
 import { PreviousEvents } from './PreviousEvents';
 import MainBg from "./MainBg";
 import { Sponsors } from './Sponsors';
 
 function Home() {
-  // const speakersRef = useRef(null);
+  const aboutRef = useRef(null);
   const sponsorsRef = useRef(null);
   const previousEventsRef = useRef(null);
 
@@ -18,13 +18,13 @@ function Home() {
   return (
     <>
       <MainBg 
-        // scrollToSpeakers={() => scrollToSection(speakersRef)}
+        scrollToAbout={() => scrollToSection(aboutRef)}
         scrollToSponsors={() => scrollToSection(sponsorsRef)}
         scrollToPreviousEvents={() => scrollToSection(previousEventsRef)}
       />
-      {/* <div ref={speakersRef}>
-        <Speakers />
-      </div> */}
+      <div ref={aboutRef}>
+        <About />
+      </div>
       <div ref={sponsorsRef}>
         <Sponsors />
       </div>      
