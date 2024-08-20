@@ -132,7 +132,7 @@ function Event() {
           college_name: collegeName,
           count_pati: countparti(),
           team_name: teamname,
-          status: "pending",
+          status: "Initiated",
         },
       ]);
       if (error) {
