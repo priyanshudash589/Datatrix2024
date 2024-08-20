@@ -10,11 +10,10 @@ import imglogo from "../assets/main-logo-datatrix2.png";
 import img from "../assets/datatrix.png";
 import img2 from "../assets/datatrix-text.svg";
 import { Link } from "react-router-dom";
-import calendaroutline from '../assets/calendar-outline.svg'
-
-
+import calendaroutline from "../assets/calendar-outline.svg";
 
 export default function MainBg({
+  scrollToAbout,
   scrollToSponsors,
   scrollToPreviousEvents,
 }) {
@@ -45,7 +44,26 @@ export default function MainBg({
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <button onClick={scrollToSponsors} className="flex items-center text-white">Sponsors</button>
+        <button
+          
+          onClick={scrollToAbout}
+          className="flex items-center text-white"
+        >
+          About Us
+        </button>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <button
+          onClick={scrollToSponsors}
+          className="flex items-center text-white"
+        >
+          Sponsors
+        </button>
       </Typography>
       <Typography
         as="li"
@@ -91,10 +109,14 @@ export default function MainBg({
             <Navbar className="mx-auto max-w-full bg-black backdrop-blur-sm rounded-xl px-4 py-2 lg:px-8 lg:py-4">
               <div className="flex items-center justify-between flex-row text-blue-gray-900">
                 <div className="flex items-center gap-2">
-                  <img src={imglogo} alt="" className="h-[3rem] overflow-hidden" />
+                  <img
+                    src={imglogo}
+                    alt=""
+                    className="h-[3rem] overflow-hidden"
+                  />
                   <img src={img2} alt="" className="h-[25px] overflow-hidden" />
-                  </div>
-                
+                </div>
+
                 <div className="flex items-center gap-4">
                   <div className="mr-4 hidden lg:block">{navList}</div>
                   <div className="flex items-center gap-x-1">
@@ -157,22 +179,25 @@ export default function MainBg({
           </div>
 
           <div className="bg-transparent flex w-screen h-screen flex-col sm:flex-col justify-center items-center">
-
-            <img src={img} alt="" className="h-[4rem] md:lg-[7rem] lg:h-[10rem]" />
+            <img
+              src={img}
+              alt=""
+              className="h-[4rem] md:lg-[7rem] lg:h-[10rem]"
+            />
 
             <div className="h-auto w-auto flex items-center gap-6 border-white border-[0.8px] p-3 rounded">
               <img src={calendaroutline} alt="" className="h-[2rem] invert" />
-              <p className="text-white font-orbitron flex gap-1 tracking-wider">13.09.24 <span></span>{"  "} <span></span>&{"  "} <span></span> 14.09.24</p>
+              <p className="text-white font-orbitron flex gap-1 tracking-wider">
+                13.09.24 <span></span>
+                {"  "} <span></span>&{"  "} <span></span> 14.09.24
+              </p>
             </div>
-    
           </div>
         </div>
       </div>
     </>
   );
 }
-
-
 
 // ({
 //   scrollToSponsors,

@@ -3,7 +3,9 @@ import React from "react";
 const Gallery = () => {
   return (
     <>
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="text-3xl bg-black text-white p-[3rem] font-orbitron"> Gallery</div>
+      <div class="grid grid-cols-2 gap-4 bg-black md:grid-cols-4 cont">
+        
         <div class="grid gap-4">
 
 
