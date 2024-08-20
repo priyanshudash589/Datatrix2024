@@ -35,9 +35,10 @@ function Event() {
 
   const [accessKey, setAccessKey] = useState("");
 
+  const [paymentResponse, setPaymentResponse] = useState(null);
 
 
-
+  const buttonRef = React.useRef(null);
   const getAccessKey = async () => {
     try {
       // post fetch
@@ -48,8 +49,11 @@ function Event() {
         },
         body: JSON.stringify({
           "env": "test",
-          "key": "2PBP7IABZ2",
+          "event": event.event_name,
           "amount": event.price,
+          "email": email,
+          "phone": participant1phone,
+          "name": participant1name,
         })
       });
       const response = await data.json();
@@ -73,6 +77,12 @@ function Event() {
       access_key: accessKey,
       onResponse: (response) => {
         console.log(response);
+        if (response.status === "success") {
+          window.location.href = "/success";
+        }
+        else {
+          window.location.href = "/failure";
+        }
       },
       theme: "#123456" // color hex
     };
@@ -83,7 +93,6 @@ function Event() {
     );
   };
 
-  const buttonRef = React.useRef(null);
 
   const handlePaymentClick = () => {
     initiatePayment();

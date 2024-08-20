@@ -17,9 +17,6 @@ export function Admin() {
 
     const [rowData, setRowData] = React.useState([]); // State to store the data fetched from the database
     const [columnDefs, setColumnDefs] = React.useState([]); // State to store the column definitions for the Data Grid
-
-
-
     const fetchdata = async () => {
         const { data, error } = await supabase
             .from("registration")
@@ -42,7 +39,6 @@ export function Admin() {
                     editable: true,
                     pivot: true,
                 };
-
             }));
         }
     }
