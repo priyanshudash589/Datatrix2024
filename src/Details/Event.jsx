@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import LoaderSlot from "../assets/loaderslot.gif";
 import supabase from "../supabase";
 function Event() {
- 
+
   const id = window.location.pathname.split("/")[2];
 
   //fetch event details
@@ -33,6 +33,63 @@ function Event() {
   const [participant2phone, setParticipant2phone] = useState("");
   const [participant3phone, setParticipant3phone] = useState("");
 
+  const [accessKey, setAccessKey] = useState("");
+
+
+
+
+  const getAccessKey = async () => {
+    try {
+      // post fetch
+      const data = await fetch("https://shy-moon-9f81.syn4ck.workers.dev/", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "env": "test",
+          "key": "2PBP7IABZ2",
+          "amount": event.price,
+        })
+      });
+      const response = await data.json();
+      setAccessKey(response.data);
+      console.log(response.data);
+    }
+    catch (error) {
+      console.error(error);
+    }
+
+  };
+
+  const initiatePayment = () => {
+
+
+    const key = "2PBP7IABZ2";
+    const easebuzzCheckout = new EasebuzzCheckout(key, 'test'); // or 'test' for test environment
+
+
+    const options = {
+      access_key: accessKey,
+      onResponse: (response) => {
+        console.log(response);
+      },
+      theme: "#123456" // color hex
+    };
+
+    getAccessKey().then(() => {
+      easebuzzCheckout.initiatePayment(options);
+    }
+    );
+  };
+
+  const buttonRef = React.useRef(null);
+
+  const handlePaymentClick = () => {
+    initiatePayment();
+  }
+
+
   const register = async () => {
     const countparti = () => {
       let count = 0;
@@ -47,6 +104,8 @@ function Event() {
       }
       return count;
     };
+    initiatePayment();
+
 
     try {
       const { data, error } = await supabase.from("registration").insert([
@@ -88,6 +147,14 @@ function Event() {
   // const [checkdata, setCheckData] = useState(null);
 
   useEffect(() => {
+
+
+    // The script is loaded, now we can use EasebuzzCheckout
+
+
+    // Cleanup function
+
+
     const fetchUser = async () => {
       try {
         const user2 = supabase.auth.getUser().then((user) => {
@@ -101,6 +168,7 @@ function Event() {
         setAuthLoaded(true);
       }
     };
+
     fetchUser();
     const fetchEvent = async () => {
       try {
@@ -130,7 +198,7 @@ function Event() {
   }
 
   return (
-    <div  className="bg-patt-grid min-h-screen bg-fixed w-full text-white">
+    <div className="bg-patt-grid min-h-screen bg-fixed w-full text-white">
       <div className="container mx-auto p-4 pt-8">
         <h1 className="text-6xl font-bold mb-4 text-center font-orbitron p-6">
           {event?.event_name}
@@ -348,9 +416,8 @@ function Event() {
 
                   <button
                     className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
-                    onClick={() => {
-                      register();
-                    }}
+                    id="ebz-checkout-btn" ref={buttonRef}
+                    onClick={handlePaymentClick}
                   >
                     Register
                   </button>

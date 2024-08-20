@@ -5,6 +5,12 @@ import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional: theme for the Data Grid 
 
+import {
+    useRef,
+    useEffect,
+    useState
+} from "react";
+
 
 
 export function Admin() {
@@ -45,6 +51,8 @@ export function Admin() {
         params.api.sizeColumnsToFit();
     };
 
+    const Gridref = useRef(null);
+
 
     React.useEffect(() => {
         fetchdata();
@@ -52,9 +60,24 @@ export function Admin() {
 
     return (
         <div
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center center bg-gray-800"
             style={{ height: "100vh" }}
         >
+            <h1 className="text-3xl font-bold mt-5 text-white">Admin Panel</h1>
+            <div>
+                <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white m-2 font-bold py-2 px-4 rounded mt-5"
+                    onClick={fetchdata}
+                >
+                    Refresh Data
+                </button>
+                <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white m-2 font-bold py-2 px-4 rounded mt-5"
+                    onClick={() => Gridref.current.api.exportDataAsCsv()}
+                >
+                    Export Data
+                </button>
+            </div>
             <div className="ag-theme-quartz m-5" style={{ height: '80%', width: '80%' }}>
                 <AgGridReact
                     rowData={rowData}
@@ -62,6 +85,7 @@ export function Admin() {
                     pagination={true}
                     paginationPageSize={10}
                     onGridReady={onGridReady}
+                    ref={Gridref}
                 />
             </div>
         </div>
