@@ -6,6 +6,7 @@ import { PreviousEvents } from './PreviousEvents';
 import MainBg from "./MainBg";
 import { Sponsors } from './Sponsors';
 
+
 function Home() {
   const aboutRef = useRef(null);
   const sponsorsRef = useRef(null);
