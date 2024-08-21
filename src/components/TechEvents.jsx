@@ -186,13 +186,11 @@ const TechEvents = () => {
                     <Typography>{event.event_description}</Typography>
                   </CardBody>
                   <CardFooter className="pt-0 flex justify-between">
-                    {/* <a
+                    <a
                       href="https://datathon2024.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       <Button fullWidth={true}>Register Here</Button>
-                    </a> */}
+                    </a>
 
                     <div className="border-[3px] border-green-500 text-center rounded-lg px-3 flex items-center justify-center">
                       {event.price === 0 ? (
