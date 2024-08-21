@@ -53,6 +53,7 @@ function Event() {
           "email": email,
           "phone": participant1phone,
           "name": participant1name,
+          "ticket_id": id + "-" + email
         })
       });
       const response = await data.json();
@@ -60,7 +61,6 @@ function Event() {
       setAccessKey(response.data);
       console.log(response.data);
       return response.data;
-
     }
     catch (error) {
       console.error(error);
@@ -79,22 +79,41 @@ function Event() {
       access_key: await getAccessKey(),
       onResponse: (response) => {
         console.log(response);
-        const { data, error } = supabase.from("payment").update([
-          {
-            status: response.status,
-            note: response.note,
-            payment_id: response.payment_id,
-            txnid: response.txnid,
-            amount: response.amount,
-            addedon: response.addedon,
-            productinfo: response.productinfo,
-          }
-        ]).eq("ticket_id", id + "-" + email);
+
+
 
         if (response.status === "success") {
+          const { data, error } = supabase.from("registrationpaid").insert([
+            {
+              ticket_id: id + "-" + email,
+              status: response.status,
+              note: response.note,
+            }
+          ])
+          if (error) {
+            if (error.message.includes("duplicate key value violates unique constraint")) {
+              alert("Payment Already Exists");
+            } else {
+              alert(error.message);
+            }
+          }
           window.location.href = "/success";
         }
         else {
+          const { data, error } = supabase.from("registrationpaid").insert([
+            {
+              ticket_id: id + "-" + email,
+              status: response.status,
+              note: response.note,
+            }
+          ])
+          if (error) {
+            if (error.message.includes("duplicate key value violates unique constraint")) {
+              alert("Payment Already Exists");
+            } else {
+              alert(error.message);
+            }
+          }
           window.location.href = "/failure";
         }
       },
@@ -144,7 +163,7 @@ function Event() {
       if (error) {
         throw error;
       }
-      // handlePayment();
+      handlePayment();
       alert("Registered Successfully");
       setRegistering(false);
       try {
