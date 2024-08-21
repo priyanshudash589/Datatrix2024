@@ -206,44 +206,7 @@ const TechEvents = () => {
                   </CardFooter>
                 </Card>
               );
-            } else if (
-              event.event_name === "Idea Explorer" ||
-              event.event_name === "UI/UX Workshop"
-            ) {
-              return (
-                <Card className="mt-6 w-96" key={event.id}>
-                  <CardHeader color="blue-gray" className="relative h-56">
-                    <img
-                      src={event.image_url}
-                      alt={event.event_name}
-                      className="w-full h-full object-cover"
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Typography variant="h5" color="blue-gray" className="mb-2">
-                      {event.event_name}
-                    </Typography>
-                    <Typography>{event.event_description}</Typography>
-                  </CardBody>
-                  <CardFooter className="pt-0 flex justify-between">
-                    {/* <Link to={`/events/${event.id}`}> */}
-                      <Button className="w-[10rem]">
-                        Register Here
-                      </Button>
-                    {/* </Link> */}
-                    <div className="border-[3px] border-green-500 text-center rounded-lg px-3 flex items-center justify-center">
-                      {event.price === 0 ? (
-                        <span className="text-green-500">Free</span>
-                      ) : (
-                        <span className="text-green-500">
-                          ₹{event.price}
-                        </span>
-                      )}
-                    </div>
-                  </CardFooter>
-                </Card>
-              );
-            } else {
+            }  else {
               return (
                 <Card className="mt-6 w-96" key={event.id}>
                   <CardHeader color="blue-gray" className="relative h-56">
