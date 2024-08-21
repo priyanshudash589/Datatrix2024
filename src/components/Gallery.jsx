@@ -14,6 +14,7 @@ import imglogo from "../assets/main-logo-datatrix2.png";
 import img2 from "../assets/datatrix-text.svg";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
+import { img3} from "../assets/gallery_images/ng3_p.png"
 
 const Gallery = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -149,7 +150,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               class="h-auto max-w-full rounded-lg object-cover object-center "
-              src="src/assets/gallery_images/ng3_p.png"
+              src={img3}
               alt="gallery-photo"
             />
           </div>
