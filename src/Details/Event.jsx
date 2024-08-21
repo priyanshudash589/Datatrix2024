@@ -98,7 +98,6 @@ function Event() {
             }
           }
           window.location.href = "/success";
-          alert("Registered Successfully");
         }
         else {
           const { data, error } = supabase.from("registrationpaid").insert([
@@ -164,6 +163,7 @@ function Event() {
         throw error;
       }
       handlePayment();
+      alert("Registered Successfully");
       setRegistering(false);
       try {
         await supabase
