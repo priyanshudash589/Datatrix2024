@@ -38,6 +38,8 @@ function Event() {
 
 
   const buttonRef = React.useRef(null);
+
+
   const getAccessKey = async () => {
     try {
       // post fetch
@@ -167,8 +169,16 @@ function Event() {
       setRegistering(false);
       try {
         await supabase
-          .from("event_details")
-          .update({ occupied_slots: event.occupied_slots + countparti() })
+        .from("event_details")
+        .update({ occupied_slots: event.occupied_slots + countparti() })
+        .match({ id: event.id });
+        if (error) {
+          throw setError;
+        }
+        setEvent({
+          ...event,
+          occupied_slots: eventData[0].occupied_slots,
+        });
       } catch (error) {
         alert(error.message);
       }
@@ -182,17 +192,9 @@ function Event() {
       }
     }
     return countparti();
-    console.log(countparti())
   };
 
   useEffect(() => {
-
-
-    // The script is loaded, now we can use EasebuzzCheckout
-
-
-    // Cleanup function
-
 
     const fetchUser = async () => {
       try {
@@ -270,16 +272,8 @@ function Event() {
             </ul>
             <div className="bg-dark rounded-md h-auto shadow-md p-4 mt-4">
               <h3 className="text-xl font-bold text-white-800 mb-2 font-orbitron">
-                ₹{event?.price}
+                ₹{event?.price} /- 
               </h3>
-
-              {/* <div className="flex flex-col space-y-4">
-                  logged in as {user ? email : "Guest"}
-                </div>
-                <div className="flex flex-col space-y-4">
-                  <img src={user ? user.data.user.user_metadata.avatar_url : ""} alt="avatar" className="rounded-full h-12 w-12" />
-                </div> */}
-              {/* card with avatar */}
 
               <div className="flex flex-col space-y-4">
                 <img
