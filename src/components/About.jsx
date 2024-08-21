@@ -7,6 +7,11 @@ import fg from "../assets/aboutus_imgs/srm.png"
 import sg from "../assets/aboutus_imgs/bms.png"
 import gg from "../assets/aboutus_imgs/dean.png"
 
+import bda from "../assets/aboutus_imgs/bda.png"
+import ideaexplore from "../assets/aboutus_imgs/ideaexplore.png"
+import deptHod from "../assets/aboutus_imgs/deptHod.png"
+import { isElement } from "react-dom/test-utils";
+
 
 const About = () => {
   return (
@@ -147,14 +152,14 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="py-3 sm:py-4">
                         <img
-                          src="../assets/aboutus_imgs/bda.png"
+                          src={bda}
                           alt=""
                           className="w-full rounded-2xl"
                         />
                       </div>
                       <div className="py-3 sm:py-4">
                         <img
-                          src="../assets/aboutus_imgs/ideaexplore.png"
+                          src={ideaexplore}
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -163,7 +168,7 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="relative z-10 my-4">
                         <img
-                          src="../assets/aboutus_imgs/deptHod.png"
+                          src={deptHod}
                           alt=""
                           className="w-full rounded-2xl"
                         />
