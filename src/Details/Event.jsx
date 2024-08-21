@@ -132,7 +132,7 @@ function Event() {
       if (error) {
         throw error;
       }
-      handlePayment();
+      // handlePayment();
       alert("Registered Successfully");
       setRegistering(false);
       try {
