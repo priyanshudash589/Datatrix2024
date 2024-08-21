@@ -79,6 +79,18 @@ function Event() {
       access_key: await getAccessKey(),
       onResponse: (response) => {
         console.log(response);
+        const { data, error } = supabase.from("payment").update([
+          {
+            status: response.status,
+            note: response.note,
+            payment_id: response.payment_id,
+            txnid: response.txnid,
+            amount: response.amount,
+            addedon: response.addedon,
+            productinfo: response.productinfo,
+          }
+        ]).eq("ticket_id", id + "-" + email);
+
         if (response.status === "success") {
           window.location.href = "/success";
         }
