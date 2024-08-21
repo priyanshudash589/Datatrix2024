@@ -53,7 +53,7 @@ function Event() {
           "email": email,
           "phone": participant1phone,
           "name": participant1name,
-          "ticket_id": id + "-" + email
+          "ticket_id": id + "-" + email     
         })
       });
       const response = await data.json();
