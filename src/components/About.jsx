@@ -49,19 +49,21 @@ const About = () => {
                       DATATRIX 2024
                     </h2>
                     <p className=" text-white mb-8 text-justify text-xl ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Voluptates magni voluptatem tenetur tempore aspernatur
-                      eius vel modi ea. Voluptates, odio, at et numquam deserunt
-                      inventore fugit aut dolorum aliquam ab deleniti.
-                      Consequuntur expedita quis aut voluptas deserunt molestiae
-                      explicabo natus culpa officiis inventore. Libero incidunt
-                      reiciendis repellendus maiores quo perferendis molestias,
-                      vel pariatur, omnis placeat quae nam neque at odio ea
-                      saepe culpa, atque error doloribus earum eos ratione natus
-                      facere. Perspiciatis laboriosam reiciendis possimus quasi
-                      harum adipisci vero iure tempore asperiores dolor, ratione
-                      dolorum in iste ipsa incidunt deleniti nobis. Expedita aut
-                      sapiente ratione cumque.
+                      The Datatrix '24 symposium, presented by the Department of
+                      Computer Science and Engineering with a specialization in
+                      Big Data Analytics at SRM Institute of Science and
+                      Technology, Ramapuram, is set to be a landmark event for
+                      tech enthusiasts and aspiring data scientists. Scheduled
+                      for the 13th and 14th of September 2024, from 8:00 AM to
+                      4:00 PM, this two-day event promises a dynamic blend of
+                      competitions, workshops, and interactive sessions designed
+                      to ignite innovation and deepen participants'
+                      understanding of the rapidly evolving field of data
+                      science. This symposium is an exceptional opportunity for
+                      students, professionals, and technology enthusiasts to
+                      engage with the latest trends, network with like-minded
+                      individuals, and showcase their talents in the
+                      ever-expanding world of big data analytics.
                     </p>
                   </div>
                 </div>
@@ -108,19 +110,21 @@ const About = () => {
                       SRMIST
                     </h2>
                     <p className=" text-white mb-8 text-justify text-xl ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Voluptates magni voluptatem tenetur tempore aspernatur
-                      eius vel modi ea. Voluptates, odio, at et numquam deserunt
-                      inventore fugit aut dolorum aliquam ab deleniti.
-                      Consequuntur expedita quis aut voluptas deserunt molestiae
-                      explicabo natus culpa officiis inventore. Libero incidunt
-                      reiciendis repellendus maiores quo perferendis molestias,
-                      vel pariatur, omnis placeat quae nam neque at odio ea
-                      saepe culpa, atque error doloribus earum eos ratione natus
-                      facere. Perspiciatis laboriosam reiciendis possimus quasi
-                      harum adipisci vero iure tempore asperiores dolor, ratione
-                      dolorum in iste ipsa incidunt deleniti nobis. Expedita aut
-                      sapiente ratione cumque.
+                      SRM Institute of Science and Technology, Ramapuram campus,
+                      is a premier educational institution located in Chennai,
+                      Tamil Nadu. Known for its robust academic programs, the
+                      campus offers a diverse range of undergraduate,
+                      postgraduate, and doctoral courses in engineering,
+                      management, science, and humanities. The Ramapuram campus
+                      is equipped with state-of-the-art infrastructure, modern
+                      laboratories, and a well-stocked library, providing
+                      students with an enriching learning environment. The
+                      institution emphasizes a blend of academic excellence and
+                      holistic development, with a strong focus on research,
+                      innovation, and extracurricular activities. With its
+                      commitment to nurturing future leaders and professionals,
+                      SRM Ramapuram stands as a beacon of quality
+                      education in India.
                     </p>
                   </div>
                 </div>
@@ -167,19 +171,26 @@ const About = () => {
                       DEPARTMENT OF BIG DATA ANALYTICS
                     </h2>
                     <p className=" text-white mb-8 text-justify text-xl ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Voluptates magni voluptatem tenetur tempore aspernatur
-                      eius vel modi ea. Voluptates, odio, at et numquam deserunt
-                      inventore fugit aut dolorum aliquam ab deleniti.
-                      Consequuntur expedita quis aut voluptas deserunt molestiae
-                      explicabo natus culpa officiis inventore. Libero incidunt
-                      reiciendis repellendus maiores quo perferendis molestias,
-                      vel pariatur, omnis placeat quae nam neque at odio ea
-                      saepe culpa, atque error doloribus earum eos ratione natus
-                      facere. Perspiciatis laboriosam reiciendis possimus quasi
-                      harum adipisci vero iure tempore asperiores dolor, ratione
-                      dolorum in iste ipsa incidunt deleniti nobis. Expedita aut
-                      sapiente ratione cumque.
+                      The Computer Science Engineering (CSE) program with a
+                      specialization in Big Data Analytics at SRM Institute of
+                      Science and Technology, Ramapuram, is designed to equip
+                      students with cutting-edge skills in data science and
+                      analytics. This specialization focuses on the principles
+                      and technologies needed to handle, analyze, and draw
+                      insights from large and complex data sets. The curriculum
+                      combines a solid foundation in computer science with
+                      advanced courses in big data technologies, machine
+                      learning, data mining, and cloud computing.Students
+                      benefit from hands-on experience through industry
+                      collaborations, projects, and state-of-the-art
+                      laboratories that mirror real-world scenarios. The program
+                      also emphasizes research and innovation, encouraging
+                      students to explore emerging trends in data science. With
+                      a strong focus on practical applications, graduates are
+                      well-prepared for careers in data analytics, business
+                      intelligence, and other high-demand fields in technology,
+                      making SRM Ramapuram a preferred choice for aspiring data
+                      scientists and engineers.
                     </p>
                   </div>
                 </div>
