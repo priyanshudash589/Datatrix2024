@@ -106,8 +106,7 @@ function Event() {
         count++;
       }
       return count;
-    };
-
+    };    
 
     try {
       const { data, error } = await supabase.from("registration").insert([
@@ -152,6 +151,7 @@ function Event() {
       }
     }
     return countparti();
+    console.log(countparti())
   };
 
   useEffect(() => {
