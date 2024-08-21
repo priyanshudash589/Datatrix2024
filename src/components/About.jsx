@@ -18,14 +18,14 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="py-3 sm:py-4">
                         <img
-                          src="https://i.ibb.co/gFb3ns6/image-1.jpg"
+                          src="src/assets/aboutus_imgs/website.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
                       </div>
                       <div className="py-3 sm:py-4">
                         <img
-                          src="https://i.ibb.co/rfHFq15/image-2.jpg"
+                          src="src/assets/aboutus_imgs/gallery.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -34,7 +34,7 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="relative z-10 my-4">
                         <img
-                          src="https://i.ibb.co/9y7nYCD/image-3.jpg"
+                          src="src/assets/aboutus_imgs/hod.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -79,14 +79,14 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="py-3 sm:py-4">
                         <img
-                          src="https://i.ibb.co/gFb3ns6/image-1.jpg"
+                          src="src/assets/aboutus_imgs/srm.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
                       </div>
                       <div className="py-3 sm:py-4">
                         <img
-                          src="https://i.ibb.co/rfHFq15/image-2.jpg"
+                          src="src/assets/aboutus_imgs/bms.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -95,7 +95,7 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="relative z-10 my-4">
                         <img
-                          src="https://i.ibb.co/9y7nYCD/image-3.jpg"
+                          src="src/assets/aboutus_imgs/dean.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -140,14 +140,14 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="py-3 sm:py-4">
                         <img
-                          src="https://i.ibb.co/gFb3ns6/image-1.jpg"
+                          src="src/assets/aboutus_imgs/bda.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
                       </div>
                       <div className="py-3 sm:py-4">
                         <img
-                          src="https://i.ibb.co/rfHFq15/image-2.jpg"
+                          src="src/assets/aboutus_imgs/ideaexplore.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -156,7 +156,7 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="relative z-10 my-4">
                         <img
-                          src="https://i.ibb.co/9y7nYCD/image-3.jpg"
+                          src="src/assets/aboutus_imgs/deptHod.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
