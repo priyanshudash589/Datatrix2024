@@ -227,7 +227,7 @@ const TechEvents = () => {
                   </CardBody>
                   <CardFooter className="pt-0 flex justify-between">
                     {/* <Link to={`/events/${event.id}`}> */}
-                      <Button className="w-[10rem]" disabled>
+                      <Button className="w-[10rem]">
                         Register Here
                       </Button>
                     {/* </Link> */}
