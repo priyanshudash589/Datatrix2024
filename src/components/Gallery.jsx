@@ -14,7 +14,20 @@ import imglogo from "../assets/main-logo-datatrix2.png";
 import img2 from "../assets/datatrix-text.svg";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
-// import { img3} from "../assets/gallery_images/ng3_p.png"
+
+//assets/gallery_images/ng1_l.png
+import img1 from "../assets/gallery_images/ng1_l.png";
+import img2 from "../assets/gallery_images/ng2_l.png";
+import img3 from "../assets/gallery_images/ng3_p.png";
+import img4 from "../assets/gallery_images/gall12_l.jpg";
+import img5 from "../assets/gallery_images/gall21_p.png";
+import img6 from "../assets/gallery_images/gall22_p.png";
+import img7 from "../assets/gallery_images/gall24_p.jpg";
+import img8 from "../assets/gallery_images/gall26_p.png";
+import img9 from "../assets/gallery_images/gall27_s.png";
+import img10 from "../assets/gallery_images/gall30_l.png";
+import img11 from "../assets/gallery_images/gall31_p.png";
+
 
 const Gallery = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -62,6 +75,8 @@ const Gallery = () => {
       
     </ul>
   );
+
+
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-50 p-6">
@@ -132,17 +147,21 @@ const Gallery = () => {
           </Collapse>
         </Navbar>
       </div>
+
+
       <div className="text-5xl bg-black text-white pt-[10rem] text-center font-orbitron">
         
         {"  "}
         Gallery
       </div>
+
+
       <div className="grid grid-cols-2 gap-4 bg-black md:grid-cols-4 cont">
         <div className="grid gap-4">
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/ng1_l.png"
+              src={img1}
               alt="gallery-photo"
             />
           </div>
@@ -150,7 +169,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center "
-              src="src/assets/gallery_images/ng3_p.png"
+              src={img3}
               alt="gallery-photo"
             />
           </div>
@@ -158,7 +177,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/ng2_l.png"
+              src={img2}
               alt="gallery-photo"
             />
           </div>
@@ -170,7 +189,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall31_p.png"
+              src={img11}
               alt="gallery-photo"
             />
           </div>
@@ -178,7 +197,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall30_l.png"
+              src={img10}
               alt="gallery-photo"
             />
           </div>
@@ -186,7 +205,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center "
-              src="src/assets/gallery_images/gall27_s.png"
+              src={img9}
               alt="gallery-photo"
             />
           </div>
@@ -198,21 +217,21 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall12_l.jpg"
+              src={img4}
               alt="gallery-photo"
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center "
-              src="src/assets/gallery_images/gall24_p.jpg"
+              src={img7}
               alt="gallery-photo"
             />
           </div>
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall26_p.png"
+              src={img8}
               alt="gallery-photo"
             />
           </div>
@@ -224,14 +243,14 @@ const Gallery = () => {
           <div className="mx-auto my-auto flex justify-center items-center">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall21_p.png"
+              src={img5}
               alt="gallery-photo"
             />
           </div>
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall22_p.png"
+              src={img6}
               alt="gallery-photo"
             />
           </div>
