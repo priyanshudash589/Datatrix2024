@@ -212,7 +212,7 @@ function Event() {
         <div className="flex flex-col md:flex-row items-center md:items-start mb-8">
           <div className="md:w-1/2 md:mr-8">
             <img
-              src={event?.image_url}
+              src={event?.inside_img_logo}
               alt="Event"
               className="rounded-md mb-4"
             />
