@@ -1,5 +1,12 @@
 import React from "react";
-import { Footer } from "./Footer";
+import gh from "../assets/aboutus_imgs/website.png";
+import sh from "../assets/aboutus_imgs/gallery.png";
+import hh from "../assets/aboutus_imgs/hod.png";
+
+import fg from "../assets/aboutus_imgs/srm.png"
+import sg from "../assets/aboutus_imgs/bms.png"
+import gg from "../assets/aboutus_imgs/dean.png"
+
 
 const About = () => {
   return (
@@ -18,14 +25,14 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="py-3 sm:py-4">
                         <img
-                          src="src/assets/aboutus_imgs/website.png"
+                          src={gh}
                           alt=""
                           className="w-full rounded-2xl"
                         />
                       </div>
                       <div className="py-3 sm:py-4">
                         <img
-                          src="src/assets/aboutus_imgs/gallery.png"
+                          src={sh}
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -34,7 +41,7 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="relative z-10 my-4">
                         <img
-                          src="src/assets/aboutus_imgs/hod.png"
+                          src={hh}
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -79,14 +86,14 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="py-3 sm:py-4">
                         <img
-                          src="src/assets/aboutus_imgs/srm.png"
+                          src={fg}
                           alt=""
                           className="w-full rounded-2xl"
                         />
                       </div>
                       <div className="py-3 sm:py-4">
                         <img
-                          src="src/assets/aboutus_imgs/bms.png"
+                          src={sg}
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -95,7 +102,7 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="relative z-10 my-4">
                         <img
-                          src="src/assets/aboutus_imgs/dean.png"
+                          src={gg}
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -140,14 +147,14 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="py-3 sm:py-4">
                         <img
-                          src="src/assets/aboutus_imgs/bda.png"
+                          src="../assets/aboutus_imgs/bda.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
                       </div>
                       <div className="py-3 sm:py-4">
                         <img
-                          src="src/assets/aboutus_imgs/ideaexplore.png"
+                          src="../assets/aboutus_imgs/ideaexplore.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />
@@ -156,7 +163,7 @@ const About = () => {
                     <div className="w-full px-3 sm:px-4 xl:w-1/2">
                       <div className="relative z-10 my-4">
                         <img
-                          src="src/assets/aboutus_imgs/deptHod.png"
+                          src="../assets/aboutus_imgs/deptHod.png"
                           alt=""
                           className="w-full rounded-2xl"
                         />

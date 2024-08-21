@@ -137,11 +137,11 @@ const Gallery = () => {
         {"  "}
         Gallery
       </div>
-      <div class="grid grid-cols-2 gap-4 bg-black md:grid-cols-4 cont">
-        <div class="grid gap-4">
+      <div className="grid grid-cols-2 gap-4 bg-black md:grid-cols-4 cont">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/ng1_l.png"
               alt="gallery-photo"
             />
@@ -149,7 +149,7 @@ const Gallery = () => {
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center "
+              className="h-auto max-w-full rounded-lg object-cover object-center "
               src="src/assets/gallery_images/ng3_p.png"
               alt="gallery-photo"
             />
@@ -157,7 +157,7 @@ const Gallery = () => {
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/ng2_l.png"
               alt="gallery-photo"
             />
@@ -166,10 +166,10 @@ const Gallery = () => {
 
         {/* //************************************************************************************************ */}
 
-        <div class="grid gap-4">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/gall31_p.png"
               alt="gallery-photo"
             />
@@ -177,7 +177,7 @@ const Gallery = () => {
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/gall30_l.png"
               alt="gallery-photo"
             />
@@ -185,7 +185,7 @@ const Gallery = () => {
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center "
+              className="h-auto max-w-full rounded-lg object-cover object-center "
               src="src/assets/gallery_images/gall27_s.png"
               alt="gallery-photo"
             />
@@ -194,24 +194,24 @@ const Gallery = () => {
 
         {/* */}
 
-        <div class="grid gap-4">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/gall12_l.jpg"
               alt="gallery-photo"
             />
           </div>
           <div>
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center "
+              className="h-auto max-w-full rounded-lg object-cover object-center "
               src="src/assets/gallery_images/gall24_p.jpg"
               alt="gallery-photo"
             />
           </div>
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/gall26_p.png"
               alt="gallery-photo"
             />
@@ -220,17 +220,17 @@ const Gallery = () => {
 
         {/*  */}
 
-        <div class="grid gap-4">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto flex justify-center items-center">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/gall21_p.png"
               alt="gallery-photo"
             />
           </div>
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
               src="src/assets/gallery_images/gall22_p.png"
               alt="gallery-photo"
             />
