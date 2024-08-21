@@ -36,53 +36,43 @@ function Event() {
 
   const [paymentResponse, setPaymentResponse] = useState(null);
 
-
   const buttonRef = React.useRef(null);
-
-
   const getAccessKey = async () => {
     try {
       // post fetch
       const data = await fetch("https://shy-moon-9f81.syn4ck.workers.dev/", {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          "env": "prod",
-          "event": event.event_name,
-          "amount": event.price,
-          "email": email,
-          "phone": participant1phone,
-          "name": participant1name,
-          "ticket_id": id + "-" + email     
-        })
+          env: "prod",
+          event: event.event_name,
+          amount: event.price,
+          email: email,
+          phone: participant1phone,
+          name: participant1name,
+          ticket_id: id + "-" + email,
+        }),
       });
       const response = await data.json();
 
       setAccessKey(response.data);
       console.log(response.data);
       return response.data;
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error);
     }
-
   };
-
-
 
   const handlePayment = async () => {
     const key = "DTDZKG0DFU ";
-    const easebuzzCheckout = new EasebuzzCheckout(key, 'prod'); // or 'test' for test environment
-
+    const easebuzzCheckout = new EasebuzzCheckout(key, "prod"); // or 'test' for test environment
 
     const options = {
       access_key: await getAccessKey(),
       onResponse: (response) => {
         console.log(response);
-
-
 
         if (response.status === "success") {
           const { data, error } = supabase.from("registrationpaid").insert([
@@ -90,27 +80,34 @@ function Event() {
               ticket_id: id + "-" + email,
               status: response.status,
               note: response.note,
-            }
-          ])
+            },
+          ]);
           if (error) {
-            if (error.message.includes("duplicate key value violates unique constraint")) {
+            if (
+              error.message.includes(
+                "duplicate key value violates unique constraint"
+              )
+            ) {
               alert("Payment Already Exists");
             } else {
               alert(error.message);
             }
           }
           window.location.href = "/success";
-        }
-        else {
+        } else {
           const { data, error } = supabase.from("registrationpaid").insert([
             {
               ticket_id: id + "-" + email,
               status: response.status,
               note: response.note,
-            }
-          ])
+            },
+          ]);
           if (error) {
-            if (error.message.includes("duplicate key value violates unique constraint")) {
+            if (
+              error.message.includes(
+                "duplicate key value violates unique constraint"
+              )
+            ) {
               alert("Payment Already Exists");
             } else {
               alert(error.message);
@@ -119,12 +116,11 @@ function Event() {
           window.location.href = "/failure";
         }
       },
-      theme: "#123456" // color hex
+      theme: "#123456", // color hex
     };
 
     easebuzzCheckout.initiatePayment(options);
-  }
-
+  };
 
   const register = async () => {
     const countparti = () => {
@@ -139,7 +135,7 @@ function Event() {
         count++;
       }
       return count;
-    };    
+    };
 
     try {
       const { data, error } = await supabase.from("registration").insert([
@@ -165,20 +161,12 @@ function Event() {
         throw error;
       }
       handlePayment();
-      alert("Registered Successfully");
       setRegistering(false);
       try {
         await supabase
-        .from("event_details")
-        .update({ occupied_slots: event.occupied_slots + countparti() })
-        .match({ id: event.id });
-        if (error) {
-          throw setError;
-        }
-        setEvent({
-          ...event,
-          occupied_slots: eventData[0].occupied_slots,
-        });
+          .from("event_details")
+          .update({ occupied_slots: event.occupied_slots + countparti() })
+          .match({ id: event.id });
       } catch (error) {
         alert(error.message);
       }
@@ -195,7 +183,6 @@ function Event() {
   };
 
   useEffect(() => {
-
     const fetchUser = async () => {
       try {
         const user2 = supabase.auth.getUser().then((user) => {
@@ -272,7 +259,7 @@ function Event() {
             </ul>
             <div className="bg-dark rounded-md h-auto shadow-md p-4 mt-4">
               <h3 className="text-xl font-bold text-white-800 mb-2 font-orbitron">
-                ₹{event?.price} /- 
+                ₹{event?.price} /-
               </h3>
 
               <div className="flex flex-col space-y-4">
@@ -451,7 +438,8 @@ function Event() {
 
                   <button
                     className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
-                    id="ebz-checkout-btn" ref={buttonRef}
+                    id="ebz-checkout-btn"
+                    ref={buttonRef}
                     onClick={register}
                   >
                     Register
