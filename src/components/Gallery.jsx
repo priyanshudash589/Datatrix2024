@@ -141,7 +141,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall32_l.png"
+              src="src/assets/gallery_images/ng1_l.png"
               alt="gallery-photo"
             />
           </div>
@@ -149,7 +149,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               class="h-auto max-w-full rounded-lg object-cover object-center "
-              src="src/assets/gallery_images/gall33_p.png"
+              src="src/assets/gallery_images/ng3_p.png"
               alt="gallery-photo"
             />
           </div>
@@ -157,7 +157,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="src/assets/gallery_images/gall16_l.jpg"
+              src="src/assets/gallery_images/ng2_l.png"
               alt="gallery-photo"
             />
           </div>
