@@ -17,7 +17,7 @@ import { Footer } from "./Footer";
 
 //assets/gallery_images/ng1_l.png
 import img1 from "../assets/gallery_images/ng1_l.png";
-import img2 from "../assets/gallery_images/ng2_l.png";
+import imglg from "../assets/gallery_images/ng2_l.png";
 import img3 from "../assets/gallery_images/ng3_p.png";
 import img4 from "../assets/gallery_images/gall12_l.jpg";
 import img5 from "../assets/gallery_images/gall21_p.png";
@@ -177,7 +177,7 @@ const Gallery = () => {
           <div className="mx-auto my-auto">
             <img
               className="h-auto max-w-full rounded-lg object-cover object-center"
-              src={img2}
+              src={imglg}
               alt="gallery-photo"
             />
           </div>

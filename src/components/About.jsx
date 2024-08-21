@@ -10,7 +10,6 @@ import gg from "../assets/aboutus_imgs/dean.png"
 import bda from "../assets/aboutus_imgs/bda.png"
 import ideaexplore from "../assets/aboutus_imgs/ideaexplore.png"
 import deptHod from "../assets/aboutus_imgs/deptHod.png"
-import { isElement } from "react-dom/test-utils";
 
 
 const About = () => {
