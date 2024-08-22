@@ -53,7 +53,7 @@ function Event() {
           "email": email,
           "phone": participant1phone,
           "name": participant1name,
-          "ticket_id": id + "-" + email     
+          "ticket_id": id + "-" + email
         })
       });
       const response = await data.json();
@@ -81,40 +81,28 @@ function Event() {
         console.log(response);
 
 
+        const { data, error } = supabase.from("registrationpaid").update({
+          status: response.status,
+          note: response.note,
+        }).eq("ticket_id", id + "-" + email);
+        if (error) {
+          alert(error.message);
+        }
+
+
 
         if (response.status === "success") {
-          const { data, error } = supabase.from("registrationpaid").insert([
-            {
-              ticket_id: id + "-" + email,
-              status: response.status,
-              note: response.note,
-            }
-          ])
-          if (error) {
-            if (error.message.includes("duplicate key value violates unique constraint")) {
-              alert("Payment Already Exists");
-            } else {
-              alert(error.message);
-            }
-          }
-          window.location.href = "/success";
+          alert("Payment Successful");
+          setTimeout(() => {
+            window.location.href = "/success";
+          }, 1000);
+
         }
         else {
-          const { data, error } = supabase.from("registrationpaid").insert([
-            {
-              ticket_id: id + "-" + email,
-              status: response.status,
-              note: response.note,
-            }
-          ])
-          if (error) {
-            if (error.message.includes("duplicate key value violates unique constraint")) {
-              alert("Payment Already Exists");
-            } else {
-              alert(error.message);
-            }
-          }
-          window.location.href = "/failure";
+          alert("Payment Failed");
+          setTimeout(() => {
+            window.location.href = "/failed";
+          }, 1000);
         }
       },
       theme: "#123456" // color hex

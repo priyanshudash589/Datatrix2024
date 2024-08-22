@@ -104,7 +104,7 @@ var basic_default = {
                 obj.productinfo = "";
             }
             if (obj.udf10 === null) {
-                obj.udf10 = ""; 
+                obj.udf10 = "";
             }
             if (obj.udf9 === null) {
                 obj.udf9 = "";
@@ -112,61 +112,89 @@ var basic_default = {
             if (obj.udf8 === null) {
                 obj.udf8 = "";
             }
-
-
-
-
-
-
-
-
-
-
-
+            if (obj.udf7 === null) {
+                obj.udf7 = "";
+            }
+            if (obj.udf6 === null) {
+                obj.udf6 = "";
+            }
+            if (obj.udf5 === null) {
+                obj.udf5 = "";
+            }
+            if (obj.udf4 === null) {
+                obj.udf4 = "";
+            }
+            if (obj.udf3 === null) {
+                obj.udf3 = "";
+            }
+            if (obj.udf2 === null) {
+                obj.udf2 = "";
+            }
+            if (obj.udf1 === null) {
+                obj.udf1 = "";
+            }
+            if (obj.hash === null) {
+                obj.hash = "";
+            }
+            if (obj.surl === null) {
+                obj.surl = "";
+            }
+            if (obj.furl === null) {
+                obj.furl = "";
+            }
+            if (obj.error_Message === null) {
+                obj.error_Message = "";
+            }
+            if (obj.merchant_logo === null) {
+                obj.merchant_logo = "";
+            }
+            if (obj.upi_va === null) {
+                obj.upi_va = "";
+            }
 
             const { data1, error } = await supabase.from('public.payments').insert([
                 {
                     txtid: obj.txnid,
                     firstname: obj.firstname,
-                    email: obj.email,
-                    phone: obj.phone,
-                    key: obj.key,
-                    mode: obj.mode,
-                    status: obj.status,
-                    unmappedstatus: obj.unmappedstatus,
-                    cardCategory: obj.cardCategory,
-                    addedon: obj.addedon,
-                    payment_source: obj.payment_source,
-                    PG_TYPE: obj.PG_TYPE,
-                    bank_ref_num: obj.bank_ref_num,
-                    bankcode: obj.bankcode,
-                    error: obj.error,
-                    name_on_card: obj.name_on_card,
-                    cardnum: obj.cardnum,
-                    issuing_bank: obj.issuing_bank,
-                    card_type: obj.card_type,
-                    easepayid: obj.easepayid,
-                    amount: obj.amount,
-                    net_amount_debit: obj.net_amount_debit,
-                    cash_back_percentage: obj.cash_back_percentage,
-                    deduction_percentage: obj.deduction_percentage,
-                    productinfo: obj.productinfo,
-                    udf10: obj.udf10,
-                    udf9: obj.udf9,
-                    udf8: obj.udf8,
-                    udf7: obj.udf7,
-                    udf6: obj.udf6,
-                    udf5: obj.udf5,
-                    udf4: obj.udf4,
-                    udf3: obj.udf3,
-                    udf2: obj.udf2,
-                    udf1: obj.udf1,
-                    hash: obj.hash,
-                    surl: obj.surl,
-                    furl: obj.furl,
-                    error_Message: obj.error_Message,
-                    merchant_logo: obj.merchant_logo,
-                    upi_va: obj.upi_va
+                    // email: obj.email,
+                    // phone: obj.phone,
+                    // key: obj.key,
+                    // mode: obj.mode,
+                    // status: obj.status,
+                    // unmappedstatus: obj.unmappedstatus,
+                    // cardCategory: obj.cardCategory,
+                    // addedon: obj.addedon,
+                    // payment_source: obj.payment_source,
+                    // PG_TYPE: obj.PG_TYPE,
+                    // bank_ref_num: obj.bank_ref_num,
+                    // bankcode: obj.bankcode,
+                    // error: obj.error,
+                    // name_on_card: obj.name_on_card,
+                    // cardnum: obj.cardnum,
+                    // issuing_bank: obj.issuing_bank,
+                    // card_type: obj.card_type,
+                    // easepayid: obj.easepayid,
+                    // amount: obj.amount,
+                    // net_amount_debit: obj.net_amount_debit,
+                    // cash_back_percentage: obj.cash_back_percentage,
+                    // deduction_percentage: obj.deduction_percentage,
+                    // productinfo: obj.productinfo,
+                    // udf10: obj.udf10,
+                    // udf9: obj.udf9,
+                    // udf8: obj.udf8,
+                    // udf7: obj.udf7,
+                    // udf6: obj.udf6,
+                    // udf5: obj.udf5,
+                    // udf4: obj.udf4,
+                    // udf3: obj.udf3,
+                    // udf2: obj.udf2,
+                    // udf1: obj.udf1,
+                    // hash: obj.hash,
+                    // surl: obj.surl,
+                    // furl: obj.furl,
+                    // error_Message: obj.error_Message,
+                    // merchant_logo: obj.merchant_logo,
+                    // upi_va: obj.upi_va
                 }
             ]);
             if (error) {
