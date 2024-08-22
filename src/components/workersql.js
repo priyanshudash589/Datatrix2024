@@ -24,6 +24,55 @@
 // | `team_name` | TEXT |                                      |
 // | `college_name` | TEXT |                                      |
 
+// frontendvalidation 
+
+| Column Name | Data Type | Constraints |
+| ------------------------| -----------| -----------------|
+| `deduction_percentage` | REAL | NOT NULL |
+| `net_amount_debit` | REAL | NOT NULL |
+| `cardCategory` | TEXT | NOT NULL |
+| `unmappedstatus` | TEXT | NOT NULL |
+| `addedon` | DATETIME | NOT NULL |
+| `cash_back_percentage` | REAL | NOT NULL |
+| `bank_ref_num` | TEXT | NOT NULL |
+| `error_Message` | TEXT | NOT NULL |
+| `phone` | TEXT | NOT NULL |
+| `easepayid` | TEXT | NOT NULL |
+| `cardnum` | TEXT | NOT NULL |
+| `upi_va` | TEXT | NOT NULL |
+| `payment_source` | TEXT | NOT NULL |
+| `card_type` | TEXT | NOT NULL |
+| `mode` | TEXT | NOT NULL |
+| `error` | TEXT | NOT NULL |
+| `bankcode` | TEXT | NOT NULL |
+| `name_on_card` | TEXT | NOT NULL |
+| `bank_name` | TEXT | NOT NULL |
+| `issuing_bank` | TEXT | NOT NULL |
+| `PG_TYPE` | TEXT | NOT NULL |
+| `amount` | REAL | NOT NULL |
+| `furl` | TEXT | NOT NULL |
+| `productinfo` | TEXT | NOT NULL |
+| `email` | TEXT | NOT NULL |
+| `status` | TEXT | NOT NULL |
+| `hash` | TEXT | NOT NULL |
+| `firstname` | TEXT | NOT NULL |
+| `surl` | TEXT | NOT NULL |
+| `key` | TEXT | NOT NULL |
+| `merchant_logo` | TEXT | NOT NULL |
+| `udf10` | TEXT |                 |
+| `txnid` | TEXT | NOT NULL |
+| `udf1` | TEXT |                 |
+| `udf3` | TEXT |                 |
+| `udf2` | TEXT |                 |
+| `udf5` | TEXT |                 |
+| `udf4` | TEXT |                 |
+| `udf7` | TEXT |                 |
+| `udf6` | TEXT |                 |
+| `udf9` | TEXT |                 |
+| `udf8` | TEXT |                 |
+| `cancellation_reason` | TEXT | NOT NULL |
+
+
 
 
 
@@ -136,14 +185,9 @@ var src_default = {
                         }
                     );
                 }
-                if (obj.status === "") {
-                    return new Response(
-                        JSON.stringify({ message: 'status is required' }),
-                        {
-                            headers: headers
-                        }
-                    );
-                }
+                obj.status = "Initiated";
+                obj.timestamp = new Date().toISOString();
+
 
 
 

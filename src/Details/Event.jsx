@@ -73,33 +73,35 @@ function Event() {
 
     const options = {
       access_key: await getAccessKey(),
-      onResponse: (response) => {
+      // async the function
+      onResponse:  async (response) => {
         console.log(response);
 
+        // post data to the server
+        const data = await fetch("https://www.postb.in/1724357642240-0790746028069", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            "response": response,
+            "ticket_id": id + "-" + email
+          })
+        });
 
-        const { data, error } = supabase.from("registrationpaid").update({
-          status: response.status,
-          note: response.note,
-        }).eq("ticket_id", id + "-" + email);
-        if (error) {
-          alert(error.message);
-        }
+        // if (response.status === "success") {
+        //   alert("Payment Successful");
+        //   setTimeout(() => {
+        //     window.location.href = "/success";
+        //   }, 1000);
 
-
-
-        if (response.status === "success") {
-          alert("Payment Successful");
-          setTimeout(() => {
-            window.location.href = "/success";
-          }, 1000);
-
-        }
-        else {
-          alert("Payment Failed");
-          setTimeout(() => {
-            window.location.href = "/failed";
-          }, 1000);
-        }
+        // }
+        // else {
+        //   alert("Payment Failed");
+        //   setTimeout(() => {
+        //     window.location.href = "/failed";
+        //   }, 1000);
+        // }
       },
       theme: "#123456", // color hex
     };
@@ -175,10 +177,17 @@ function Event() {
         team_name: teamname,
         college_name: collegeName
       });
-  
-      alert("Registration Successful");
-      // window.location.href = "/success";
-      // handlePayment();
+
+      if ( event.price > 0 ) {
+      alert("Registration Initiated");
+      handlePayment();
+      }
+      else {
+        alert("Registration Successful");
+        setTimeout(() => {
+          window.location.href = "/success";
+        }, 1000);
+      }
       setRegistering(false);
   
       try {
