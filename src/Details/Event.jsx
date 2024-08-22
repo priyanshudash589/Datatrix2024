@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LoaderSlot from "../assets/loaderslot.gif";
+import axios from "axios";
 import supabase from "../supabase";
 function Event() {
   const id = window.location.pathname.split("/")[2];
@@ -10,6 +11,7 @@ function Event() {
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState(null);
+  const [btntxt, setBtntxt] = useState("Register");
 
   const [registering, setRegistering] = useState(false);
   // const [ParticipantCount, setParticipantCount] = useState(0);
@@ -125,18 +127,12 @@ function Event() {
   const register = async () => {
     const countparti = () => {
       let count = 0;
-      if (email) {
-        count++;
-      }
-      if (participant2email) {
-        count++;
-      }
-      if (participant3email) {
-        count++;
-      }
+      if (email) count++;
+      if (participant2email) count++;
+      if (participant3email) count++;
       return count;
     };
-
+  
     if (teamname === "") {
       alert("Please enter Team Name");
       return;
@@ -168,50 +164,46 @@ function Event() {
       alert("Please enter Participant 3 Phone Number");
       return;
     }
-
-
+  
     try {
-      const { data, error } = await supabase.from("registration").insert([
-        {
-          eventid: id,
-          ticket_id: id + "-" + email,
-          participant1_email: email,
-          participant1_name: participant1name,
-          participant1_phone: participant1phone,
-          participant2_email: participant2email,
-          participant2_name: participant2name,
-          participant2_phone: participant2phone,
-          participant3_email: participant3email,
-          participant3_name: participant3name,
-          participant3_phone: participant3phone,
-          college_name: collegeName,
-          count_pati: countparti(),
-          team_name: teamname,
-          status: "Initiated",
-        },
-      ]);
-      if (error) {
-        throw error;
-      }
+      const response = await axios.post('https://datatrixregistrationsapi.syn4ck.workers.dev/api/register', {
+        eventid: id,
+        ticket_id: id + "-" + email,
+        participant1_email: email,
+        participant1_name: participant1name,
+        participant1_phone: participant1phone,
+        participant2_email: participant2email,
+        participant2_name: participant2name,
+        participant2_phone: participant2phone,
+        participant3_email: participant3email,
+        participant3_name: participant3name,
+        participant3_phone: participant3phone,
+        college_name: collegeName,
+        count_pati: countparti(),
+        team_name: teamname,
+        status: "Initiated"
+      });
+  
+      alert("Registration Successful");
+      // window.location.href = "/success";
       handlePayment();
       setRegistering(false);
+  
       try {
-        await supabase
-          .from("event_details")
-          .update({ occupied_slots: event.occupied_slots + countparti() })
-          .match({ id: event.id });
+        await axios.put(`https://datatrixregistrationsapi.syn4ck.workers.dev/api/update-event/${event.id}`, {
+          occupied_slots: event.occupied_slots + countparti()
+        });
       } catch (error) {
-        alert(error.message);
+        alert(error.response?.data?.message || error.message);
       }
     } catch (error) {
-      if (
-        error.message.includes("duplicate key value violates unique constraint")
-      ) {
+      if (error.response?.data?.message?.includes("duplicate key value violates unique constraint")) {
         alert("Registration Already Exists");
       } else {
-        alert(error.message);
+        alert(error.response?.data?.message || error.message);
       }
     }
+  
     return countparti();
   };
 
@@ -322,6 +314,7 @@ function Event() {
                           type="text"
                           id="teamname"
                           className="p-2 text-black rounded-md"
+                          placeholder="Team Name"
                           value={teamname}
                           onChange={(e) => setTeamname(e.target.value)}
                         />
@@ -333,6 +326,7 @@ function Event() {
                         <input
                           type="text"
                           id="clgname"
+                          placeholder="College Name"
                           className="p-2 text-black rounded-md"
                           value={collegeName}
                           onChange={(e) => setCollegeName(e.target.value)}
@@ -342,12 +336,14 @@ function Event() {
                         <label
                           htmlFor="participant1name"
                           className="text-white"
+                          placeholder="Participant 1 Name"
                         >
                           Participant 1 Name
                         </label>
                         <input
                           type="text"
                           id="participant1name"
+                          placeholder="Participant 1 Name"
                           className="text-black p-2 rounded-md"
                           value={participant1name}
                           onChange={(e) => setParticipant1name(e.target.value)}
@@ -363,6 +359,7 @@ function Event() {
                         <input
                           type="text"
                           id="participant1phone"
+                          placeholder="Participant 1 Phone Number"
                           className="text-black p-2 rounded-md"
                           value={participant1phone}
                           onChange={(e) => setParticipant1phone(e.target.value)}
@@ -383,6 +380,7 @@ function Event() {
                           type="text"
                           id="participant2name"
                           className="text-black p-2 rounded-md"
+                          placeholder="Participant 2 Name"
                           value={participant2name}
                           onChange={(e) => setParticipant2name(e.target.value)}
                         />
@@ -397,6 +395,7 @@ function Event() {
                         <input
                           type="email"
                           id="participant2email"
+                          placeholder="Participant 2 Email"
                           className="text-black p-2 rounded-md"
                           value={participant2email}
                           onChange={(e) => setParticipant2email(e.target.value)}
@@ -412,6 +411,7 @@ function Event() {
                         <input
                           type="text"
                           id="participant2phone"
+                          placeholder="Participant 2 Phone Number"
                           className="text-black p-2 rounded-md"
                           value={participant2phone}
                           onChange={(e) => setParticipant2phone(e.target.value)}
@@ -431,6 +431,7 @@ function Event() {
                         <input
                           type="text"
                           id="participant3name"
+                          placeholder="Participant 3 Name"
                           className="text-black p-2 rounded-md"
                           value={participant3name}
                           onChange={(e) => setParticipant3name(e.target.value)}
@@ -446,6 +447,7 @@ function Event() {
                         <input
                           type="email"
                           id="participant3email"
+                          placeholder="Participant 3 Email"
                           className="text-black p-2 rounded-md"
                           value={participant3email}
                           onChange={(e) => setParticipant3email(e.target.value)}
@@ -461,6 +463,7 @@ function Event() {
                         <input
                           type="text"
                           id="participant3phone"
+                          placeholder="Participant 3 Phone Number"
                           className="text-black p-2 rounded-md"
                           value={participant3phone}
                           onChange={(e) => setParticipant3phone(e.target.value)}
@@ -485,7 +488,7 @@ function Event() {
                   setRegistering(!registering);
                 }}
               >
-                {registering ? "Cancel" : "Register"}
+                {registering ? "Cancel" : "Open Form"}
               </button>
             </div>
           </div>
