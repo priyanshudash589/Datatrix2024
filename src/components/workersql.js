@@ -169,7 +169,7 @@ var src_default = {
                     await stmt.run();
                 } catch (error) {
                     console.log(error);
-                    if (error.code === 'SQLITE_CONSTRAINT') {
+                    if ( error.message.includes('UNIQUE') ) {
                         return new Response(
                             JSON.stringify({ message: 'Duplicate Entry' }),
                             {
@@ -178,7 +178,7 @@ var src_default = {
                         );
                     }
                     return new Response(
-                        JSON.stringify({ message: 'Error' }),
+                        JSON.stringify({ message: error.message }),
                         {
                             headers: headers
                         }

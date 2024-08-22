@@ -149,31 +149,40 @@ function Event() {
     }
   
     try {
+
+      // ticket_id, uuid, timestamp, status, note, eventid,
+      //   participant1_email, participant1_name, participant2_email, participant2_name,
+      //   participant3_email, participant3_name, participant1_phone, participant2_phone,
+      //   participant3_phone, count_pati, team_name, college_name
+
       const response = await axios.post('https://datatrixregistrationsapi.syn4ck.workers.dev/api/register', {
         eventid: id,
-        ticket_id: id + "-" + email,
+        ticket_id: id + "." + email,
+        uuid: email,
+        timestamp: new Date().toISOString(),
+        status: "pending",
+        note: "pending",
         participant1_email: email,
         participant1_name: participant1name,
-        participant1_phone: participant1phone,
         participant2_email: participant2email,
         participant2_name: participant2name,
-        participant2_phone: participant2phone,
         participant3_email: participant3email,
         participant3_name: participant3name,
+        participant1_phone: participant1phone,
+        participant2_phone: participant2phone,
         participant3_phone: participant3phone,
-        college_name: collegeName,
         count_pati: countparti(),
         team_name: teamname,
-        status: "Initiated"
+        college_name: collegeName
       });
   
       alert("Registration Successful");
       // window.location.href = "/success";
-      handlePayment();
+      // handlePayment();
       setRegistering(false);
   
       try {
-        await axios.put(`https://datatrixregistrationsapi.syn4ck.workers.dev/api/update-event/${event.id}`, {
+        await axios.post(`https://datatrixregistrationsapi.syn4ck.workers.dev/api/update-event/${event.id}`, {
           occupied_slots: event.occupied_slots + countparti()
         });
       } catch (error) {
