@@ -170,9 +170,9 @@ export default function MainBg({
               <Collapse open={openNav}>
                 {navList}
                 <div className="flex items-center gap-x-1">
-                  <Button fullWidth variant="gradient" size="sm" className="">
+                  {/* <Button fullWidth variant="gradient" size="sm" className="">
                     <span>Log in</span>
-                  </Button>
+                  </Button> */}
                 </div>
               </Collapse>
             </Navbar>
