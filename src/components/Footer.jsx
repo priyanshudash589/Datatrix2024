@@ -32,7 +32,7 @@ export function Footer() {
           <li>
             <Typography
               as="a"
-              href="#"
+              href="https://linktr.ee/Datatrix_24"
               color="blue-gray"
               className="font-normal transition-colors hover:text-blue-500 text-white focus:text-blue-500"
             >
