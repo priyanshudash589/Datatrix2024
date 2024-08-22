@@ -170,9 +170,9 @@ export default function MainBg({
               <Collapse open={openNav}>
                 {navList}
                 <div className="flex items-center gap-x-1">
-                  <Button fullWidth variant="gradient" size="sm" className="">
+                  {/* <Button fullWidth variant="gradient" size="sm" className="">
                     <span>Log in</span>
-                  </Button>
+                  </Button> */}
                 </div>
               </Collapse>
             </Navbar>
@@ -198,72 +198,3 @@ export default function MainBg({
     </>
   );
 }
-
-// ({
-//   scrollToSponsors,
-//   scrollToPreviousEvents,
-// }) {
-//   const [openNav, setOpenNav] = React.useState(false);
-
-//   React.useEffect(() => {
-//     window.addEventListener(
-//       "resize",
-//       () => window.innerWidth >= 960 && setOpenNav(false)
-//     );
-//   }, []);
-
-//   const navList = (
-//     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <Link to="/" className="flex items-center text-white">
-//           Home
-//         </Link>
-//       </Typography>
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <button onClick={scrollToSponsors} className="flex items-center text-white">Sponsors</button>
-//       </Typography>
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <Link to="/gallery" className="flex items-center text-white">
-//           Gallery
-//         </Link>
-//       </Typography>
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <Link to="/events" className="flex items-center text-white">
-//           Our Events
-//         </Link>
-//       </Typography>
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <button
-//           onClick={scrollToPreviousEvents}
-//           className="flex items-center text-white"
-//         >
-//           Previous Events
-//         </button>
-//       </Typography>
-//     </ul>
-//   );

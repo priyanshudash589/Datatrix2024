@@ -15,10 +15,7 @@ export default {
         if (request.method === 'GET') {
 
             const supabase = createClient('https://rnbtyqydrkbalujsypwr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuYnR5cXlkcmtiYWx1anN5cHdyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyMzkyMTE1NCwiZXhwIjoyMDM5NDk3MTU0fQ.SDvQRWvqwM_Klz_1eegouj7QtTY7fTLc5vqJPQnRsTY');
-            const { data, error } = await supabase.from('registration
-
-
-
+            const { data, error } = await supabase.from('registration').select('*');
         }
         if (request.method === 'POST') {
             try {

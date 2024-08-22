@@ -15,6 +15,20 @@ import img2 from "../assets/datatrix-text.svg";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
 
+//assets/gallery_images/ng1_l.png
+import img1 from "../assets/gallery_images/minu n uma ma'am.png";
+import imglg from "../assets/gallery_images/explain.png";
+import img3 from "../assets/gallery_images/jasmine.png";
+import img4 from "../assets/gallery_images/group.png";
+import img5 from "../assets/gallery_images/shruthi.png";
+import img6 from "../assets/gallery_images/pratish.png";
+import img7 from "../assets/gallery_images/website.png";
+import img8 from "../assets/gallery_images/logo2.png";
+import img9 from "../assets/gallery_images/laptop.png";
+import img10 from "../assets/gallery_images/dean n hod.png";
+import img11 from "../assets/gallery_images/sandman.png";
+
+
 const Gallery = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
@@ -61,6 +75,8 @@ const Gallery = () => {
       
     </ul>
   );
+
+
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-50 p-6">
@@ -131,32 +147,37 @@ const Gallery = () => {
           </Collapse>
         </Navbar>
       </div>
-      <div className="text-5xl bg-black text-white pt-[10rem] text-center font-orbitron">
-        {" "}
+
+
+      <div className="text-5xl bg-black text-white pt-[10rem] pb-[3rem] text-center font-orbitron">
+        
+        {"  "}
         Gallery
       </div>
-      <div class="grid grid-cols-2 gap-4 bg-black md:grid-cols-4 cont">
-        <div class="grid gap-4">
+
+
+      <div className="grid grid-cols-2 gap-4 bg-black md:grid-cols-4 cont">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={img1}
               alt="gallery-photo"
             />
           </div>
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center "
-              src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center "
+              src={img3}
               alt="gallery-photo"
             />
           </div>
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={imglg}
               alt="gallery-photo"
             />
           </div>
@@ -164,27 +185,27 @@ const Gallery = () => {
 
         {/* //************************************************************************************************ */}
 
-        <div class="grid gap-4">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={img11}
               alt="gallery-photo"
             />
           </div>
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={img10}
               alt="gallery-photo"
             />
           </div>
 
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center "
-              src="https://docs.material-tailwind.com/img/team-3.jpg"
+              className="h-auto max-w-full rounded-lg object-cover object-center "
+              src={img9}
               alt="gallery-photo"
             />
           </div>
@@ -192,25 +213,25 @@ const Gallery = () => {
 
         {/* */}
 
-        <div class="grid gap-4">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={img4}
               alt="gallery-photo"
             />
           </div>
           <div>
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center "
-              src="https://docs.material-tailwind.com/img/team-3.jpg"
+              className="h-auto max-w-full rounded-lg object-cover object-center "
+              src={img7}
               alt="gallery-photo"
             />
           </div>
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={img8}
               alt="gallery-photo"
             />
           </div>
@@ -218,18 +239,18 @@ const Gallery = () => {
 
         {/*  */}
 
-        <div class="grid gap-4">
+        <div className="grid gap-4">
           <div className="mx-auto my-auto flex justify-center items-center">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={img5}
               alt="gallery-photo"
             />
           </div>
           <div className="mx-auto my-auto">
             <img
-              class="h-auto max-w-full rounded-lg object-cover object-center"
-              src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
+              className="h-auto max-w-full rounded-lg object-cover object-center"
+              src={img6}
               alt="gallery-photo"
             />
           </div>
