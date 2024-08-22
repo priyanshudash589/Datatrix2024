@@ -67,7 +67,7 @@ function Event() {
 
   const handlePayment = async () => {
     const key = "DTDZKG0DFU ";
-    const easebuzzCheckout = new EasebuzzCheckout(key, "prod"); // or 'test' for test environment
+    const easebuzzCheckout = new EasebuzzCheckout(key, "prod");
 
     const options = {
       access_key: await getAccessKey(),
@@ -136,6 +136,39 @@ function Event() {
       }
       return count;
     };
+
+    if (teamname === "") {
+      alert("Please enter Team Name");
+      return;
+    } else if (collegeName === "") {
+      alert("Please enter College Name");
+      return;
+    }
+    if (participant1name === "") {
+      alert("Please enter Participant 1 Name");
+      return;
+    }
+    if (participant1phone === "") { 
+      alert("Please enter Participant 1 Phone Number");
+      return;
+    }
+    if (participant2email !== "" && participant2name === "") {
+      alert("Please enter Participant 2 Name");
+      return;
+    }
+    if (participant2email !== "" && participant2phone === "") {
+      alert("Please enter Participant 2 Phone Number");
+      return;
+    }
+    if (participant3email !== "" && participant3name === "") {
+      alert("Please enter Participant 3 Name");
+      return;
+    }
+    if (participant3email !== "" && participant3phone === "") {
+      alert("Please enter Participant 3 Phone Number");
+      return;
+    }
+
 
     try {
       const { data, error } = await supabase.from("registration").insert([
@@ -272,11 +305,11 @@ function Event() {
                   Logged in as {user ? email : "Guest"}
                 </p>
               </div>
-              <div>
+              {/* <div>
                 <p>
                   Available slots: {event.occupied_slots} / {event.total_slots}
                 </p>
-              </div>
+              </div> */}
               {registering && (
                 <>
                   {event?.max_count >= 1 && (

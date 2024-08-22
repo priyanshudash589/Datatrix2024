@@ -197,7 +197,7 @@ const TechEvents = () => {
                         <span className="text-green-500">Free</span>
                       ) : (
                         <span className="text-green-500">
-                          ₹{event.price}
+                          ₹{event.price} 
                         </span>
                       )}
                     </div>
@@ -229,7 +229,7 @@ const TechEvents = () => {
                         <span className="text-green-500">Free</span>
                       ) : (
                         <span className="text-green-500">
-                          ₹{event.price}
+                          ₹{event.price} {event.free_price}
                         </span>
                       )}
                     </div>
