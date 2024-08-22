@@ -12,16 +12,6 @@ export function Footer() {
               as="a"
               href="#"
               color="blue-gray"
-              className="font-normal transition-colors text-white hover:text-blue-500 focus:text-blue-500"
-            >
-             <Link to="/about">About us</Link>
-            </Typography>
-          </li>
-          <li>
-            <Typography
-              as="a"
-              href="#"
-              color="blue-gray"
               className="font-normal transition-colors hover:text-blue-500 text-white focus:text-blue-500"
             >
               <Link to="/gallery">Gallery</Link>
@@ -32,7 +22,7 @@ export function Footer() {
           <li>
             <Typography
               as="a"
-              href="#"
+              href="https://linktr.ee/Datatrix_24"
               color="blue-gray"
               className="font-normal transition-colors hover:text-blue-500 text-white focus:text-blue-500"
             >
@@ -43,7 +33,7 @@ export function Footer() {
       </div>
       <hr className="my-8 border-blue-gray-50" />
       <Typography color="blue-gray" className="text-center font-normal text-white">
-        &copy; 2024 Copyright : SRM Institute Of Science And Technology , CSE-BD , Priyanshu Dash❤️
+        &copy; 2024 Copyright : SRM Institute Of Science And Technology , CSE-BD , Priyanshu Dash
       </Typography>
     </footer>
   );

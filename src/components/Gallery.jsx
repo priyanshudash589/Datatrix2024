@@ -16,17 +16,17 @@ import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
 
 //assets/gallery_images/ng1_l.png
-import img1 from "../assets/gallery_images/ng1_l.png";
-import imglg from "../assets/gallery_images/ng2_l.png";
-import img3 from "../assets/gallery_images/ng3_p.png";
-import img4 from "../assets/gallery_images/gall12_l.jpg";
-import img5 from "../assets/gallery_images/gall21_p.png";
-import img6 from "../assets/gallery_images/gall22_p.png";
-import img7 from "../assets/gallery_images/gall24_p.jpg";
-import img8 from "../assets/gallery_images/gall26_p.png";
-import img9 from "../assets/gallery_images/gall27_s.png";
-import img10 from "../assets/gallery_images/gall30_l.png";
-import img11 from "../assets/gallery_images/gall31_p.png";
+import img1 from "../assets/gallery_images/minu n uma ma'am.png";
+import imglg from "../assets/gallery_images/explain.png";
+import img3 from "../assets/gallery_images/jasmine.png";
+import img4 from "../assets/gallery_images/group.png";
+import img5 from "../assets/gallery_images/shruthi.png";
+import img6 from "../assets/gallery_images/pratish.png";
+import img7 from "../assets/gallery_images/website.png";
+import img8 from "../assets/gallery_images/logo2.png";
+import img9 from "../assets/gallery_images/laptop.png";
+import img10 from "../assets/gallery_images/dean n hod.png";
+import img11 from "../assets/gallery_images/sandman.png";
 
 
 const Gallery = () => {
@@ -149,7 +149,7 @@ const Gallery = () => {
       </div>
 
 
-      <div className="text-5xl bg-black text-white pt-[10rem] text-center font-orbitron">
+      <div className="text-5xl bg-black text-white pt-[10rem] pb-[3rem] text-center font-orbitron">
         
         {"  "}
         Gallery
