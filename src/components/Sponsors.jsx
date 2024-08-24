@@ -2,7 +2,7 @@ import React from 'react'
 import aanya from '../assets/amaya.png'
 import mj from '../assets/mj.jpeg.jpg'
 import grid from '../assets/gridart.jpg'
-import silly from '../assets/Silly stitches.png'
+import silly from '../assets/silly_stiches.jpg'
 import daphne from '../assets/daphnetech.jpg'
 import codentatives from '../assets/Codentatives.png'
 export function Sponsors() {
