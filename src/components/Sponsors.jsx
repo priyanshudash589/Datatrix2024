@@ -2,6 +2,8 @@ import React from 'react'
 import aanya from '../assets/amaya.png'
 import mj from '../assets/mj.jpeg.jpg'
 import grid from '../assets/gridart.jpg'
+import silly from '../assets/Silly stitches.png'
+import daphne from '../assets/daphnetech.jpg'
 export function Sponsors() {
   return (
     <div className='bg-patt-grid p-4 sm:p-8 lg:p-[2rem] w-full text-center lg:pt-[5rem]'>
@@ -15,6 +17,8 @@ export function Sponsors() {
             <img src={aanya} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
             <img src={mj} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
             <img src={grid} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> 
+            <img src={silly} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> 
+            <img src={daphne} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> 
         </div>
     </div>
 </div>
