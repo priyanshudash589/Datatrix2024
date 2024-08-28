@@ -1,6 +1,6 @@
 import React from 'react'
 import aanya from '../assets/amaya.png'
-import mj from '../assets/mj.jpeg.jpg'
+import mj from '../assets/mj.png'
 import grid from '../assets/gridart.jpg'
 import silly from '../assets/silly_stiches.jpg'
 import daphne from '../assets/daphnetech.jpg'
@@ -18,7 +18,7 @@ export function Sponsors() {
 
     <div className='p-4 sm:p-6 lg:p-[3rem] min-h-[20rem]'>
         
-        <div className='grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-2'>
+        <div className='grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4'>
             <img src={aanya} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
             <img src={mj} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" />
             <img src={grid} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> 
@@ -27,7 +27,6 @@ export function Sponsors() {
             <img src={codentatives} className='h-24 sm:h-32 lg:h-[15rem] mx-auto bg-white' alt="" /> 
             <img src={black} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> 
             <img src={Nivellia_Fashion} className='h-24 sm:h-32 lg:h-[15rem] mx-auto' alt="" /> 
-
         </div>
     </div>
 </div>
