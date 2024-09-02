@@ -164,7 +164,7 @@ const TechEvents = () => {
             let link;
             if (event.event_name === "Datathon") {
               link = "https://datathon2024.vercel.app/";
-            } else if ([1, 2, 3, 4, 5, 6, 12].includes(event.id)) {
+            } else if ([1, 2, 3, 4, 5, 6].includes(event.id)) {
               link = `/events/${event.id}`;
             } else {
               link = `/events/${event.id}`;
