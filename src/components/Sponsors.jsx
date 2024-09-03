@@ -9,7 +9,7 @@ import black from '../assets/black.png'
 import Nivellia_Fashion from '../assets/Nivellia_Fashion.png'
 import Guvi from '../assets/Guvi.png'
 import Alumaigal from '../assets/Alumaigal.png'
-
+import Flynet from '../assets/flynet.png'
 
 export function Sponsors() {
   return (
@@ -41,13 +41,14 @@ export function Sponsors() {
             <img src={grid} className='h-relative max-h-48 mx-auto' alt="" />
             <img src={Nivellia_Fashion} className='h-relative max-h-48 mx-auto' alt="" />
             {/* <img src={Guvi} className='h-24 sm:h-32 lg:h-[15rem] mx-auto bg-white' alt="" /> */}
+            <img src={Flynet} className='h-relative max-h-48 mx-auto' alt="" />
             <img src={codentatives} className='h-relative max-h-48 mx-auto bg-white' alt="" />
             <img src={mj} className='h-relative max-h-48 mx-auto' alt="" />
             <img src={silly} className='h-relative max-h-48 mx-auto' alt="" />
-            <img src={aanya} className='h-relative max-h-48 mx-auto' alt="" />
           </div>
-          <div className='grid grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-4 mt-4'>
+          <div className='grid grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-4 mt-4'>
             {/* <img src={black} className="hidden lg:block h-24 sm:h-32 lg:h-[15rem] mx-auto" alt="" /> */}
+            <img src={aanya} className='h-relative max-h-48 mx-auto' alt="" />
             <img src={daphne} className='h-relative max-h-36 mx-auto' alt="" />
           </div>
         </div>
