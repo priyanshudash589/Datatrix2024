@@ -15,7 +15,7 @@ function Event() {
     1: "https://forms.gle/CSEhXekLxEFJXPgt9",
     2: "https://forms.gle/JbpHFCBrgfGVEh4f7",
     3: "https://forms.gle/f3GbZVjs2job1Po89",
-    4: "https://forms.gle/UeGB8LGRZggD3bUj9",
+    4: "https://docs.google.com/forms/d/e/1FAIpQLScrG2BBu6Pt1VH66Qy8HGTFDjrPXlOJxpcPifrEjJROqoSXxQ/viewform?usp=sf_link",
     5: "https://forms.gle/nDgzR4veZV2FnWrq7",
     6: "https://forms.gle/PGJLaBmYSNWPurmL8",
   };
