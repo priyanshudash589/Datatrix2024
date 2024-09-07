@@ -11,6 +11,8 @@ import Guvi from '../assets/Guvi.png'
 import Alumaigal from '../assets/Alumaigal.png'
 import Flynet from '../assets/flynet.png'
 import Fragomen from '../assets/Fragomen.jpeg'
+import Nerds from '../assets/Nerds.jpeg'
+import Poorvika from '../assets/Poorvika.jpg'
 
 export function Sponsors() {
   return (
@@ -46,12 +48,14 @@ export function Sponsors() {
             <img src={codentatives} className='h-relative max-h-48 mx-auto bg-white' alt="" />
             <img src={mj} className='h-relative max-h-48 mx-auto' alt="" />
             <img src={silly} className='h-relative max-h-48 mx-auto' alt="" />
-          </div>
-          <div className='grid grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-4 mt-4'>
-            {/* <img src={black} className="hidden lg:block h-24 sm:h-32 lg:h-[15rem] mx-auto" alt="" /> */}
             <img src={aanya} className='h-relative max-h-48 mx-auto' alt="" />
-            <img src={daphne} className='h-relative max-h-36 mx-auto' alt="" />
             <img src={Fragomen} className='h-relative max-h-36 mx-auto' alt="" />
+            <img src={Nerds} className='h-relative max-h-36 mx-auto' alt="" />
+          </div>
+          <div className='grid grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-4 mt-4'>
+            {/* <img src={black} className="hidden lg:block h-24 sm:h-32 lg:h-[15rem] mx-auto" alt="" /> */}
+            <img src={Poorvika} className='h-relative max-h-36 mx-auto' alt="" />
+            <img src={daphne} className='h-relative max-h-36 mx-auto' alt="" />
           </div>
         </div>
       </div>
