@@ -12,12 +12,12 @@ function Event() {
 
   // Registration links mapped to specific event IDs
   const registrationLinks = {
-    1: "https://forms.gle/CSEhXekLxEFJXPgt9",
-    2: "https://forms.gle/JbpHFCBrgfGVEh4f7",
+    1: "",
+    2: "",
     3: "https://forms.gle/f3GbZVjs2job1Po89",
     4: "https://docs.google.com/forms/d/e/1FAIpQLScrG2BBu6Pt1VH66Qy8HGTFDjrPXlOJxpcPifrEjJROqoSXxQ/viewform?usp=sf_link",
-    5: "https://forms.gle/nDgzR4veZV2FnWrq7",
-    6: "https://forms.gle/PGJLaBmYSNWPurmL8",
+    5: "",
+    6: "",
   };
 
   useEffect(() => {
@@ -93,7 +93,7 @@ function Event() {
               <button
                 className="bg-dark-500 ml-4 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
                 onClick={() => {
-                  window.location.href = registrationLinks[id] || "https://defaulturl.com";
+                  window.location.href = registrationLinks[id] || window.alert("Registration Are Closed");
                 }}
               >
                 Register Now
