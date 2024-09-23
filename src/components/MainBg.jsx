@@ -180,27 +180,27 @@ export default function MainBg({
                   </a>
                 </p> */}
                 <p class="inline-block text-white px-4">
-                  <a href="https://drive.google.com/file/d/1HmJJ5KOkwsmFOoSkKOiN2DAgk4yusF1s/view?usp=sharing" download class="text-white-300 underline px-2">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
                     Checkout our souvenir!!!
                   </a>
                 </p>
                 <p class="inline-block text-white px-4">
-                  <a href="https://drive.google.com/file/d/1HmJJ5KOkwsmFOoSkKOiN2DAgk4yusF1s/view?usp=sharing" download class="text-white-300 underline px-2">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
                     Checkout our souvenir!!!
                   </a>
                 </p>
                 <p class="inline-block text-white px-4">
-                  <a href="https://drive.google.com/file/d/1HmJJ5KOkwsmFOoSkKOiN2DAgk4yusF1s/view?usp=sharing" download class="text-white-300 underline px-2">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
                     Checkout our souvenir!!!
                   </a>
                 </p>
                 <p class="inline-block text-white px-4">
-                  <a href="https://drive.google.com/file/d/1HmJJ5KOkwsmFOoSkKOiN2DAgk4yusF1s/view?usp=sharing" download class="text-white-300 underline px-2">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
                     Checkout our souvenir!!!
                   </a>
                 </p>
                 <p class="inline-block text-white px-4">
-                  <a href="https://drive.google.com/file/d/1HmJJ5KOkwsmFOoSkKOiN2DAgk4yusF1s/view?usp=sharing" download class="text-white-300 underline px-2">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
                     Checkout our souvenir!!!
                   </a>
                 </p>
