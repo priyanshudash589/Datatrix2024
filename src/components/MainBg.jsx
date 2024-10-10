@@ -27,78 +27,80 @@ export default function MainBg({
   }, []);
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link to="/" className="flex items-center text-white">
-          Home
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <button
-          
-          onClick={scrollToAbout}
-          className="flex items-center text-white"
+    <>
+      <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
         >
-          About Us
-        </button>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <button
-          onClick={scrollToSponsors}
-          className="flex items-center text-white"
+          <Link to="/" className="flex items-center text-white">
+            Home
+          </Link>
+        </Typography>
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
         >
-          Sponsors
-        </button>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link to="/gallery" className="flex items-center text-white">
-          Gallery
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link to="/events" className="flex items-center text-white">
-          Our Events
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <button
-          onClick={scrollToPreviousEvents}
-          className="flex items-center text-white"
+          <button
+
+            onClick={scrollToAbout}
+            className="flex items-center text-white"
+          >
+            About Us
+          </button>
+        </Typography>
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
         >
-          Previous Events
-        </button>
-      </Typography>
-    </ul>
+          <button
+            onClick={scrollToSponsors}
+            className="flex items-center text-white"
+          >
+            Sponsors
+          </button>
+        </Typography>
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <Link to="/gallery" className="flex items-center text-white">
+            Gallery
+          </Link>
+        </Typography>
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <Link to="/events" className="flex items-center text-white">
+            Our Events
+          </Link>
+        </Typography>
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <button
+            onClick={scrollToPreviousEvents}
+            className="flex items-center text-white"
+          >
+            Previous Events
+          </button>
+        </Typography>
+      </ul>
+    </>
   );
 
   return (
@@ -120,13 +122,6 @@ export default function MainBg({
                 <div className="flex items-center gap-4">
                   <div className="mr-4 hidden lg:block">{navList}</div>
                   <div className="flex items-center gap-x-1">
-                    <Button
-                      variant="gradient"
-                      size="sm"
-                      className="hidden lg:inline-block"
-                    >
-                      <span>Log in</span>
-                    </Button>
                   </div>
                   <IconButton
                     variant="text"
@@ -176,7 +171,45 @@ export default function MainBg({
                 </div>
               </Collapse>
             </Navbar>
+            <div class="relative w-full mx-auto overflow-hidden border-2 border-white rounded-lg bg-transparent py-2 my-4">
+              <div class="animate-marquee whitespace-nowrap">
+                {/* <p class="inline-block text-white px-4">
+                  Our souvenir is available!!!
+                  <a href="https://drive.google.com/file/d/1f_CPPLjTU9LHyoU9tbwWHA4epH-gMz5q/view?usp=sharing" download class="text-blue-300 underline px-2">
+                    Check here!
+                  </a>
+                </p> */}
+                <p class="inline-block text-white px-4">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
+                    Checkout our souvenir!!!
+                  </a>
+                </p>
+                <p class="inline-block text-white px-4">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
+                    Checkout our souvenir!!!
+                  </a>
+                </p>
+                <p class="inline-block text-white px-4">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
+                    Checkout our souvenir!!!
+                  </a>
+                </p>
+                <p class="inline-block text-white px-4">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
+                    Checkout our souvenir!!!
+                  </a>
+                </p>
+                <p class="inline-block text-white px-4">
+                  <a href="https://online.flippingbook.com/view/888690701/" download class="text-white-300 underline px-2">
+                    Checkout our souvenir!!!
+                  </a>
+                </p>
+              </div>
+            </div>
+
           </div>
+
+
 
           <div className="bg-transparent flex w-screen h-screen flex-col sm:flex-col justify-center items-center">
             <img

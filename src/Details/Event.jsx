@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 import LoaderSlot from "../assets/loaderslot.gif";
-import axios from "axios";
 import supabase from "../supabase";
+
 function Event() {
   const id = window.location.pathname.split("/")[2];
 
-  //fetch event details
+  // Fetch event details
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [user, setUser] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [btntxt, setBtntxt] = useState("Register");
 
+<<<<<<< HEAD
   const [registering, setRegistering] = useState(false);
   // const [ParticipantCount, setParticipantCount] = useState(0);
   // const [availableSlots, setAvailableSlots] = useState(0);
@@ -224,22 +222,19 @@ function Event() {
     }
 
     return countparti();
+=======
+  // Registration links mapped to specific event IDs
+  const registrationLinks = {
+    1: "",
+    2: "",
+    3: "https://forms.gle/f3GbZVjs2job1Po89",
+    4: "https://docs.google.com/forms/d/e/1FAIpQLScrG2BBu6Pt1VH66Qy8HGTFDjrPXlOJxpcPifrEjJROqoSXxQ/viewform?usp=sf_link",
+    5: "",
+    6: "",
+>>>>>>> 8a56d2161de1f2290228912d4667455ba4869bfa
   };
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const user2 = supabase.auth.getUser().then((user) => {
-          setUser(user);
-          console.log(user.data.user);
-          setEmail(user.data.user.email);
-        });
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-
-    fetchUser();
     const fetchEvent = async () => {
       try {
         let { data: event, error } = await supabase
@@ -265,6 +260,10 @@ function Event() {
         <img src={LoaderSlot} alt="Loading..." />
       </div>
     );
+  }
+
+  if (error) {
+    return <p className="text-red-500">{error}</p>;
   }
 
   return (
@@ -305,209 +304,13 @@ function Event() {
               <h3 className="text-xl font-bold text-white-800 mb-2 font-orbitron">
                 ₹{event?.price} /-
               </h3>
-
-              <div className="flex flex-col space-y-4">
-                <img
-                  src={user ? user.data.user.user_metadata.avatar_url : ""}
-                  alt="avatar"
-                  className="rounded-full h-10 w-10"
-                />
-                <p className="text-white">
-                  Logged in as {user ? email : "Guest"}
-                </p>
-              </div>
-              {/* <div>
-                <p>
-                  Available slots: {event.occupied_slots} / {event.total_slots}
-                </p>
-              </div> */}
-              {registering && (
-                <>
-                  {event?.max_count >= 1 && (
-                    <>
-                      <div className="flex flex-col space-y-4">
-                        <label htmlFor="teamname" className="text-white">
-                          Team Name
-                        </label>
-                        <input
-                          type="text"
-                          id="teamname"
-                          className="p-2 text-black rounded-md"
-                          placeholder="Team Name"
-                          value={teamname}
-                          onChange={(e) => setTeamname(e.target.value)}
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4">
-                        <label htmlFor="teamname" className="text-white">
-                          College Name
-                        </label>
-                        <input
-                          type="text"
-                          id="clgname"
-                          placeholder="College Name"
-                          className="p-2 text-black rounded-md"
-                          value={collegeName}
-                          onChange={(e) => setCollegeName(e.target.value)}
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant1name"
-                          className="text-white"
-                          placeholder="Participant 1 Name"
-                        >
-                          Participant 1 Name
-                        </label>
-                        <input
-                          type="text"
-                          id="participant1name"
-                          placeholder="Participant 1 Name"
-                          className="text-black p-2 rounded-md"
-                          value={participant1name}
-                          onChange={(e) => setParticipant1name(e.target.value)}
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant1phone"
-                          className="text-white"
-                        >
-                          Participant 1 Phone
-                        </label>
-                        <input
-                          type="text"
-                          id="participant1phone"
-                          placeholder="Participant 1 Phone Number"
-                          className="text-black p-2 rounded-md"
-                          value={participant1phone}
-                          onChange={(e) => setParticipant1phone(e.target.value)}
-                        />
-                      </div>
-                    </>
-                  )}
-                  {event?.max_count >= 2 && (
-                    <>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant2name"
-                          className="text-white"
-                        >
-                          Participant 2 Name
-                        </label>
-                        <input
-                          type="text"
-                          id="participant2name"
-                          className="text-black p-2 rounded-md"
-                          placeholder="Participant 2 Name"
-                          value={participant2name}
-                          onChange={(e) => setParticipant2name(e.target.value)}
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant2email"
-                          className="text-white"
-                        >
-                          Participant 2 Email
-                        </label>
-                        <input
-                          type="email"
-                          id="participant2email"
-                          placeholder="Participant 2 Email"
-                          className="text-black p-2 rounded-md"
-                          value={participant2email}
-                          onChange={(e) => setParticipant2email(e.target.value)}
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant2phone"
-                          className="text-white"
-                        >
-                          Participant 2 Phone
-                        </label>
-                        <input
-                          type="text"
-                          id="participant2phone"
-                          placeholder="Participant 2 Phone Number"
-                          className="text-black p-2 rounded-md"
-                          value={participant2phone}
-                          onChange={(e) => setParticipant2phone(e.target.value)}
-                        />
-                      </div>
-                    </>
-                  )}
-                  {event?.max_count >= 3 && (
-                    <>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant3name"
-                          className="text-white"
-                        >
-                          Participant 3 Name
-                        </label>
-                        <input
-                          type="text"
-                          id="participant3name"
-                          placeholder="Participant 3 Name"
-                          className="text-black p-2 rounded-md"
-                          value={participant3name}
-                          onChange={(e) => setParticipant3name(e.target.value)}
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant3email"
-                          className="text-white"
-                        >
-                          Participant 3 Email
-                        </label>
-                        <input
-                          type="email"
-                          id="participant3email"
-                          placeholder="Participant 3 Email"
-                          className="text-black p-2 rounded-md"
-                          value={participant3email}
-                          onChange={(e) => setParticipant3email(e.target.value)}
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4">
-                        <label
-                          htmlFor="participant3phone"
-                          className="text-white"
-                        >
-                          Participant 3 Phone
-                        </label>
-                        <input
-                          type="text"
-                          id="participant3phone"
-                          placeholder="Participant 3 Phone Number"
-                          className="text-black p-2 rounded-md"
-                          value={participant3phone}
-                          onChange={(e) => setParticipant3phone(e.target.value)}
-                        />
-                      </div>
-                    </>
-                  )}
-
-                  <button
-                    className="bg-dark-500 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
-                    id="ebz-checkout-btn"
-                    ref={buttonRef}
-                    onClick={register}
-                  >
-                    Register
-                  </button>
-                </>
-              )}
               <button
                 className="bg-dark-500 ml-4 mt-[2.5rem] border-[1px] hover:bg-blue-300 hover:text-blue-800 text-white font-bold py-2 px-[3rem] rounded-full focus:outline-none font-orbitron focus:shadow-outline border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_10px_#08f]"
                 onClick={() => {
-                  setRegistering(!registering);
+                  window.location.href = registrationLinks[id] || window.alert("Registration Are Closed");
                 }}
               >
-                {registering ? "Cancel" : "Open Form"}
+                Register Now
               </button>
             </div>
           </div>
