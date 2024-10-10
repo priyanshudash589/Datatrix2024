@@ -12,12 +12,14 @@ module.exports = withMT({
         "event2": "url('/src/assets/Desktop - 2.svg')",
         "patdata": "url('/src/assets/techno3.gif')",
       },
-      
+
     },
     fontFamily: {
       orbitron: ["Orbitron"],
       aston: ["Anton"],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 });

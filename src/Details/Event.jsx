@@ -74,11 +74,11 @@ function Event() {
     const options = {
       access_key: await getAccessKey(),
       // async the function
-      onResponse:  async (response) => {
+      onResponse: async (response) => {
         console.log(response);
 
         // post data to the server
-        const data = await fetch("https://www.postb.in/1724357642240-0790746028069", {
+        const data = await fetch("https://datatrixregistrationsapi.syn4ck.workers.dev/api/frontendvalidation", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -117,7 +117,7 @@ function Event() {
       if (participant3email) count++;
       return count;
     };
-  
+
     if (teamname === "") {
       alert("Please enter Team Name");
       return;
@@ -129,7 +129,7 @@ function Event() {
       alert("Please enter Participant 1 Name");
       return;
     }
-    if (participant1phone === "") { 
+    if (participant1phone === "") {
       alert("Please enter Participant 1 Phone Number");
       return;
     }
@@ -149,7 +149,7 @@ function Event() {
       alert("Please enter Participant 3 Phone Number");
       return;
     }
-  
+
     try {
 
       // ticket_id, uuid, timestamp, status, note, eventid,
@@ -159,7 +159,7 @@ function Event() {
 
       const response = await axios.post('https://datatrixregistrationsapi.syn4ck.workers.dev/api/register', {
         eventid: id,
-        ticket_id: id + "." + email,
+        ticket_id: id + "-" + email,
         uuid: email,
         timestamp: new Date().toISOString(),
         status: "pending",
@@ -178,25 +178,43 @@ function Event() {
         college_name: collegeName
       });
 
-      if ( event.price > 0 ) {
-      alert("Registration Initiated");
-      handlePayment();
+      const resp = await response.data;
+      if (resp.message === "success") {
+        if (event.price > 0) {
+          alert("Registration Initiated");
+          handlePayment();
+        }
+
+        else {
+          alert("Registration Successful");
+          setTimeout(() => {
+            window.location.href = "/success";
+          }, 1000);
+        }
       }
       else {
-        alert("Registration Successful");
-        setTimeout(() => {
-          window.location.href = "/success";
-        }, 1000);
+        if (resp.message.includes("duplicate")) {
+          alert("Duplicate Entry");
+        }
+        else {
+
+          alert("Registration Failed");
+
+          setTimeout(() => {
+            window.location.href = "/failure";
+          }, 1000);
+        }
       }
+
       setRegistering(false);
-  
-      try {
-        await axios.post(`https://datatrixregistrationsapi.syn4ck.workers.dev/api/update-event/${event.id}`, {
-          occupied_slots: event.occupied_slots + countparti()
-        });
-      } catch (error) {
-        alert(error.response?.data?.message || error.message);
-      }
+
+      // try {
+      //   await axios.post(`https://datatrixregistrationsapi.syn4ck.workers.dev/api/update-event/${event.id}`, {
+      //     occupied_slots: event.occupied_slots + countparti()
+      //   });
+      // } catch (error) {
+      //   alert(error.response?.data?.message || error.message);
+      // }
     } catch (error) {
       if (error.response?.data?.message?.includes("duplicate key value violates unique constraint")) {
         alert("Registration Already Exists");
@@ -204,7 +222,7 @@ function Event() {
         alert(error.response?.data?.message || error.message);
       }
     }
-  
+
     return countparti();
   };
 
